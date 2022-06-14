@@ -11,9 +11,11 @@ export const Base = styled.button`
     padding: ${p =>
         p.wide ? 'var(--btn-padding-wide)' : 'var(--btn-padding-normal)'};
     border-radius: ${p =>
-        p.round ? 'var(--border-radius-lg)' : 'var(--border-radius-sm)'};
+        p.round ? 'var(--border-radius-xl)' : 'var(--border-radius-sm)'};
     transition: all 0.5s;
     box-shadow: var(--shadow-elevation-medium);
+    align-self: ${p => p.alignSelf || 'flex-start'};
+    margin-top: ${p => p.marginTop && 'var(--padding-sm)'};
 
     &:hover {
         box-shadow: var(--shadow-elevation-high);

@@ -4,7 +4,7 @@ import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants';
 import { AuthContext } from '../../hooks/Auth';
-import { useContext } from 'react';
+import { Fragment, useContext } from 'react';
 import { ReactComponent as Home } from '../../assets/home.svg';
 import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
@@ -21,7 +21,7 @@ const NavigationDesktop = () => {
                 <List>
                     <WrapListItems>
                         {isAuth && (
-                            <>
+                            <Fragment>
                                 <ListItem>
                                     <NavLink
                                         to='home'
@@ -52,7 +52,7 @@ const NavigationDesktop = () => {
                                         <p>Settings</p>
                                     </NavLink>
                                 </ListItem>
-                            </>
+                            </Fragment>
                         )}
                     </WrapListItems>
                     <WrapListItems>
@@ -70,8 +70,7 @@ const NavigationDesktop = () => {
                         {!isAuth && (
                             <ListItem>
                                 <NavLink
-                                    onClick={toggle}
-                                    to=''
+                                    to='auth'
                                     className='desktop-nav-link'
                                     activeClassName='desktop-nav-link--active'
                                 >
@@ -85,7 +84,7 @@ const NavigationDesktop = () => {
                             <ListItem>
                                 <NavLink
                                     onClick={toggle}
-                                    to=''
+                                    to='/'
                                     className='desktop-nav-link'
                                     activeClassName='desktop-nav-link--active'
                                 >
@@ -104,6 +103,7 @@ const NavigationDesktop = () => {
 export default NavigationDesktop;
 
 const Wrapper = styled.nav`
+    position: fixed;
     display: flex;
     flex-direction: column;
     width: var(--width-navigation);

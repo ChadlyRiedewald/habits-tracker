@@ -78,8 +78,7 @@ export const NavLink = styled(Link)`
     // Mobile Navigation Links
     &.mobile-nav-link {
         position: relative;
-        padding: var(--padding-xs);
-        padding-top: var(--padding-sm);
+        padding: var(--padding-sm);
 
         svg {
             fill: var(--color-gray-100);
@@ -98,6 +97,21 @@ export const NavLink = styled(Link)`
             &::after {
                 background-color: var(--color-gray-100);
             }
+        }
+    }
+
+    // Button group Links
+    &.button-group {
+        display: flex;
+        flex-basis: 50%;
+        justify-content: center;
+        color: var(--color-orange-300);
+        background-color: var(--color-gray-100);
+        padding: var(--btn-padding-normal);
+
+        &--active {
+            color: var(--color-gray-100);
+            background-color: var(--color-orange-300);
         }
     }
 `;

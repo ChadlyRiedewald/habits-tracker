@@ -1,10 +1,12 @@
 import styled from 'styled-components/macro';
 import { ReactComponent as Svg } from '../../assets/logo.svg';
 import { BREAKPOINTS } from '../../constants';
+import { useNavigate } from 'react-router-dom';
 
 export const Logo = () => {
+    const navigate = useNavigate();
     return (
-        <Wrapper>
+        <Wrapper onClick={() => navigate('/')}>
             <Svg />
             <Title>Fix Your Habits</Title>
         </Wrapper>

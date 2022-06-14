@@ -101,7 +101,8 @@ export const LINE_HEIGHTS = {
 export const BORDER_RADIUS = {
     sm: '8px',
     md: '16px',
-    lg: '64px',
+    lg: '32px',
+    xl: '64px',
 };
 
 export const BORDER_WIDTH = {
@@ -143,8 +144,7 @@ export const ROUTES = [
     },
 
     // When not logged in
-    { path: 'sign-in' },
-    { path: 'sign-up' },
+    { path: 'auth', children: [{ path: '' }, { path: 'sign-up' }] },
 
     // When logged in
     { path: 'home', children: [{ path: '' }, { path: 'completed' }] },
