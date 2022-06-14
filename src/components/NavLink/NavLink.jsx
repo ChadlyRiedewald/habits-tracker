@@ -102,8 +102,9 @@ export const NavLink = styled(Link)`
 
     // Button group Links
     &.button-group {
-        display: flex;
-        flex-basis: 50%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 1fr);
+        width: 100%;
         justify-content: center;
         color: var(--color-orange-300);
         background-color: var(--color-gray-100);
