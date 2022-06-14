@@ -77,12 +77,11 @@ const Wrapper = styled.nav`
 
 const List = styled.ul`
     display: flex;
+    justify-content: space-between;
 `;
 
 const ListItem = styled.li`
     display: flex;
-    justify-content: center;
-    width: 100%;
 
     svg {
         fill: var(--color-gray-100);
