@@ -39,7 +39,7 @@ const SignUp = () => {
             <TabletOnly>
                 <SignInContainer>
                     <S.Header>
-                        <h2>Welcome Back!</h2>
+                        <h2>Welcome back!</h2>
                         <S.Paragraph>
                             Already have an account?
                             <br />
