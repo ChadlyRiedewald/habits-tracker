@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import { useLocation, matchRoutes, useResolvedPath } from 'react-router-dom';
 import { ROUTES } from '../../constants';
 import { Link as L } from 'react-router-dom';
+import { BREAKPOINTS } from '../../constants';
 
 const Link = ({
     to,
@@ -39,27 +40,34 @@ export const NavLink = styled(Link)`
     }
 
     // Desktop Navigation Links
-    &.sidebar-nav-link {
+    &.desktop-nav-link {
         padding-block: var(--padding-sm);
         border-left: var(--border-width-xxl) solid transparent;
         border-right: var(--border-width-xxl) solid transparent;
-
-        & p {
-            color: var(--color-gray-100);
-        }
+        color: var(--color-gray-100);
+        display: flex;
+        align-items: center;
+        gap: var(--padding-md);
+        padding-left: 15%;
 
         & svg {
             fill: var(--color-gray-100);
+        }
+
+        @media screen and ${BREAKPOINTS.lg} {
+            justify-content: center;
+            padding-left: 0;
+
+            p {
+                display: none;
+            }
         }
 
         &--active {
             background-color: var(--color-orange-200);
             border-color: var(--color-gray-100);
             border-right: var(--border-width-xxl) solid transparent;
-
-            & p {
-                color: var(--color-orange-400);
-            }
+            color: var(--color-orange-400);
 
             & svg {
                 fill: var(--color-orange-400);

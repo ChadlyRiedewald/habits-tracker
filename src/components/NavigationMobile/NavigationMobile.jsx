@@ -6,6 +6,7 @@ import { ReactComponent as Home } from '../../assets/home.svg';
 import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
+import { ReactComponent as Plus } from '../../assets/plus.svg';
 
 const NavigationMobile = () => {
     return (
@@ -23,7 +24,7 @@ const NavigationMobile = () => {
                     </ListItem>
                     <ListItem>
                         <NavLink
-                            to=''
+                            to='discover'
                             className='mobile-nav-link'
                             activeClassName='mobile-nav-link--active'
                         >
@@ -32,16 +33,18 @@ const NavigationMobile = () => {
                     </ListItem>
                     <ListItem>
                         <NavLink
-                            to=''
+                            to='add-habit'
                             className='mobile-nav-link'
                             activeClassName='mobile-nav-link--active'
                         >
-                            <Ellipse />
+                            <Ellipse>
+                                <Plus stroke='var(--color-orange-400)' />
+                            </Ellipse>
                         </NavLink>
                     </ListItem>
                     <ListItem>
                         <NavLink
-                            to=''
+                            to='settings'
                             className='mobile-nav-link'
                             activeClassName='mobile-nav-link--active'
                         >
@@ -50,7 +53,7 @@ const NavigationMobile = () => {
                     </ListItem>
                     <ListItem>
                         <NavLink
-                            to=''
+                            to='help'
                             className='mobile-nav-link'
                             activeClassName='mobile-nav-link--active'
                         >
