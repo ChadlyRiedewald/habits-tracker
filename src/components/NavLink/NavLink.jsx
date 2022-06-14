@@ -109,6 +109,8 @@ export const NavLink = styled(Link)`
         color: var(--color-orange-300);
         background-color: var(--color-gray-100);
         padding: var(--btn-padding-normal);
+        text-transform: uppercase;
+        font-weight: var(--font-weight-bold);
 
         &--active {
             color: var(--color-gray-100);

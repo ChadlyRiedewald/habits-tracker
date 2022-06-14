@@ -187,8 +187,12 @@ input, textarea {
 }
 
   textarea {
-    height: 200px;
     resize: none;
+	height: 8rem;
+	
+	@media screen and ${CONSTANTS.BREAKPOINTS.smMin} {
+		height: 12rem;
+	}
   }
 
 label {

@@ -13,6 +13,11 @@ import Settings from './components/Settings';
 import Auth from './components/Auth';
 import SignIn from './components/Auth/SignIn';
 import SignUp from './components/Auth/SignUp';
+import Contact from './components/Help/Contact';
+import Faq from './components/Help/Faq';
+import Account from './components/Help/Account';
+import Rewards from './components/Help/Rewards';
+import Habits from './components/Help/Habits';
 
 const App = () => {
     const { isAuth } = useContext(AuthContext);
@@ -41,12 +46,12 @@ const App = () => {
 
                         {/* Always available */}
                         <Route path='help' element={<Help />}>
-                            {/*<Route path='' element={<Contact />} />*/}
-                            {/*<Route path='faq' element={<Faq />}>*/}
-                            {/*    <Route path='' element={<Account />} />*/}
-                            {/*    <Route path='rewards' element={<Rewards />} />*/}
-                            {/*    <Route path='habits' element={<Habits />} />*/}
-                            {/*</Route>*/}
+                            <Route path='' element={<Contact />} />
+                            <Route path='faq' element={<Faq />}>
+                                <Route path='' element={<Account />} />
+                                <Route path='rewards' element={<Rewards />} />
+                                <Route path='habits' element={<Habits />} />
+                            </Route>
                         </Route>
                         <Route
                             path='*'

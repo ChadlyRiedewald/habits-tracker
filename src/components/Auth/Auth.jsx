@@ -45,14 +45,17 @@ const Auth = () => {
 
 export default Auth;
 
-const OuterContainer = styled.div`
+export const OuterContainer = styled.div`
     padding-top: var(--padding-md);
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: var(--padding-md);
 
     @media screen and ${BREAKPOINTS.smMin} {
+        padding-top: 0;
+        margin-block: auto;
         padding-inline: var(--padding-md);
         padding-block: var(--padding-lg);
     }
@@ -79,13 +82,15 @@ export const Paragraph = styled.p`
     }
 `;
 
-const InnerContainer = styled.div`
+export const InnerContainer = styled.div`
     width: 100%;
-    height: 75%;
+    height: 100%;
     background-color: var(--color-gray-100);
     border-top-right-radius: var(--border-radius-lg);
     border-top-left-radius: var(--border-radius-lg);
     padding: calc(var(--padding-md) * 1.5);
+    padding-bottom: calc(var(--padding-lg) * 1.5);
+    overflow: scroll;
 
     @media screen and ${BREAKPOINTS.smMin} {
         height: 100%;
