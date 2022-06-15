@@ -1,12 +1,11 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { NavLink } from '../NavLink';
-import { ButtonGroup } from '../ButtonGroup';
+import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
 import MobileLayout from '../MobileLayout';
 import { Paragraph } from '../Paragraph';
 import { Fragment } from 'react';
 import DesktopOnly from '../DesktopOnly';
 import styled from 'styled-components/macro';
-import { BREAKPOINTS } from '../../constants';
 
 const Auth = () => {
     let location = useLocation();
@@ -14,23 +13,27 @@ const Auth = () => {
     return (
         <Fragment>
             <MobileLayout>
-                <ButtonGroup>
-                    <NavLink
-                        to=''
-                        className='button-group'
-                        activeClassName='button-group--active'
-                        exact={true}
-                    >
-                        Sign in
-                    </NavLink>
-                    <NavLink
-                        to='sign-up'
-                        className='button-group'
-                        activeClassName='button-group--active'
-                    >
-                        Sign up
-                    </NavLink>
-                </ButtonGroup>
+                <ButtonGroupNavigation>
+                    <li>
+                        <NavLink
+                            to='sign-in'
+                            className='button-group'
+                            activeClassName='button-group--active'
+                            exact={true}
+                        >
+                            Sign in
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to='sign-up'
+                            className='button-group'
+                            activeClassName='button-group--active'
+                        >
+                            Sign up
+                        </NavLink>
+                    </li>
+                </ButtonGroupNavigation>
                 <Paragraph orange>
                     {location.pathname === '/auth'
                         ? 'Log in with your account to Fix Your Habits'
@@ -50,22 +53,13 @@ export default Auth;
 
 const InnerContainer = styled.div`
     padding: var(--padding-lg);
-    width: calc(100vw - var(--width-navigation));
+    width: calc(100vw - var(--width-nav));
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 `;
 
-// SIGN IN & SIGN UP STYLES
-export const FormWrapper = styled.div`
-    margin-inline: auto;
-    width: clamp(280px, 75vw, 650px);
-
-    @media screen and ${BREAKPOINTS.lgMin} {
-        width: 80%;
-    }
-`;
 export const Wrapper = styled.div`
     background-color: var(--color-gray-100);
     display: flex;

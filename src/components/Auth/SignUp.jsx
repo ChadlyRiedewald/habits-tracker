@@ -8,6 +8,7 @@ import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
 import { Inverted } from '../Button';
 import { Fragment } from 'react';
+import { FormWrapper } from '../FormWrapper';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -15,9 +16,9 @@ const SignUp = () => {
     return (
         <Fragment>
             <MobileOnly>
-                <Style.FormWrapper>
+                <FormWrapper>
                     <SignUpForm />
-                </Style.FormWrapper>
+                </FormWrapper>
             </MobileOnly>
             <DesktopOnly>
                 <Style.Wrapper>
@@ -30,7 +31,7 @@ const SignUp = () => {
                                 Click the button below to sign in
                             </Paragraph>
                             <Inverted
-                                onClick={() => navigate('/auth')}
+                                onClick={() => navigate('/auth/sign-in')}
                                 round
                                 alignSelf='center'
                                 marginTop
@@ -43,13 +44,13 @@ const SignUp = () => {
                         <Header>
                             <h1>Get started</h1>
                             <Paragraph orange width='80%'>
-                                Welcome to Fix Your Habits Fill in your info to
-                                get started
+                                Welcome to Fix Your Habits! Fill in your info to
+                                get started!
                             </Paragraph>
                         </Header>
-                        <Style.FormWrapper>
+                        <FormWrapper>
                             <SignUpForm />
-                        </Style.FormWrapper>
+                        </FormWrapper>
                     </SignUpContainer>
                 </Style.Wrapper>
             </DesktopOnly>

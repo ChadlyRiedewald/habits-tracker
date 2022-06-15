@@ -1,13 +1,13 @@
 import MobileLayout from '../MobileLayout';
-import { ButtonGroup } from '../ButtonGroup';
+import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
 import { NavLink } from '../NavLink';
 
 const Discover = () => {
     return (
         <MobileLayout>
-            <ButtonGroup>
+            <ButtonGroupNavigation>
                 <NavLink
-                    to=''
+                    to='discover'
                     className='button-group'
                     activeClassName='button-group--active'
                     exact={true}
@@ -21,7 +21,7 @@ const Discover = () => {
                 >
                     All
                 </NavLink>
-            </ButtonGroup>
+            </ButtonGroupNavigation>
         </MobileLayout>
     );
 };

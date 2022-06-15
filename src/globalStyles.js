@@ -104,10 +104,10 @@ const GlobalStyles = createGlobalStyle`
 	
 	// Fixed Widths
 	@media screen and ${CONSTANTS.BREAKPOINTS.lgMin} {
-      --width-navigation: ${CONSTANTS.WIDTH.navigation.sm};
+      --width-nav: ${CONSTANTS.WIDTH.navigation.sm};
     }    
 	@media screen and ${CONSTANTS.BREAKPOINTS.xlMin} {
-      --width-navigation: ${CONSTANTS.WIDTH.navigation.md};
+      --width-nav: ${CONSTANTS.WIDTH.navigation.md};
     }
 	
 	// Shadows
@@ -176,6 +176,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 ul {
   list-style: none;
+  width: 100%;
 }
 
 form {
@@ -199,7 +200,7 @@ input, textarea {
 	height: 8rem;
 	
 	@media screen and ${CONSTANTS.BREAKPOINTS.smMin} {
-		height: 12rem;
+		height: 10rem;
 	}
   }
 
@@ -207,6 +208,10 @@ label {
   display: flex;
   flex-direction: column;
   gap: var(--padding-xs);
+}
+
+li {
+  width: 100%;
 }
 
   // Typography

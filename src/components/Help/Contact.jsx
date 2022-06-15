@@ -1,25 +1,51 @@
-import Input from '../Input';
-import * as B from '../Button';
 import styled from 'styled-components/macro';
+import { FormWrapper } from '../FormWrapper';
+import ContactForm from './ContactForm';
+import MobileOnly from '../MobileOnly';
+import { Fragment } from 'react';
+import DesktopOnly from '../DesktopOnly';
+import { Header } from '../Header';
+import { Paragraph } from '../Paragraph';
 
 const Contact = () => {
     return (
-        <Wrapper>
-            <form>
-                <Input name='name' label='Name:' />
-                <Input name='email' label='Email:' type='email' />
-                <Input name='message' label='Message:' textarea />
-                <B.Base wide round alignSelf='center' marginTop>
-                    Send
-                </B.Base>
-            </form>
-        </Wrapper>
+        <Fragment>
+            <MobileOnly>
+                <FormWrapper>
+                    <ContactForm />
+                </FormWrapper>
+            </MobileOnly>
+            <DesktopOnly>
+                <Wrapper>
+                    <Header>
+                        <h2>Get in touch</h2>
+                        <Paragraph small>
+                            Feel free to contact us for any other questions
+                        </Paragraph>
+                    </Header>
+                    <FormCard>
+                        <ContactForm />
+                    </FormCard>
+                </Wrapper>
+            </DesktopOnly>
+        </Fragment>
     );
 };
 
 export default Contact;
 
 const Wrapper = styled.div`
-    margin-inline: auto;
-    width: clamp(280px, 80vw, 650px);
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--margin-lg);
+`;
+
+const FormCard = styled.div`
+    display: flex;
+    width: clamp(550px, 100%, 664px);
+    background-color: var(--color-gray-100);
+    padding: var(--padding-lg);
+    border-radius: var(--border-radius-sm);
 `;

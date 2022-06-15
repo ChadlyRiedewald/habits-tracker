@@ -1,13 +1,15 @@
 import DesktopOnly from '../DesktopOnly';
 import styled from 'styled-components/macro';
 import { Outlet } from 'react-router-dom';
-import { Header } from '../Header';
 
-const DesktopLayout = ({ children }) => {
+const DesktopLayout = ({ title, children }) => {
     return (
         <DesktopOnly>
             <OuterContainer>
-                <Header>{children}</Header>
+                <Navigation>
+                    <h2>{title}</h2>
+                    <List>{children}</List>
+                </Navigation>
                 <InnerContainer>
                     <Outlet />
                 </InnerContainer>
@@ -19,24 +21,37 @@ const DesktopLayout = ({ children }) => {
 export default DesktopLayout;
 
 const OuterContainer = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
+`;
+
+const Navigation = styled.nav`
+    min-width: 300px;
+    background-color: var(--color-gray-100);
+    padding-inline: calc(var(--padding-md) * 1.5);
+    padding-block: var(--padding-md);
+`;
+
+const List = styled.ul`
+    margin-top: var(--margin-lg);
+    gap: var(--margin-md);
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: var(--padding-md);
-    margin-block: auto;
-    padding-inline: var(--padding-md);
-    padding-block: var(--padding-lg);
+
+    & li {
+        display: flex;
+    }
 `;
 
 const InnerContainer = styled.div`
-    width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100vw - var(--width-nav) - 300px);
+    height: 100vh;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
-    background-color: var(--color-gray-200);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-inline: calc(var(--padding-md) * 1.5);
+    padding-block: var(--padding-md);
 `;

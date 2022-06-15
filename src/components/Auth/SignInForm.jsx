@@ -1,7 +1,7 @@
 import Input from '../Input';
 import * as B from '../Button';
 import { useContext } from 'react';
-import { AuthContext } from '../../hooks/Auth';
+import { AuthContext } from '../../hooks/Auth.context';
 
 const SignInForm = () => {
     const { toggle } = useContext(AuthContext);

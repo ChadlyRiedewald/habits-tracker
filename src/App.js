@@ -2,7 +2,7 @@ import { Fragment, useContext } from 'react';
 import styled from 'styled-components/macro';
 import GlobalStyles from './globalStyles';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { AuthContext } from './hooks/Auth';
+import { AuthContext } from './hooks/Auth.context';
 import Div100vh from 'react-div-100vh';
 
 import DesktopNavigation from './components/DesktopNavigation';
@@ -21,6 +21,8 @@ import Rewards from './components/Help/Rewards';
 import Habits from './components/Help/Habits';
 import DiscoverContent from './components/Discover/DiscoverContent';
 import All from './components/Discover/All';
+import MyAccount from './components/Settings/MyAccount';
+import Security from './components/Settings/Security';
 
 const App = () => {
     const { isAuth } = useContext(AuthContext);
@@ -46,26 +48,41 @@ const App = () => {
                             index
                             element={<AuthWrapper isAuth={isAuth} />}
                         />
-
                         {/* Always available */}
                         <Route path='help' element={<Help />}>
-                            <Route path='' element={<Contact />} />
+                            <Route
+                                path=''
+                                element={<Navigate to='contact' />}
+                            />
+                            <Route path='contact' element={<Contact />} />
                             <Route path='faq' element={<Faq />}>
-                                <Route path='' element={<Account />} />
+                                <Route
+                                    path=''
+                                    element={<Navigate to='account' />}
+                                />
+                                <Route path='account' element={<Account />} />
                                 <Route path='rewards' element={<Rewards />} />
                                 <Route path='habits' element={<Habits />} />
                             </Route>
                         </Route>
+
+                        {/* TODO 404 not found page*/}
                         <Route
                             path='*'
                             element={<AuthWrapper isAuth={isAuth} />}
                         />
-
                         {/* Conditional Routes */}
                         {!isAuth && (
                             <Fragment>
                                 <Route path='auth' element={<Auth />}>
-                                    <Route path='' element={<SignIn />} />
+                                    <Route
+                                        path=''
+                                        element={<Navigate to='sign-in' />}
+                                    />
+                                    <Route
+                                        path='sign-in'
+                                        element={<SignIn />}
+                                    />
                                     <Route
                                         path='sign-up'
                                         element={<SignUp />}
@@ -73,7 +90,6 @@ const App = () => {
                                 </Route>
                             </Fragment>
                         )}
-
                         {isAuth && (
                             <Fragment>
                                 <Route path='home' element={<Home />}>
@@ -86,16 +102,27 @@ const App = () => {
                                 <Route path='discover' element={<Discover />}>
                                     <Route
                                         path=''
+                                        element={<Navigate to='discover' />}
+                                    />
+                                    <Route
+                                        path='discover'
                                         element={<DiscoverContent />}
                                     />
                                     <Route path='all' element={<All />} />
                                 </Route>
                                 <Route path='settings' element={<Settings />}>
-                                    {/*<Route path='' element={<MyAccount />} />*/}
-                                    {/*<Route*/}
-                                    {/*    path='security'*/}
-                                    {/*    element={<Security />}*/}
-                                    {/*/>*/}
+                                    <Route
+                                        path=''
+                                        element={<Navigate to='my-account' />}
+                                    />
+                                    <Route
+                                        path='my-account'
+                                        element={<MyAccount />}
+                                    />
+                                    <Route
+                                        path='security'
+                                        element={<Security />}
+                                    />
                                 </Route>
                             </Fragment>
                         )}
@@ -113,7 +140,7 @@ const OuterContainer = styled(Div100vh)`
 `;
 
 const InnerContainer = styled(Div100vh)`
-    margin-left: var(--width-navigation);
+    margin-left: var(--width-nav);
     margin-bottom: var(--height-mobile-nav);
     display: flex;
     width: 100%;

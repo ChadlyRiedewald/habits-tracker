@@ -33,6 +33,13 @@ const Link = ({
     return <L className={allClassNames} to={to} {...rest} />;
 };
 
+/*
+
+//////////////////// STYLING
+
+
+ */
+
 export const NavLink = styled(Link)`
     font-size: var(--font-md);
     p {
@@ -107,6 +114,19 @@ export const NavLink = styled(Link)`
             &::after {
                 background-color: var(--color-gray-100);
             }
+        }
+    }
+
+    // Settings / Help Page Links
+
+    &.settings-link {
+        color: var(--color-gray-600);
+        padding: var(--padding-sm) var(--padding-md);
+        width: 100%;
+
+        &--active {
+            background-color: var(--color-gray-200);
+            border-radius: var(--border-radius-sm);
         }
     }
 

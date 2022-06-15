@@ -132,10 +132,12 @@ export const ROUTES = [
         path: 'help',
         children: [
             { path: '' },
+            { path: 'contact' },
             {
                 path: 'faq',
                 children: [
                     { path: '' },
+                    { path: 'account' },
                     { path: 'rewards' },
                     { path: 'habits' },
                 ],
@@ -144,13 +146,19 @@ export const ROUTES = [
     },
 
     // When not logged in
-    { path: 'auth', children: [{ path: '' }, { path: 'sign-up' }] },
+    {
+        path: 'auth',
+        children: [{ path: '' }, { path: 'sign-in' }, { path: 'sign-up' }],
+    },
 
     // When logged in
     { path: 'home', children: [{ path: '' }, { path: 'completed' }] },
-    { path: 'discover', children: [{ path: '' }, { path: 'all' }] },
+    {
+        path: 'discover',
+        children: [{ path: '' }, { path: 'discover' }, { path: 'all' }],
+    },
     {
         path: 'settings',
-        children: [{ path: '' }, { path: 'security' }],
+        children: [{ path: '' }, { path: 'my-account' }, { path: 'security' }],
     },
 ];

@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants';
-import { AuthContext } from '../../hooks/Auth';
+import { AuthContext } from '../../hooks/Auth.context';
 import { Fragment, useContext } from 'react';
 import { ReactComponent as Home } from '../../assets/home.svg';
 import { ReactComponent as Discover } from '../../assets/discover.svg';
@@ -106,7 +106,7 @@ const Wrapper = styled.nav`
     position: fixed;
     display: flex;
     flex-direction: column;
-    width: var(--width-navigation);
+    width: var(--width-nav);
     background-color: var(--color-orange-400);
     justify-content: space-between;
 `;

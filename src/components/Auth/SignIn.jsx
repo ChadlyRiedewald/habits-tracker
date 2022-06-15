@@ -7,7 +7,8 @@ import { Fragment } from 'react';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
 import { Inverted } from '../Button';
-import { FormWrapper, SignInContainer, SignUpContainer, Wrapper } from './Auth';
+import { SignInContainer, SignUpContainer, Wrapper } from './Auth';
+import { FormWrapper } from '../FormWrapper';
 
 const SignIn = () => {
     const navigate = useNavigate();
@@ -39,7 +40,7 @@ const SignIn = () => {
                                 Create an account to start your journey
                             </Paragraph>
                             <Inverted
-                                onClick={() => navigate('sign-up')}
+                                onClick={() => navigate('/auth/sign-up')}
                                 round
                                 alignSelf='center'
                                 marginTop

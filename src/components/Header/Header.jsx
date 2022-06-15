@@ -9,6 +9,12 @@ export const Header = styled.div`
     margin-inline: auto;
 
     @media screen and ${BREAKPOINTS.lg} {
-        width: clamp(280px, 75vw, 550px);
+        width: clamp(200px, 75vw, 550px);
+    }
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        margin: 0;
+        gap: var(--padding-xs);
+        align-items: flex-start;
     }
 `;

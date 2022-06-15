@@ -1,16 +1,29 @@
 import styled from 'styled-components/macro';
 import { NavLink } from '../NavLink';
 
-export const ButtonGroup = styled.div`
+export const ButtonGroupNavigation = ({ children }) => {
+    return (
+        <Nav>
+            <List>{children}</List>
+        </Nav>
+    );
+};
+
+const Nav = styled.nav`
+    display: flex;
+    width: 100%;
+`;
+
+const List = styled.ul`
     display: flex;
     width: 100%;
 
-    & > ${NavLink}:first-child {
+    & li:first-child ${NavLink} {
         border-top-left-radius: var(--border-radius-sm);
         border-bottom-left-radius: var(--border-radius-sm);
     }
 
-    & > ${NavLink}:last-child {
+    & li:last-child ${NavLink} {
         border-top-right-radius: var(--border-radius-sm);
         border-bottom-right-radius: var(--border-radius-sm);
     }

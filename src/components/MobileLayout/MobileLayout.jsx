@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import MobileOnly from '../MobileOnly';
 import { Outlet } from 'react-router-dom';
 import { Header } from '../Header';
+import { BREAKPOINTS } from '../../constants';
 
 const MobileLayout = ({ children }) => {
     return (
@@ -39,4 +40,8 @@ export const InnerContainer = styled.div`
     margin-bottom: var(--height-mobile-nav);
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+
+    @media screen and ${BREAKPOINTS.xs} {
+        padding: var(--padding-sm);
+    }
 `;

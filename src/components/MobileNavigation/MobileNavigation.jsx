@@ -1,6 +1,5 @@
 import styled from 'styled-components/macro';
 import MobileOnly from '../MobileOnly';
-import Ellipse from '../Ellipse';
 import { NavLink } from '../NavLink';
 import { ReactComponent as Home } from '../../assets/home.svg';
 import { ReactComponent as Discover } from '../../assets/discover.svg';
@@ -91,4 +90,20 @@ const List = styled.ul`
 const ListItem = styled.li`
     display: flex;
     align-items: center;
+    justify-content: center;
+`;
+
+const Ellipse = styled.div`
+    display: flex;
+    background-color: var(--color-gray-100);
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        width: 42px;
+        height: 42px;
+    }
 `;
