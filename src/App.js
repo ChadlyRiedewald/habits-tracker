@@ -107,8 +107,7 @@ export default App;
 
 const OuterContainer = styled.div`
     display: flex;
-    height: 100vh;
-    margin-bottom: var(--height-mobile-nav);
+    height: calc(100vh - var(--height-mobile-nav));
 `;
 
 const InnerContainer = styled.div`
