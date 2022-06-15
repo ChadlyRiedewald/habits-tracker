@@ -102,6 +102,7 @@ export const NavLink = styled(Link)`
 
     // Button group Links
     &.button-group {
+        font-size: var(--font-sm);
         display: grid;
         grid-template-columns: repeat(auto-fill, 1fr);
         width: 100%;

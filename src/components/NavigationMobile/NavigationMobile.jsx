@@ -86,7 +86,7 @@ const ListItem = styled.li`
     svg {
         fill: var(--color-gray-100);
         display: flex;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
     }
 `;

@@ -93,7 +93,11 @@ const GlobalStyles = createGlobalStyle`
     --border-width-xxl: ${CONSTANTS.BORDER_WIDTH.xxl};
     --border-width-xxxl: ${CONSTANTS.BORDER_WIDTH.xxxl};
 	
-	// Width
+	// Fixed Widths & Heights
+    @media screen and ${CONSTANTS.BREAKPOINTS.sm} {
+      --height-mobile-nav: ${`${CONSTANTS.SPACING.lg}px`};
+    }
+	
     @media screen and ${CONSTANTS.BREAKPOINTS.smMin} {
       --width-navigation: ${CONSTANTS.WIDTH.navigation.sm};
     }
@@ -224,8 +228,10 @@ label {
     color: var(--color-orange-400);
   }
   
-  label, input, textarea {
+  label, input, textarea, button {
+    @media screen and ${CONSTANTS.BREAKPOINTS.smMin} {
     font-size: var(--font-md);
+    }
   }
 `;
 

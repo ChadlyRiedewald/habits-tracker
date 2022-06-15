@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
+import { BREAKPOINTS } from '../../constants';
 
 export const Base = styled.button`
-    font-size: ${p => (p.small ? 'var(--font-xs)' : 'var(--font-md)')};
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     color: var(--color-gray-100);
@@ -20,6 +20,10 @@ export const Base = styled.button`
     &:hover {
         box-shadow: var(--shadow-elevation-high);
         transform: scale(1.01);
+    }
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        font-size: ${p => (p.small ? 'var(--font-xs)' : 'var(--font-md)')};
     }
 `;
 
