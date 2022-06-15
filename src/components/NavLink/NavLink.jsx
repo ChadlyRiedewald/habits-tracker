@@ -78,10 +78,15 @@ export const NavLink = styled(Link)`
     // Mobile Navigation Links
     &.mobile-nav-link {
         position: relative;
-        padding: var(--padding-sm);
+        display: flex;
+        align-items: center;
+        padding: calc(var(--padding-xs) * 1.5);
 
         svg {
             fill: var(--color-gray-100);
+            display: flex;
+            width: 32px;
+            height: 32px;
         }
 
         &::after {
