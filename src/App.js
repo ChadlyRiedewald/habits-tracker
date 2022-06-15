@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import GlobalStyles from './globalStyles';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthContext } from './hooks/Auth';
+import Div100vh from 'react-div-100vh';
 
 import NavigationDesktop from './components/NavigationDesktop';
 import NavigationMobile from './components/NavigationMobile';
@@ -105,13 +106,14 @@ const App = () => {
 
 export default App;
 
-const OuterContainer = styled.div`
+const OuterContainer = styled(Div100vh)`
     display: flex;
-    height: calc(100vh - var(--height-mobile-nav));
+    //height: 100vh;
 `;
 
 const InnerContainer = styled.div`
     margin-left: var(--width-navigation);
+    margin-bottom: var(--height-mobile-nav);
     display: flex;
     width: 100%;
 `;
