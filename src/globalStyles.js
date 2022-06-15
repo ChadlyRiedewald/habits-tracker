@@ -93,15 +93,17 @@ const GlobalStyles = createGlobalStyle`
     --border-width-xxl: ${CONSTANTS.BORDER_WIDTH.xxl};
     --border-width-xxxl: ${CONSTANTS.BORDER_WIDTH.xxxl};
 	
-	// Fixed Widths & Heights
-    @media screen and ${CONSTANTS.BREAKPOINTS.sm} {
+	// Fixed Heights
       --height-mobile-nav: ${`${CONSTANTS.SPACING.lg}px`};
-    }
     @media screen and ${CONSTANTS.BREAKPOINTS.smMin} {
       --height-mobile-nav: calc(${CONSTANTS.SPACING.lg * 1.25}px);
     }
-	
     @media screen and ${CONSTANTS.BREAKPOINTS.lgMin} {
+      --height-mobile-nav: 0;
+    }
+	
+	// Fixed Widths
+	@media screen and ${CONSTANTS.BREAKPOINTS.lgMin} {
       --width-navigation: ${CONSTANTS.WIDTH.navigation.sm};
     }    
 	@media screen and ${CONSTANTS.BREAKPOINTS.xlMin} {

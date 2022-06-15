@@ -37,6 +37,6 @@ export const InnerContainer = styled.div`
     border-top-left-radius: var(--border-radius-lg);
     padding: calc(var(--padding-md) * 1.5);
     margin-bottom: var(--height-mobile-nav);
-    overflow: hidden;
+    overflow: scroll;
     -webkit-overflow-scrolling: touch;
 `;

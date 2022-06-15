@@ -51,7 +51,7 @@ export default Auth;
 const InnerContainer = styled.div`
     padding: var(--padding-lg);
     width: calc(100vw - var(--width-navigation));
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
