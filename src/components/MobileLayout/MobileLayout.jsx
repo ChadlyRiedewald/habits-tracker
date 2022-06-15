@@ -21,7 +21,7 @@ export default MobileLayout;
 export const OuterContainer = styled.div`
     padding-top: var(--padding-md);
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
