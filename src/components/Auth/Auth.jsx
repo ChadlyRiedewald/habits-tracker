@@ -89,8 +89,6 @@ export const InnerContainer = styled.div`
     border-top-right-radius: var(--border-radius-lg);
     border-top-left-radius: var(--border-radius-lg);
     padding: calc(var(--padding-md) * 1.5);
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
 
     @media screen and ${BREAKPOINTS.smMin} {
         height: 100%;
