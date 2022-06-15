@@ -4,7 +4,7 @@ import { BREAKPOINTS } from '../../constants';
 export const Header = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: ${p => (p.center ? 'center' : 'flex-start')};
     gap: var(--padding-sm);
     margin-inline: auto;
 
@@ -15,6 +15,5 @@ export const Header = styled.div`
     @media screen and ${BREAKPOINTS.lgMin} {
         margin: 0;
         gap: var(--padding-xs);
-        align-items: flex-start;
     }
 `;

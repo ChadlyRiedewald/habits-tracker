@@ -6,11 +6,6 @@ const SignUpForm = () => {
         <form>
             <Input name='email' label='Email:' type='email' />
             <Input name='password' label='Password:' type='password' />
-            <Input
-                name='confirm-password'
-                label='Confirm password:'
-                type='password'
-            />
             <B.Base round wide alignSelf='center' marginTop type='button'>
                 Sign up
             </B.Base>

@@ -8,7 +8,7 @@ const MobileLayout = ({ children }) => {
     return (
         <MobileOnly>
             <OuterContainer>
-                <Header>{children}</Header>
+                <Header center>{children}</Header>
                 <InnerContainer>
                     <Outlet />
                 </InnerContainer>

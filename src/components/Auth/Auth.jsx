@@ -35,7 +35,7 @@ const Auth = () => {
                     </li>
                 </ButtonGroupNavigation>
                 <Paragraph orange>
-                    {location.pathname === '/auth'
+                    {location.pathname === '/auth/sign-in'
                         ? 'Log in with your account to Fix Your Habits'
                         : 'Welcome to Fix Your Habits. Fill in your information to get started!'}
                 </Paragraph>
@@ -82,6 +82,7 @@ export const SignUpContainer = styled.div`
     background-color: var(--color-orange-300);
     display: flex;
     align-items: center;
+    justify-content: center;
     border-top-right-radius: var(--border-radius-lg);
     border-bottom-right-radius: var(--border-radius-lg);
     padding: var(--padding-lg);

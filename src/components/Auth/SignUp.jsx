@@ -23,7 +23,7 @@ const SignUp = () => {
             <DesktopOnly>
                 <Style.Wrapper>
                     <SignInContainer>
-                        <Header>
+                        <Header center>
                             <h2>Welcome back</h2>
                             <Paragraph small>
                                 Already have an account?
@@ -41,7 +41,7 @@ const SignUp = () => {
                         </Header>
                     </SignInContainer>
                     <SignUpContainer>
-                        <Header>
+                        <Header center>
                             <h1>Get started</h1>
                             <Paragraph orange width='80%'>
                                 Welcome to Fix Your Habits! Fill in your info to
@@ -64,6 +64,7 @@ const SignInContainer = styled.div`
     background-color: var(--color-orange-300);
     display: flex;
     align-items: center;
+    justify-content: center;
     border-top-left-radius: var(--border-radius-lg);
     border-bottom-left-radius: var(--border-radius-lg);
     padding: var(--padding-lg);

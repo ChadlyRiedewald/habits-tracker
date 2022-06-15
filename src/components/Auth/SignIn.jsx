@@ -23,7 +23,7 @@ const SignIn = () => {
             <DesktopOnly>
                 <Wrapper>
                     <SignInContainer>
-                        <Header>
+                        <Header center>
                             <h1>Log in</h1>
                             <Paragraph orange width='80%'>
                                 Log in with your account to Fix Your Habits
@@ -34,7 +34,7 @@ const SignIn = () => {
                         </FormWrapper>
                     </SignInContainer>
                     <SignUpContainer>
-                        <Header>
+                        <Header center>
                             <h2>New here?</h2>
                             <Paragraph small>
                                 Create an account to start your journey
