@@ -112,7 +112,7 @@ const OuterContainer = styled(Div100vh)`
     display: flex;
 `;
 
-const InnerContainer = styled(Div100vh)`
+const InnerContainer = styled.div`
     margin-left: var(--width-navigation);
     margin-bottom: var(--height-mobile-nav);
     display: flex;
