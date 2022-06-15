@@ -73,6 +73,7 @@ const Wrapper = styled.nav`
     position: fixed;
     bottom: 0;
     background-color: var(--color-orange-400);
+    z-index: 10;
 `;
 
 const List = styled.ul`
