@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { BREAKPOINTS } from '../../constants';
 
 const Ellipse = styled.div`
     display: flex;
@@ -8,6 +9,11 @@ const Ellipse = styled.div`
     border-radius: 100%;
     justify-content: center;
     align-items: center;
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        width: 42px;
+        height: 42px;
+    }
 `;
 
 export default Ellipse;

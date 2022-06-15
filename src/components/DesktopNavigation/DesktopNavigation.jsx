@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro';
-import TabletOnly from '../TabletOnly';
 import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants';
@@ -11,11 +10,12 @@ import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as SignIn } from '../../assets/login.svg';
 import { ReactComponent as SignOut } from '../../assets/logout.svg';
+import DesktopOnly from '../DesktopOnly';
 
-const NavigationDesktop = () => {
+const DesktopNavigation = () => {
     const { isAuth, toggle } = useContext(AuthContext);
     return (
-        <TabletOnly>
+        <DesktopOnly>
             <Wrapper>
                 <Logo />
                 <List>
@@ -96,11 +96,11 @@ const NavigationDesktop = () => {
                     </WrapListItems>
                 </List>
             </Wrapper>
-        </TabletOnly>
+        </DesktopOnly>
     );
 };
 
-export default NavigationDesktop;
+export default DesktopNavigation;
 
 const Wrapper = styled.nav`
     position: fixed;
@@ -118,7 +118,7 @@ const List = styled.ul`
     justify-content: space-between;
     height: 85vh;
 
-    @media screen and ${BREAKPOINTS.lg} {
+    @media screen and ${BREAKPOINTS.xl} {
         height: 90vh;
     }
 `;

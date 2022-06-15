@@ -7,8 +7,9 @@ import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
+import { BREAKPOINTS } from '../../constants';
 
-const NavigationMobile = () => {
+const MobileNavigation = () => {
     return (
         <MobileOnly>
             <Wrapper>
@@ -66,10 +67,11 @@ const NavigationMobile = () => {
     );
 };
 
-export default NavigationMobile;
+export default MobileNavigation;
 
 const Wrapper = styled.nav`
     width: 100vw;
+    height: var(--height-mobile-nav);
     position: fixed;
     bottom: 0;
     background-color: var(--color-orange-400);
@@ -78,9 +80,15 @@ const Wrapper = styled.nav`
 
 const List = styled.ul`
     display: flex;
+    align-items: center;
     justify-content: space-between;
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        justify-content: space-around;
+    }
 `;
 
 const ListItem = styled.li`
     display: flex;
+    align-items: center;
 `;

@@ -44,8 +44,8 @@ const GlobalStyles = createGlobalStyle`
 	--padding-xxxl: ${`${CONSTANTS.SPACING.xxxl}px`};
 
     // Button padding
-	--btn-padding-normal: 12px 32px;
-	--btn-padding-wide: 12px 64px;
+	--btn-padding-normal: 12px 1.5em;
+	--btn-padding-wide: 0.75em 3.5em;
 	
 	// Margin
 	--margin-xs: calc(${CONSTANTS.SPACING.xs / 16}em);
@@ -97,12 +97,14 @@ const GlobalStyles = createGlobalStyle`
     @media screen and ${CONSTANTS.BREAKPOINTS.sm} {
       --height-mobile-nav: ${`${CONSTANTS.SPACING.lg}px`};
     }
-	
     @media screen and ${CONSTANTS.BREAKPOINTS.smMin} {
-      --width-navigation: ${CONSTANTS.WIDTH.navigation.sm};
+      --height-mobile-nav: calc(${CONSTANTS.SPACING.lg * 1.25}px);
     }
 	
     @media screen and ${CONSTANTS.BREAKPOINTS.lgMin} {
+      --width-navigation: ${CONSTANTS.WIDTH.navigation.sm};
+    }    
+	@media screen and ${CONSTANTS.BREAKPOINTS.xlMin} {
       --width-navigation: ${CONSTANTS.WIDTH.navigation.md};
     }
 	

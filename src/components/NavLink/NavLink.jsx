@@ -54,7 +54,7 @@ export const NavLink = styled(Link)`
             fill: var(--color-gray-100);
         }
 
-        @media screen and ${BREAKPOINTS.lg} {
+        @media screen and ${BREAKPOINTS.xl} {
             justify-content: center;
             padding-left: 0;
 
@@ -80,13 +80,18 @@ export const NavLink = styled(Link)`
         position: relative;
         display: flex;
         align-items: center;
-        padding: calc(var(--padding-xs) * 1.5);
+        height: var(--height-mobile-nav);
+        padding-inline: var(--padding-sm);
 
         svg {
             fill: var(--color-gray-100);
             display: flex;
             width: 32px;
             height: 32px;
+            @media screen and ${BREAKPOINTS.smMin} {
+                width: 36px;
+                height: 36px;
+            }
         }
 
         &::after {
@@ -94,7 +99,7 @@ export const NavLink = styled(Link)`
             position: absolute;
             top: 0;
             left: 0;
-            height: var(--border-width-lg);
+            height: var(--border-width-xl);
             width: 100%;
         }
 
@@ -121,6 +126,10 @@ export const NavLink = styled(Link)`
         &--active {
             color: var(--color-gray-100);
             background-color: var(--color-orange-300);
+        }
+
+        @media screen and ${BREAKPOINTS.smMin} {
+            font-size: calc(var(--font-md) * 1.1);
         }
     }
 `;

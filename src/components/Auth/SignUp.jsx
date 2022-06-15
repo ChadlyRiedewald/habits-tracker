@@ -1,85 +1,72 @@
 import styled from 'styled-components/macro';
-import Input from '../Input';
-import * as B from '../Button';
-import * as S from './Auth';
-import TabletOnly from '../TabletOnly/TabletOnly';
-import { BREAKPOINTS } from '../../constants';
 import { useNavigate } from 'react-router-dom';
+import MobileOnly from '../MobileOnly/MobileOnly';
+import * as Style from './Auth';
+import SignUpForm from './SignUpForm';
+import DesktopOnly from '../DesktopOnly/DesktopOnly';
+import { Header } from '../Header';
+import { Paragraph } from '../Paragraph';
+import { Inverted } from '../Button';
+import { Fragment } from 'react';
 
 const SignUp = () => {
     const navigate = useNavigate();
 
     return (
-        <S.Wrapper>
-            <SignUpContainer>
-                <TabletOnly>
-                    <S.Header>
-                        <S.Title>Get started</S.Title>
-                        <S.Paragraph big orange>
-                            Welcome to Fix Your Habits
-                            <br />
-                            Fill in your info to get started
-                        </S.Paragraph>
-                    </S.Header>
-                </TabletOnly>
-                <form>
-                    <Input name='email' label='Email' type='email' />
-                    <Input name='password' label='Password' type='password' />
-                    <B.Base
-                        round
-                        wide
-                        alignSelf='center'
-                        marginTop
-                        type='button'
-                    >
-                        Sign up
-                    </B.Base>
-                </form>
-            </SignUpContainer>
-            <TabletOnly>
-                <SignInContainer>
-                    <S.Header>
-                        <h2>Welcome back!</h2>
-                        <S.Paragraph>
-                            Already have an account?
-                            <br />
-                            Click on the button below to sign in
-                        </S.Paragraph>
-                        <B.Inverted
-                            onClick={() => navigate('/auth')}
-                            round
-                            alignSelf='center'
-                            marginTop
-                            type='button'
-                        >
-                            Sign in
-                        </B.Inverted>
-                    </S.Header>
-                </SignInContainer>
-            </TabletOnly>
-        </S.Wrapper>
+        <Fragment>
+            <MobileOnly>
+                <Style.FormWrapper>
+                    <SignUpForm />
+                </Style.FormWrapper>
+            </MobileOnly>
+            <DesktopOnly>
+                <Style.Wrapper>
+                    <SignInContainer>
+                        <Header>
+                            <h2>Welcome back</h2>
+                            <Paragraph small>
+                                Already have an account?
+                                <br />
+                                Click the button below to sign in
+                            </Paragraph>
+                            <Inverted
+                                onClick={() => navigate('/auth')}
+                                round
+                                alignSelf='center'
+                                marginTop
+                            >
+                                Sign in
+                            </Inverted>
+                        </Header>
+                    </SignInContainer>
+                    <SignUpContainer>
+                        <Header>
+                            <h1>Get started</h1>
+                            <Paragraph orange width='80%'>
+                                Welcome to Fix Your Habits Fill in your info to
+                                get started
+                            </Paragraph>
+                        </Header>
+                        <Style.FormWrapper>
+                            <SignUpForm />
+                        </Style.FormWrapper>
+                    </SignUpContainer>
+                </Style.Wrapper>
+            </DesktopOnly>
+        </Fragment>
     );
 };
 
 export default SignUp;
 
-const SignInContainer = styled(S.SignUpContainer)`
-    @media screen and ${BREAKPOINTS.smMin} {
-        border-bottom-left-radius: var(--border-radius-lg);
-        border-bottom-right-radius: var(--border-radius-lg);
-    }
-
-    @media screen and ${BREAKPOINTS.mdMin} {
-        order: 1;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-        border-top-left-radius: var(--border-radius-lg);
-        border-bottom-left-radius: var(--border-radius-lg);
-    }
+const SignInContainer = styled.div`
+    background-color: var(--color-orange-300);
+    display: flex;
+    align-items: center;
+    border-top-left-radius: var(--border-radius-lg);
+    border-bottom-left-radius: var(--border-radius-lg);
+    padding: var(--padding-lg);
+    flex-basis: 40%;
 `;
 
-const SignUpContainer = styled(S.SignInContainer)`
-    @media screen and ${BREAKPOINTS.mdMin} {
-        order: 2;
-    }
-`;
+const SignUpContainer = styled(Style.SignInContainer)``;

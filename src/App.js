@@ -5,8 +5,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthContext } from './hooks/Auth';
 import Div100vh from 'react-div-100vh';
 
-import NavigationDesktop from './components/NavigationDesktop';
-import NavigationMobile from './components/NavigationMobile';
+import DesktopNavigation from './components/DesktopNavigation';
+import MobileNavigation from './components/MobileNavigation';
 import Help from './components/Help';
 import Home from './components/Home';
 import Discover from './components/Discover';
@@ -19,6 +19,8 @@ import Faq from './components/Help/Faq';
 import Account from './components/Help/Account';
 import Rewards from './components/Help/Rewards';
 import Habits from './components/Help/Habits';
+import DiscoverContent from './components/Discover/DiscoverContent';
+import All from './components/Discover/All';
 
 const App = () => {
     const { isAuth } = useContext(AuthContext);
@@ -35,8 +37,8 @@ const App = () => {
         <Fragment>
             <GlobalStyles />
             <OuterContainer>
-                <NavigationDesktop />
-                <NavigationMobile />
+                <DesktopNavigation />
+                <MobileNavigation />
                 <InnerContainer>
                     <Routes>
                         {/* Redirecting default Route */}
@@ -82,11 +84,11 @@ const App = () => {
                                     {/*/>*/}
                                 </Route>
                                 <Route path='discover' element={<Discover />}>
-                                    {/*<Route*/}
-                                    {/*    path=''*/}
-                                    {/*    element={<DiscoverContent />}*/}
-                                    {/*/>*/}
-                                    {/*<Route path='all' element={<All />} />*/}
+                                    <Route
+                                        path=''
+                                        element={<DiscoverContent />}
+                                    />
+                                    <Route path='all' element={<All />} />
                                 </Route>
                                 <Route path='settings' element={<Settings />}>
                                     {/*<Route path='' element={<MyAccount />} />*/}
@@ -108,7 +110,6 @@ export default App;
 
 const OuterContainer = styled(Div100vh)`
     display: flex;
-    //height: 100vh;
 `;
 
 const InnerContainer = styled.div`

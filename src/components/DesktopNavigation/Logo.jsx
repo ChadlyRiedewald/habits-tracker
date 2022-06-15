@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     height: 15vh;
     padding-top: var(--padding-md);
 
-    @media screen and ${BREAKPOINTS.lg} {
+    @media screen and ${BREAKPOINTS.xl} {
         height: 10vh;
 
         h1 {
