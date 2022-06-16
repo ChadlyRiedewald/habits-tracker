@@ -5,7 +5,7 @@ import { ReactComponent as Filter } from '../../assets/filter.svg';
 const FilterDropdownMenu = () => {
     return (
         <Wrapper>
-            <Inverted type='button' alignSelf='flex-end' className='filter'>
+            <Inverted type='button' className='filter' round>
                 <Filter />
                 Filter
             </Inverted>
@@ -16,7 +16,6 @@ const FilterDropdownMenu = () => {
 export default FilterDropdownMenu;
 
 const Wrapper = styled.div`
-    display: flex;
-    width: clamp(200px, 85vw, 550px);
+    width: clamp(200px, 100%, 550px);
     margin-inline: auto;
 `;

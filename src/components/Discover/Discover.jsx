@@ -48,7 +48,8 @@ export const Wrapper = styled.div`
     flex-direction: column;
     padding-inline: calc(var(--padding-md) * 1.25);
     gap: calc(var(--padding-md) * 1.25);
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 `;
 
