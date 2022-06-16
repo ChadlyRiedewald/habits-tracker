@@ -10,8 +10,8 @@ const MyAccountForm = () => {
             <Input label='Name' name='name' />
             <Input label='Email' name='email' type='email' />
             <Flex>
-                <B.Inverted>Cancel</B.Inverted>
-                <B.Base>Save</B.Base>
+                <B.Inverted small>Cancel</B.Inverted>
+                <B.Base small>Save</B.Base>
             </Flex>
         </form>
     );
