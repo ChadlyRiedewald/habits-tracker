@@ -128,6 +128,7 @@ export const NavLink = styled(Link)`
         color: var(--color-gray-600);
         padding: var(--padding-sm) var(--padding-md);
         width: 100%;
+        font-size: calc(var(--font-md) * 1.1);
 
         &--active {
             background-color: var(--color-gray-200);
@@ -158,19 +159,33 @@ export const NavLink = styled(Link)`
         }
     }
 
-    // Mobile FAQ Link
-    &.mobile-faq-link {
+    // FAQ Link
+    &.faq-link {
         color: var(--color-gray-600);
-        font-size: var(--font-md);
-        padding-bottom: var(--padding-xs);
-        border-bottom: solid var(--border-width-xs) transparent;
-        border-radius: 0;
+        font-size: var(--font-sm);
+        padding: var(--padding-sm) var(--padding-md);
+        width: 100%;
 
-        &--active {
-            border-color: var(--color-orange-400);
+        @media screen and ${BREAKPOINTS.lgMin} {
+            &--active {
+                color: var(--color-gray-100);
+                background-color: var(--color-orange-300);
+                border-radius: var(--border-radius-sm);
+            }
+        }
+
+        @media screen and ${BREAKPOINTS.lg} {
+            padding: 0;
+            padding-bottom: var(--padding-xs);
+            border-bottom: solid var(--border-width-xs) transparent;
+
+            &--active {
+                border-color: var(--color-orange-400);
+            }
         }
 
         @media screen and ${BREAKPOINTS.smMin} {
-            font-size: var(--font-lg);
+            font-size: calc(var(--font-md) * 1.1);
         }
+    }
 `;

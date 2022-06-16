@@ -31,6 +31,9 @@ const Wrapper = styled.div`
     @media screen and ${BREAKPOINTS.smMin} {
         padding-bottom: calc(var(--padding-sm) * 1.5);
     }
+    @media screen and ${BREAKPOINTS.lgMin} {
+        justify-content: space-between;
+    }
 `;
 
 const TitleContainer = styled.div`

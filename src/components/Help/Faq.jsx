@@ -1,49 +1,38 @@
 import styled from 'styled-components/macro';
 import MobileOnly from '../MobileOnly';
 import { Fragment } from 'react';
-import { NavLink } from '../NavLink';
 import { Outlet } from 'react-router-dom';
 import { BREAKPOINTS } from '../../constants';
+import DesktopOnly from '../DesktopOnly';
+import FaqNav from './FaqNav';
+import { Header } from '../Header';
+import { Paragraph } from '../Paragraph';
 
 const Faq = () => {
     return (
         <Fragment>
             <MobileOnly>
                 <Wrapper>
-                    <nav>
-                        <List>
-                            <li>
-                                <NavLink
-                                    to='account'
-                                    className='mobile-faq-link'
-                                    activeClassName='mobile-faq-link--active'
-                                >
-                                    Account
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to='rewards'
-                                    className='mobile-faq-link'
-                                    activeClassName='mobile-faq-link--active'
-                                >
-                                    Rewards
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink
-                                    to='habits'
-                                    className='mobile-faq-link'
-                                    activeClassName='mobile-faq-link--active'
-                                >
-                                    Habits
-                                </NavLink>
-                            </li>
-                        </List>
-                    </nav>
+                    <FaqNav />
                     <Outlet />
                 </Wrapper>
             </MobileOnly>
+            <DesktopOnly>
+                <Wrapper>
+                    <Header>
+                        <h2>Have a question?</h2>
+                        <Paragraph small>
+                            Feel free to contact us for any other questions
+                        </Paragraph>
+                    </Header>
+                    <Flex>
+                        <FaqNav />
+                        <WrapOutlet>
+                            <Outlet />
+                        </WrapOutlet>
+                    </Flex>
+                </Wrapper>
+            </DesktopOnly>
         </Fragment>
     );
 };
@@ -51,20 +40,27 @@ const Faq = () => {
 export default Faq;
 
 const Wrapper = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: var(--margin-md);
+    gap: var(--margin-lg);
 `;
 
-const List = styled.ul`
+const Flex = styled.div`
     display: flex;
-    text-align: center;
+    gap: var(--padding-xl);
+`;
+
+const WrapOutlet = styled.div`
+    max-width: 550px;
+    flex: 1;
+    margin-top: var(--padding-sm);
 `;
 
 export const AccordionWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: var(--padding-sm);
+    gap: calc(var(--padding-sm) * 1.5);
 
     @media screen and ${BREAKPOINTS.lg} {
         width: clamp(248px, 85vw, 800px);
@@ -72,6 +68,6 @@ export const AccordionWrapper = styled.div`
     }
 
     @media screen and ${BREAKPOINTS.smMin} {
-        gap: calc(var(--padding-sm) * 1.5);
+        gap: var(--padding-md);
     }
 `;
