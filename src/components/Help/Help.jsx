@@ -17,20 +17,20 @@ const Help = () => {
             <MobileLayout>
                 <Header>
                     <FlexColumn>
-                        {location.pathname === '/help/faq' ? (
-                            <Fragment>
-                                <Title>FAQ</Title>
-                                <Paragraph small>
-                                    Feel free to contact us for any other
-                                    questions
-                                </Paragraph>
-                            </Fragment>
-                        ) : (
+                        {location.pathname === '/help/contact' ? (
                             <Fragment>
                                 <Title>Contact</Title>
                                 <Paragraph small>
                                     Write your question below and we will reply
                                     as soon as possible
+                                </Paragraph>
+                            </Fragment>
+                        ) : (
+                            <Fragment>
+                                <Title>FAQ</Title>
+                                <Paragraph small>
+                                    Feel free to contact us for any other
+                                    questions
                                 </Paragraph>
                             </Fragment>
                         )}

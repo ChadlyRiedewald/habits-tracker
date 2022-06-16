@@ -157,4 +157,20 @@ export const NavLink = styled(Link)`
             font-size: calc(var(--font-md) * 1.1);
         }
     }
+
+    // Mobile FAQ Link
+    &.mobile-faq-link {
+        color: var(--color-gray-600);
+        font-size: var(--font-md);
+        padding-bottom: var(--padding-xs);
+        border-bottom: solid var(--border-width-xs) transparent;
+        border-radius: 0;
+
+        &--active {
+            border-color: var(--color-orange-400);
+        }
+
+        @media screen and ${BREAKPOINTS.smMin} {
+            font-size: var(--font-lg);
+        }
 `;
