@@ -94,9 +94,9 @@ const GlobalStyles = createGlobalStyle`
     --border-width-xxxl: ${CONSTANTS.BORDER_WIDTH.xxxl};
 	
 	// Fixed Heights
-      --height-mobile-nav: ${`${CONSTANTS.SPACING.lg}px`};
+      --height-mobile-nav: calc(${CONSTANTS.SPACING.md * 1.5}px);
     @media screen and ${CONSTANTS.BREAKPOINTS.smMin} {
-      --height-mobile-nav: calc(${CONSTANTS.SPACING.lg * 1.25}px);
+      --height-mobile-nav: calc(${CONSTANTS.SPACING.md * 1.8}px);
     }
     @media screen and ${CONSTANTS.BREAKPOINTS.lgMin} {
       --height-mobile-nav: 0;

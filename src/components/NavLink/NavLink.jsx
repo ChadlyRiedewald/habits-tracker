@@ -93,11 +93,11 @@ export const NavLink = styled(Link)`
         svg {
             fill: var(--color-gray-100);
             display: flex;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             @media screen and ${BREAKPOINTS.smMin} {
-                width: 36px;
-                height: 36px;
+                width: 32px;
+                height: 32px;
             }
         }
 
@@ -106,13 +106,18 @@ export const NavLink = styled(Link)`
             position: absolute;
             top: 0;
             left: 0;
-            height: var(--border-width-xl);
+            height: var(--border-width-md);
             width: 100%;
         }
 
         &--active {
             &::after {
                 background-color: var(--color-gray-100);
+            }
+        }
+        @media screen and ${BREAKPOINTS.smMin} {
+            &::after {
+                height: var(--border-width-lg);
             }
         }
     }
