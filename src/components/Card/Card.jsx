@@ -6,4 +6,5 @@ export const Card = styled.div`
     background-color: var(--color-gray-100);
     padding: calc(var(--padding-md) * 1.5);
     border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-elevation-medium);
 `;

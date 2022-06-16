@@ -28,7 +28,7 @@ const Settings = () => {
                             <Fragment>
                                 <Title>Security</Title>
                                 <Paragraph small>
-                                    Change your password
+                                    Update your password
                                 </Paragraph>
                             </Fragment>
                         )}
