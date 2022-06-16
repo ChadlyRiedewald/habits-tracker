@@ -6,6 +6,7 @@ import { Paragraph } from '../Paragraph';
 import { Fragment } from 'react';
 import DesktopOnly from '../DesktopOnly';
 import styled from 'styled-components/macro';
+import { Header } from '../Header';
 
 const Auth = () => {
     let location = useLocation();
@@ -13,32 +14,34 @@ const Auth = () => {
     return (
         <Fragment>
             <MobileLayout>
-                <ButtonGroupNavigation>
-                    <li>
-                        <NavLink
-                            to='sign-in'
-                            className='button-group'
-                            activeClassName='button-group--active'
-                            exact={true}
-                        >
-                            Sign in
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to='sign-up'
-                            className='button-group'
-                            activeClassName='button-group--active'
-                        >
-                            Sign up
-                        </NavLink>
-                    </li>
-                </ButtonGroupNavigation>
-                <Paragraph orange>
-                    {location.pathname === '/auth/sign-in'
-                        ? 'Log in with your account to Fix Your Habits'
-                        : 'Welcome to Fix Your Habits. Fill in your information to get started!'}
-                </Paragraph>
+                <Header center>
+                    <ButtonGroupNavigation>
+                        <li>
+                            <NavLink
+                                to='sign-in'
+                                className='button-group'
+                                activeClassName='button-group--active'
+                                exact={true}
+                            >
+                                Sign in
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to='sign-up'
+                                className='button-group'
+                                activeClassName='button-group--active'
+                            >
+                                Sign up
+                            </NavLink>
+                        </li>
+                    </ButtonGroupNavigation>
+                    <Paragraph orange center>
+                        {location.pathname === '/auth/sign-in'
+                            ? 'Log in with your account to Fix Your Habits'
+                            : 'Welcome to Fix Your Habits. Fill in your information to get started!'}
+                    </Paragraph>
+                </Header>
             </MobileLayout>
             <DesktopOnly>
                 <InnerContainer>

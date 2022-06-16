@@ -50,10 +50,7 @@ const App = () => {
                         />
                         {/* Always available */}
                         <Route path='help' element={<Help />}>
-                            <Route
-                                path=''
-                                element={<Navigate to='contact' />}
-                            />
+                            <Route path='' element={<Navigate to='faq' />} />
                             <Route path='contact' element={<Contact />} />
                             <Route path='faq' element={<Faq />}>
                                 <Route

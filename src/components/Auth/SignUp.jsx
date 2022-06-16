@@ -25,7 +25,7 @@ const SignUp = () => {
                     <SignInContainer>
                         <Header center>
                             <h2>Welcome back</h2>
-                            <Paragraph small>
+                            <Paragraph small center>
                                 Already have an account?
                                 <br />
                                 Click the button below to sign in
@@ -43,7 +43,7 @@ const SignUp = () => {
                     <SignUpContainer>
                         <Header center>
                             <h1>Get started</h1>
-                            <Paragraph orange width='80%'>
+                            <Paragraph orange width='80%' center>
                                 Welcome to Fix Your Habits! Fill in your info to
                                 get started!
                             </Paragraph>

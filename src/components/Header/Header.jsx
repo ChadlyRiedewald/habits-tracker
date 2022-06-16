@@ -9,7 +9,7 @@ export const Header = styled.div`
     margin-inline: auto;
 
     @media screen and ${BREAKPOINTS.lg} {
-        width: clamp(200px, 75vw, 550px);
+        width: clamp(200px, 85vw, 550px);
     }
 
     @media screen and ${BREAKPOINTS.lgMin} {

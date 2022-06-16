@@ -3,11 +3,11 @@ import { BREAKPOINTS } from '../../constants';
 
 export const Paragraph = styled.p`
     color: ${p => p.orange && 'var(--color-orange-400)'};
-    text-align: center;
+    text-align: ${p => (p.center ? 'center' : 'flex-start')};
     width: ${p => p.width};
 
     @media screen and ${BREAKPOINTS.lg} {
-        width: 90%;
+        //width: 90%;
     }
 
     @media screen and ${BREAKPOINTS.smMin} {

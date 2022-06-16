@@ -10,6 +10,7 @@ export const ButtonGroupNavigation = ({ children }) => {
 };
 
 const Nav = styled.nav`
+    margin-top: ${p => (p.marginTop ? '1rem' : '0')};
     display: flex;
     width: 100%;
 `;

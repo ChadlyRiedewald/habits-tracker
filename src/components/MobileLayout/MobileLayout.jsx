@@ -1,14 +1,13 @@
 import styled from 'styled-components/macro';
 import MobileOnly from '../MobileOnly';
 import { Outlet } from 'react-router-dom';
-import { Header } from '../Header';
 import { BREAKPOINTS } from '../../constants';
 
 const MobileLayout = ({ children }) => {
     return (
         <MobileOnly>
             <OuterContainer>
-                <Header center>{children}</Header>
+                {children}
                 <InnerContainer>
                     <Outlet />
                 </InnerContainer>
@@ -36,7 +35,7 @@ export const InnerContainer = styled.div`
     background-color: var(--color-gray-100);
     border-top-right-radius: var(--border-radius-lg);
     border-top-left-radius: var(--border-radius-lg);
-    padding: calc(var(--padding-md) * 1.5);
+    padding: calc(var(--padding-md) * 1.25);
     margin-bottom: var(--height-mobile-nav);
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
