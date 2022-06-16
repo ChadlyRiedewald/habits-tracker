@@ -2,6 +2,9 @@ import styled from 'styled-components/macro';
 import { BREAKPOINTS } from '../../constants';
 
 export const Base = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: var(--font-sm);
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
@@ -14,14 +17,8 @@ export const Base = styled.button`
     border-radius: ${p =>
         p.round ? 'var(--border-radius-xl)' : 'var(--border-radius-sm)'};
     transition: all 0.5s;
-    box-shadow: var(--shadow-elevation-medium);
     align-self: ${p => p.alignSelf || 'flex-start'};
     margin-top: ${p => p.marginTop && 'var(--padding-sm)'};
-
-    &:hover {
-        box-shadow: var(--shadow-elevation-high);
-        transform: scale(1.01);
-    }
 
     @media screen and ${BREAKPOINTS.smMin} {
         font-size: ${p =>
@@ -32,6 +29,16 @@ export const Base = styled.button`
 export const Inverted = styled(Base)`
     color: var(--color-orange-400);
     background-color: var(--color-gray-100);
+    border: 1px solid var(--color-orange-400);
+
+    &.filter {
+        font-weight: var(--font-weight-normal);
+        padding: var(--padding-xs) var(--padding-sm);
+
+        svg {
+            fill: var(--color-orange-400);
+        }
+    }
 `;
 
 export const Alert = styled(Base)`

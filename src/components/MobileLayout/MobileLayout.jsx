@@ -3,14 +3,18 @@ import MobileOnly from '../MobileOnly';
 import { Outlet } from 'react-router-dom';
 import { BREAKPOINTS } from '../../constants';
 
-const MobileLayout = ({ children }) => {
+const MobileLayout = ({ children, discover }) => {
     return (
         <MobileOnly>
             <OuterContainer>
                 {children}
-                <InnerContainer>
+                {discover ? (
                     <Outlet />
-                </InnerContainer>
+                ) : (
+                    <InnerContainer>
+                        <Outlet />
+                    </InnerContainer>
+                )}
             </OuterContainer>
         </MobileOnly>
     );
@@ -24,7 +28,6 @@ export const OuterContainer = styled.div`
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: var(--padding-md);
     margin-bottom: var(--height-mobile-nav);
 `;
