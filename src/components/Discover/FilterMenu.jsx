@@ -2,10 +2,10 @@ import styled from 'styled-components/macro';
 import { Inverted } from '../Button';
 import { ReactComponent as Filter } from '../../assets/filter.svg';
 
-const FilterDropdownMenu = () => {
+const FilterMenu = () => {
     return (
         <Wrapper>
-            <Inverted type='button' className='filter' round>
+            <Inverted type='button' className='filter' small>
                 <Filter />
                 Filter
             </Inverted>
@@ -13,7 +13,7 @@ const FilterDropdownMenu = () => {
     );
 };
 
-export default FilterDropdownMenu;
+export default FilterMenu;
 
 const Wrapper = styled.div`
     width: clamp(200px, 100%, 550px);

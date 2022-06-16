@@ -1,63 +1,107 @@
-import { Card, Wrapper } from './Discover';
+import { Banner, Card, Flex, Grid, Wrapper } from './Discover';
 import styled from 'styled-components/macro';
 import Subtitle from '../Subtitle';
+import MobileOnly from '../MobileOnly';
+import { Fragment } from 'react';
+import DesktopOnly from '../DesktopOnly';
 
 const DiscoverContent = () => {
     return (
-        <Wrapper>
-            <Flex>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-            </Flex>
-            <FlexColumn>
-                <Subtitle>Popular</Subtitle>
-                <Flex>
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </Flex>
-            </FlexColumn>
-        </Wrapper>
+        <Fragment>
+            <MobileOnly>
+                <Wrapper>
+                    <Flex>
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                    </Flex>
+                    <FlexColumn>
+                        <Subtitle>Popular</Subtitle>
+                        <Flex>
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                        </Flex>
+                    </FlexColumn>
+                </Wrapper>
+            </MobileOnly>
+            <DesktopOnly width>
+                <FlexColumn>
+                    <Banner />
+                    <FlexColumn marginTop>
+                        <h2>Popular</h2>
+                        <Grid>
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                            <Card />
+                        </Grid>
+                    </FlexColumn>
+                </FlexColumn>
+            </DesktopOnly>
+        </Fragment>
     );
 };
 
@@ -67,11 +111,5 @@ const FlexColumn = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--padding-sm);
-`;
-
-const Flex = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    margin-top: ${p => p.marginTop && 'var(--margin-md)'};
 `;

@@ -188,4 +188,17 @@ export const NavLink = styled(Link)`
             font-size: calc(var(--font-md) * 1.1);
         }
     }
+
+    // Discover Link
+    &.discover-link {
+        line-height: var(--line-height-sm);
+        color: var(--color-gray-600);
+        font-size: var(--font-xl);
+        padding-bottom: var(--padding-xs);
+        border-bottom: solid var(--border-width-md) transparent;
+
+        &--active {
+            border-color: var(--color-orange-400);
+        }
+    }
 `;

@@ -5,7 +5,7 @@ export const Base = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--font-sm);
+    font-size: ${p => (p.small ? 'var(--font-xxs)' : 'var(--font-sm)')};
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     color: var(--color-gray-100);
@@ -37,6 +37,8 @@ export const Inverted = styled(Base)`
 
         svg {
             fill: var(--color-orange-400);
+            width: 18px;
+            height: 18px;
         }
     }
 `;
