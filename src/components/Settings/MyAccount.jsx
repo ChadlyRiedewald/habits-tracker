@@ -21,26 +21,26 @@ const MyAccount = () => {
                     </FormWrapper>
                     <Divider />
                     <Flex>
-                        <Header>
+                        <MobileHeader>
                             <Subtitle>Reset account</Subtitle>
                             <Paragraph small>
                                 If you reset your account, you will lose all of
                                 your progress and data
                             </Paragraph>
-                        </Header>
+                        </MobileHeader>
                         <B.Alert small alignSelf='center'>
                             Reset
                         </B.Alert>
                     </Flex>
                     <Divider />
                     <Flex>
-                        <Header>
+                        <MobileHeader>
                             <Subtitle>Delete account</Subtitle>
                             <Paragraph small>
                                 If you reset your account, you will lose all of
                                 your progress and data
                             </Paragraph>
-                        </Header>
+                        </MobileHeader>
                         <B.Error small alignSelf='center'>
                             Delete
                         </B.Error>
@@ -107,4 +107,8 @@ const Flex = styled.div`
     justify-content: space-between;
     align-items: center;
     gap: var(--padding-lg);
+`;
+
+const MobileHeader = styled(Header)`
+    margin: 0;
 `;
