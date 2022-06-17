@@ -3,7 +3,7 @@ import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants';
 import { AuthContext } from '../../hooks/Auth.context';
-import { Fragment, useContext } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import { ReactComponent as Home } from '../../assets/home.svg';
 import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
@@ -11,11 +11,22 @@ import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as SignIn } from '../../assets/login.svg';
 import { ReactComponent as SignOut } from '../../assets/logout.svg';
 import DesktopOnly from '../DesktopOnly';
+import Modal from '../Modal/Modal';
+import { Paragraph } from '../Paragraph';
 
 const DesktopNavigation = () => {
     const { isAuth, toggle } = useContext(AuthContext);
+    const [openModal, toggleOpenModel] = useState(false);
+
     return (
         <DesktopOnly>
+            <Modal
+                open={openModal}
+                onClose={() => toggleOpenModel(!openModal)}
+                okFunction={() => toggle()}
+            >
+                <Paragraph center>Are you sure you want to sign out?</Paragraph>
+            </Modal>
             <Wrapper>
                 <Logo />
                 <List>
@@ -82,15 +93,12 @@ const DesktopNavigation = () => {
 
                         {isAuth && (
                             <ListItem>
-                                <NavLink
-                                    onClick={toggle}
-                                    to='/'
-                                    className='desktop-nav-link'
-                                    activeClassName='desktop-nav-link--active'
+                                <SignOutLink
+                                    onClick={() => toggleOpenModel(!openModal)}
                                 >
                                     <SignOut />
                                     <p>Sign out</p>
-                                </NavLink>
+                                </SignOutLink>
                             </ListItem>
                         )}
                     </WrapListItems>
@@ -129,4 +137,33 @@ const WrapListItems = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--padding-sm);
+`;
+
+const SignOutLink = styled.a`
+    padding-block: var(--padding-sm);
+    border-left: var(--border-width-xxl) solid transparent;
+    border-right: var(--border-width-xxl) solid transparent;
+    color: var(--color-gray-100);
+    display: flex;
+    align-items: center;
+    gap: var(--padding-md);
+    padding-left: 15%;
+    cursor: pointer;
+
+    & svg {
+        fill: var(--color-gray-100);
+    }
+
+    & p {
+        font-size: var(--font-md);
+    }
+
+    @media screen and ${BREAKPOINTS.xl} {
+        justify-content: center;
+        padding-left: 0;
+
+        p {
+            display: none;
+        }
+    }
 `;

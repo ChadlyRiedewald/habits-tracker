@@ -141,7 +141,7 @@ const Left = styled.div`
 `;
 
 const Right = styled.div`
-    width: 400px;
+    width: calc(300px + calc(var(--padding-md) * 3));
 `;
 
 /////////// FILTER

@@ -44,7 +44,7 @@ const GlobalStyles = createGlobalStyle`
 	--padding-xxxl: ${`${CONSTANTS.SPACING.xxxl}px`};
 
     // Button padding
-	--btn-padding-normal: 12px 1.5em;
+	--btn-padding-normal: 0.75em 1.5em;
 	--btn-padding-wide: 0.75em 3.5em;
 	
 	// Margin
@@ -130,8 +130,6 @@ const GlobalStyles = createGlobalStyle`
             11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.1),
             17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.1),
             25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.1);
-	
-	// Button padding
   }
   
   // CSS Reset

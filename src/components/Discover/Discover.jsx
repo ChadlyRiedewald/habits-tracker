@@ -84,6 +84,7 @@ const OuterContainer = styled.div`
     gap: calc(var(--padding-md) * 1.5);
     padding-inline: calc(var(--padding-md) * 1.5);
     padding-block: var(--padding-md);
+    overflow: auto;
 `;
 
 const InnerContainer = styled.div`
@@ -98,21 +99,17 @@ const List = styled.ul`
 ////////// NESTED ROUTES STYLES
 
 export const Wrapper = styled.div`
-    margin-inline: auto;
-    height: 100%;
     display: flex;
     flex-direction: column;
     padding-inline: calc(var(--padding-md) * 1.25);
     gap: calc(var(--padding-md) * 1.25);
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
 `;
 
 export const Card = styled.div`
     display: flex;
     height: 256px;
-    width: 100%;
     background-color: var(--color-gray-100);
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-elevation-low);
@@ -124,7 +121,7 @@ export const Card = styled.div`
 `;
 export const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--padding-xxl), 1fr));
     grid-gap: var(--padding-md);
 `;
 export const Banner = styled.div`
