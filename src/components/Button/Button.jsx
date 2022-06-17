@@ -29,7 +29,7 @@ export const Base = styled.button`
 export const Inverted = styled(Base)`
     color: var(--color-orange-400);
     background-color: var(--color-gray-100);
-    border: 1px solid var(--color-orange-400);
+    box-shadow: inset 0 0 0 1px var(--color-orange-400);
 
     &.filter {
         font-weight: var(--font-weight-normal);
@@ -46,11 +46,19 @@ export const Inverted = styled(Base)`
 export const Alert = styled(Base)`
     color: var(--color-alert);
     background-color: var(--color-alert-bg);
-    border: 1px solid var(--color-alert);
+    box-shadow: inset 0 0 0 1px var(--color-alert);
 `;
 
-export const Error = styled(Base)`
+export const Error = styled(Alert)`
+    font-size: ${p => p.xs && 'var(--font-xxs)'};
     color: var(--color-error);
     background-color: var(--color-error-bg);
-    border: 1px solid var(--color-error);
+    border-color: var(--color-error);
+`;
+
+export const Success = styled(Alert)`
+    font-size: ${p => p.xs && 'var(--font-xxs)'};
+    color: var(--color-success);
+    background-color: var(--color-success-bg);
+    border-color: var(--color-success);
 `;
