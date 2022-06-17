@@ -1,10 +1,34 @@
 import styled from 'styled-components/macro';
 import { BREAKPOINTS } from '../../constants';
+import { motion } from 'framer-motion';
 
-export const Base = styled.button`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+const AnimatedButton = ({ children, ...otherProps }) => {
+    const buttonVariants = {
+        hover: {
+            scale: 1.05,
+        },
+        pressed: {
+            scale: 0.9,
+        },
+        rest: {
+            scale: 1,
+        },
+    };
+
+    return (
+        <motion.button
+            initial='rest'
+            whileHover='hover'
+            whileTap='pressed'
+            variants={buttonVariants}
+            {...otherProps}
+        >
+            {children}
+        </motion.button>
+    );
+};
+
+export const Base = styled(AnimatedButton)`
     font-size: ${p => (p.small ? 'var(--font-xxs)' : 'var(--font-sm)')};
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
@@ -16,7 +40,6 @@ export const Base = styled.button`
         p.wide ? 'var(--btn-padding-wide)' : 'var(--btn-padding-normal)'};
     border-radius: ${p =>
         p.round ? 'var(--border-radius-xl)' : 'var(--border-radius-sm)'};
-    transition: all 0.5s;
     align-self: ${p => p.alignSelf || 'flex-start'};
     margin-top: ${p => p.marginTop && 'var(--padding-sm)'};
     flex-shrink: 0;
@@ -30,36 +53,16 @@ export const Base = styled.button`
 export const Inverted = styled(Base)`
     color: var(--color-orange-400);
     background-color: var(--color-gray-100);
-    box-shadow: inset 0 0 0 1px var(--color-orange-400);
-
-    &.filter {
-        font-weight: var(--font-weight-normal);
-        padding: var(--padding-xs) var(--padding-sm);
-
-        svg {
-            fill: var(--color-orange-400);
-            width: 18px;
-            height: 18px;
-        }
-    }
+    box-shadow: ${p => p.border && 'inset 0 0 0 1px var(--color-orange-400)'};
 `;
 
-export const Alert = styled(Base)`
+export const Alert = styled(Inverted)`
     color: var(--color-alert);
     background-color: var(--color-alert-bg);
-    box-shadow: inset 0 0 0 1px var(--color-alert);
 `;
 
 export const Error = styled(Alert)`
     font-size: ${p => p.xs && 'var(--font-xxs)'};
     color: var(--color-error);
     background-color: var(--color-error-bg);
-    box-shadow: inset 0 0 0 1px var(--color-error);
-`;
-
-export const Success = styled(Alert)`
-    font-size: ${p => p.xs && 'var(--font-xxs)'};
-    color: var(--color-success);
-    background-color: var(--color-success-bg);
-    box-shadow: inset 0 0 0 1px var(--color-success);
 `;
