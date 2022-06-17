@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import * as B from '../Button';
 import { ReactComponent as Close } from '../../assets/close-modal.svg';
 import { BREAKPOINTS } from '../../constants';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Modal = ({ children, open, onClose, handleAction }) => {
     const handleActions = () => {
@@ -10,25 +11,57 @@ const Modal = ({ children, open, onClose, handleAction }) => {
         onClose();
     };
 
-    return open ? (
+    return (
         <Fragment>
-            <Overlay onClick={onClose} />
-            <Wrapper>
-                <X onClick={onClose}>
-                    <Close stroke='var(--color-gray-800)' />
-                </X>
-                {children}
-                <Flex>
-                    <B.Inverted small onClick={onClose}>
-                        Cancel
-                    </B.Inverted>
-                    <B.Base small onClick={handleActions}>
-                        Ok
-                    </B.Base>
-                </Flex>
-            </Wrapper>
+            <AnimatePresence>
+                {open && (
+                    <Overlay
+                        onClick={onClose}
+                        key='overlay'
+                        as={motion.div}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5 }}
+                        exit={{
+                            opacity: 0,
+                            transition: {
+                                when: 'afterChildren',
+                            },
+                        }}
+                    >
+                        <Wrapper
+                            key='modal'
+                            as={motion.div}
+                            initial={{ opacity: 0, y: '-55%', x: '-50%' }}
+                            animate={{ opacity: 1, y: '-50%', x: '-50%' }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            exit={{
+                                opacity: 0,
+                                y: '-45%',
+                                x: '-50%',
+                                transition: {
+                                    when: 'beforeParent',
+                                },
+                            }}
+                        >
+                            <X onClick={onClose}>
+                                <Close stroke='var(--color-gray-800)' />
+                            </X>
+                            {children}
+                            <Flex>
+                                <B.Inverted small onClick={onClose}>
+                                    Cancel
+                                </B.Inverted>
+                                <B.Base small onClick={handleActions}>
+                                    Ok
+                                </B.Base>
+                            </Flex>
+                        </Wrapper>
+                    </Overlay>
+                )}
+            </AnimatePresence>
         </Fragment>
-    ) : null;
+    );
 };
 
 export default Modal;
