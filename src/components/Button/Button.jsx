@@ -51,7 +51,6 @@ export const Alert = styled(Inverted)`
 `;
 
 export const Error = styled(Alert)`
-    font-size: ${p => p.xs && 'var(--font-xxs)'};
     color: var(--color-error);
     background-color: var(--color-error-bg);
 `;

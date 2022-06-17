@@ -1,12 +1,12 @@
 import Input from '../Input';
-import * as B from '../Button';
+import * as Button from '../Button';
 
 const SignUpForm = () => {
     return (
         <form>
             <Input name='email' label='Email:' type='email' />
             <Input name='password' label='Password:' type='password' />
-            <B.Base
+            <Button.Base
                 round={true}
                 wide={true}
                 alignSelf='center'
@@ -14,7 +14,7 @@ const SignUpForm = () => {
                 type='button'
             >
                 Sign up
-            </B.Base>
+            </Button.Base>
         </form>
     );
 };

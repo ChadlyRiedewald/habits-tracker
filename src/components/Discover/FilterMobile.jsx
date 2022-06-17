@@ -4,9 +4,9 @@ import MobileOnly from '../MobileOnly';
 import S from '../Subtitle';
 import Title from '../Title';
 import { BREAKPOINTS } from '../../constants/breakpoints';
-import { Base, Inverted } from '../Button';
+import * as Button from '../Button';
 
-const FilterModal = ({ setModal }) => {
+const FilterMobile = ({ setModal }) => {
     return (
         <MobileOnly width={true}>
             <Subtitle>Type</Subtitle>
@@ -22,22 +22,22 @@ const FilterModal = ({ setModal }) => {
                 <Checkbox label='Business' />
             </FilterItems>
             <ButtonWrapper>
-                <Inverted
+                <Button.Inverted
                     border={true}
                     small={true}
                     onClick={() => setModal(false)}
                 >
                     Cancel
-                </Inverted>
-                <Base small={true} onClick={() => setModal(false)}>
+                </Button.Inverted>
+                <Button.Base small={true} onClick={() => setModal(false)}>
                     Apply
-                </Base>
+                </Button.Base>
             </ButtonWrapper>
         </MobileOnly>
     );
 };
 
-export default FilterModal;
+export default FilterMobile;
 
 const FilterItems = styled.div`
     min-width: 250px;

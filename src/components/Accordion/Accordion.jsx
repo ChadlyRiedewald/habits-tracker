@@ -10,10 +10,10 @@ const Accordion = ({ title, content }) => {
     return (
         <Wrapper onClick={() => setIsActive(!isActive)}>
             <FlexColumn>
-                <TitleContainer>
+                <TitleWrapper>
                     <Title>{title}</Title>
                     {isActive ? <Minus /> : <Plus />}
-                </TitleContainer>
+                </TitleWrapper>
                 {isActive && <Paragraph>{content}</Paragraph>}
             </FlexColumn>
         </Wrapper>
@@ -36,7 +36,7 @@ const Wrapper = styled.div`
     }
 `;
 
-const TitleContainer = styled.div`
+const TitleWrapper = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;

@@ -8,7 +8,7 @@ import { Card } from '../Card';
 import { Fragment, useState } from 'react';
 import MyAccountForm from './MyAccountForm';
 import Subtitle from '../Subtitle';
-import * as B from '../Button';
+import * as Button from '../Button';
 import { Divider } from '../Divider';
 import SignOutModal from '../Modal/SignOutModal';
 
@@ -32,9 +32,9 @@ const MyAccount = () => {
                                 your progress and data
                             </Paragraph>
                         </MobileHeader>
-                        <B.Alert small={true} alignSelf='center'>
+                        <Button.Alert small={true} alignSelf='center'>
                             Reset
-                        </B.Alert>
+                        </Button.Alert>
                     </Flex>
                     <Divider />
                     <Flex>
@@ -45,9 +45,9 @@ const MyAccount = () => {
                                 your progress and data
                             </Paragraph>
                         </MobileHeader>
-                        <B.Error small={true} alignSelf='center'>
+                        <Button.Error small={true} alignSelf='center'>
                             Delete
-                        </B.Error>
+                        </Button.Error>
                     </Flex>
                     <Divider />
                     <Flex>
@@ -57,14 +57,14 @@ const MyAccount = () => {
                                 You will be signed out of your account
                             </Paragraph>
                         </MobileHeader>
-                        <B.Inverted
+                        <Button.Inverted
                             small={true}
                             alignSelf='center'
                             onClick={() => setModalIsOpen(true)}
                             border={true}
                         >
                             Sign out
-                        </B.Inverted>
+                        </Button.Inverted>
                     </Flex>
                 </Wrapper>
             </MobileOnly>
@@ -89,9 +89,9 @@ const MyAccount = () => {
                                     of your progress and data
                                 </Paragraph>
                             </Header>
-                            <B.Alert small={true} alignSelf='center'>
+                            <Button.Alert small={true} alignSelf='center'>
                                 Reset
-                            </B.Alert>
+                            </Button.Alert>
                         </Flex>
                     </Card>
                     <Card>
@@ -103,9 +103,9 @@ const MyAccount = () => {
                                     will be gone forever
                                 </Paragraph>
                             </Header>
-                            <B.Error small={true} alignSelf='center'>
+                            <Button.Error small={true} alignSelf='center'>
                                 Delete
-                            </B.Error>
+                            </Button.Error>
                         </Flex>
                     </Card>
                 </Wrapper>

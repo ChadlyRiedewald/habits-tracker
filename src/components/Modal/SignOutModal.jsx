@@ -1,5 +1,5 @@
 import { Paragraph } from '../Paragraph';
-import { Base, Inverted } from '../Button';
+import * as Button from '../Button';
 import Modal from './Modal';
 import styled from 'styled-components/macro';
 import { useContext } from 'react';
@@ -18,16 +18,16 @@ const SignOutModal = ({ isOpen, setModal }) => {
             <FlexColumn>
                 <Paragraph center>Are you sure you want to sign out?</Paragraph>
                 <Flex>
-                    <Inverted
+                    <Button.Inverted
                         small={true}
                         border={true}
                         onClick={() => setModal(false)}
                     >
                         Cancel
-                    </Inverted>
-                    <Base small={true} onClick={signOut}>
+                    </Button.Inverted>
+                    <Button.Base small={true} onClick={signOut}>
                         Confirm
-                    </Base>
+                    </Button.Base>
                 </Flex>
             </FlexColumn>
         </Modal>

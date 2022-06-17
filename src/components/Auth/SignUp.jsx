@@ -1,12 +1,12 @@
 import styled from 'styled-components/macro';
 import { useNavigate } from 'react-router-dom';
 import MobileOnly from '../MobileOnly/MobileOnly';
-import * as Style from './Auth';
+import * as Auth from './Auth';
 import SignUpForm from './SignUpForm';
 import DesktopOnly from '../DesktopOnly/DesktopOnly';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
-import { Inverted } from '../Button';
+import * as Button from '../Button';
 import { Fragment } from 'react';
 import { FormWrapper } from '../FormWrapper';
 
@@ -21,8 +21,8 @@ const SignUp = () => {
                 </FormWrapper>
             </MobileOnly>
             <DesktopOnly>
-                <Style.Wrapper>
-                    <SignInContainer>
+                <Auth.Wrapper>
+                    <SignInWrapper>
                         <Header center={true}>
                             <h2>Welcome back</h2>
                             <Paragraph small={true} center={true}>
@@ -30,17 +30,17 @@ const SignUp = () => {
                                 <br />
                                 Click the button below to sign in
                             </Paragraph>
-                            <Inverted
+                            <Button.Inverted
                                 onClick={() => navigate('/auth/sign-in')}
                                 round={true}
                                 alignSelf='center'
                                 marginTop={true}
                             >
                                 Sign in
-                            </Inverted>
+                            </Button.Inverted>
                         </Header>
-                    </SignInContainer>
-                    <SignUpContainer>
+                    </SignInWrapper>
+                    <SignUpWrapper>
                         <Header center={true}>
                             <h1>Get started</h1>
                             <Paragraph orange={true} width='80%' center={true}>
@@ -51,8 +51,8 @@ const SignUp = () => {
                         <FormWrapper>
                             <SignUpForm />
                         </FormWrapper>
-                    </SignUpContainer>
-                </Style.Wrapper>
+                    </SignUpWrapper>
+                </Auth.Wrapper>
             </DesktopOnly>
         </Fragment>
     );
@@ -60,7 +60,7 @@ const SignUp = () => {
 
 export default SignUp;
 
-const SignInContainer = styled.div`
+const SignInWrapper = styled.div`
     background-color: var(--color-orange-300);
     display: flex;
     align-items: center;
@@ -71,4 +71,4 @@ const SignInContainer = styled.div`
     flex-basis: 40%;
 `;
 
-const SignUpContainer = styled(Style.SignInContainer)``;
+const SignUpWrapper = styled(Style.SignInWrapper)``;

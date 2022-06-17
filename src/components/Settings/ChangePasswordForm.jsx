@@ -1,6 +1,6 @@
 import Subtitle from '../Subtitle';
 import Input from '../Input';
-import * as B from '../Button';
+import * as Button from '../Button';
 import styled from 'styled-components/macro';
 
 const ChangePasswordForm = () => {
@@ -19,10 +19,10 @@ const ChangePasswordForm = () => {
                 type='password'
             />
             <Flex>
-                <B.Inverted small={true} border={true}>
+                <Button.Inverted small={true} border={true}>
                     Cancel
-                </B.Inverted>
-                <B.Base small={true}>Save</B.Base>
+                </Button.Inverted>
+                <Button.Base small={true}>Save</Button.Base>
             </Flex>
         </form>
     );

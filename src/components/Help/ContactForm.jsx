@@ -1,5 +1,5 @@
 import Input from '../Input';
-import * as B from '../Button';
+import * as Button from '../Button';
 
 const ContactForm = () => {
     return (
@@ -7,9 +7,9 @@ const ContactForm = () => {
             <Input name='name' label='Name:' />
             <Input name='email' label='Email:' type='email' />
             <Input name='message' label='Message:' textarea={true} />
-            <B.Base wide={true} marginTop={true}>
+            <Button.Base wide={true} marginTop={true}>
                 Send
-            </B.Base>
+            </Button.Base>
         </form>
     );
 };

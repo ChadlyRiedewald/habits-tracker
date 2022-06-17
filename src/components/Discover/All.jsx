@@ -7,7 +7,7 @@ import DesktopOnly from '../DesktopOnly';
 import { Divider } from '../Divider';
 import Checkbox from '../Checkbox/Checkbox';
 import Modal from '../Modal/Modal';
-import FilterModal from './FilterModal';
+import FilterMobile from './FilterMobile';
 
 const All = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const All = () => {
                     setModal={setModalIsOpen}
                     title='Filter'
                 >
-                    <FilterModal setModal={setModalIsOpen} />
+                    <FilterMobile setModal={setModalIsOpen} />
                 </Modal>
                 <Wrapper>
                     <FilterButton onClick={() => setModalIsOpen(true)} />

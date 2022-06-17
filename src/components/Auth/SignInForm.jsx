@@ -1,5 +1,5 @@
 import Input from '../Input';
-import * as B from '../Button';
+import * as Button from '../Button';
 import { useContext } from 'react';
 import { AuthContext } from '../../hooks/Auth.context';
 
@@ -10,7 +10,7 @@ const SignInForm = () => {
         <form>
             <Input name='email' label='Email:' type='email' />
             <Input name='password' label='Password:' type='password' />
-            <B.Base
+            <Button.Base
                 onClick={toggle}
                 round={true}
                 wide={true}
@@ -19,7 +19,7 @@ const SignInForm = () => {
                 type='button'
             >
                 Sign in
-            </B.Base>
+            </Button.Base>
         </form>
     );
 };

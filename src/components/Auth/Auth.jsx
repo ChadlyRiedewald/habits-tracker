@@ -71,7 +71,7 @@ export const Wrapper = styled.div`
     border-radius: var(--border-radius-lg);
     margin-inline: auto;
 `;
-export const SignInContainer = styled.div`
+export const SignInWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,7 +81,7 @@ export const SignInContainer = styled.div`
     flex-basis: 60%;
 `;
 
-export const SignUpContainer = styled.div`
+export const SignUpWrapper = styled.div`
     background-color: var(--color-orange-300);
     display: flex;
     align-items: center;

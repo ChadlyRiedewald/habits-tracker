@@ -6,8 +6,8 @@ import SignInForm from './SignInForm';
 import { Fragment } from 'react';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
-import { Inverted } from '../Button';
-import { SignInContainer, SignUpContainer, Wrapper } from './Auth';
+import * as Button from '../Button';
+import { SignInWrapper, SignUpWrapper, Wrapper } from './Auth';
 import { FormWrapper } from '../FormWrapper';
 
 const SignIn = () => {
@@ -22,7 +22,7 @@ const SignIn = () => {
             </MobileOnly>
             <DesktopOnly>
                 <Wrapper>
-                    <SignInContainer>
+                    <SignInWrapper>
                         <Header center={true}>
                             <h1>Log in</h1>
                             <Paragraph orange={true} width='80%' center={true}>
@@ -32,23 +32,23 @@ const SignIn = () => {
                         <FormWrapper>
                             <SignInForm />
                         </FormWrapper>
-                    </SignInContainer>
-                    <SignUpContainer>
+                    </SignInWrapper>
+                    <SignUpWrapper>
                         <Header center>
                             <h2>New here?</h2>
                             <Paragraph small={true} center={true}>
                                 Create an account to start your journey
                             </Paragraph>
-                            <Inverted
+                            <Button.Inverted
                                 onClick={() => navigate('/auth/sign-up')}
                                 round
                                 alignSelf='center'
                                 marginTop
                             >
                                 Sign up
-                            </Inverted>
+                            </Button.Inverted>
                         </Header>
-                    </SignUpContainer>
+                    </SignUpWrapper>
                 </Wrapper>
             </DesktopOnly>
         </Fragment>
