@@ -20,7 +20,7 @@ const Security = () => {
                 <Wrapper>
                     <Header>
                         <h2>Password</h2>
-                        <Paragraph small>Update your password</Paragraph>
+                        <Paragraph small={true}>Update your password</Paragraph>
                     </Header>
                     <Card>
                         <ChangePasswordForm />

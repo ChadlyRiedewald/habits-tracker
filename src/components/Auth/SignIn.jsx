@@ -23,9 +23,9 @@ const SignIn = () => {
             <DesktopOnly>
                 <Wrapper>
                     <SignInContainer>
-                        <Header center>
+                        <Header center={true}>
                             <h1>Log in</h1>
-                            <Paragraph orange width='80%' center>
+                            <Paragraph orange={true} width='80%' center={true}>
                                 Log in with your account to Fix Your Habits
                             </Paragraph>
                         </Header>
@@ -36,7 +36,7 @@ const SignIn = () => {
                     <SignUpContainer>
                         <Header center>
                             <h2>New here?</h2>
-                            <Paragraph small center>
+                            <Paragraph small={true} center={true}>
                                 Create an account to start your journey
                             </Paragraph>
                             <Inverted

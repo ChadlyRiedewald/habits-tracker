@@ -20,7 +20,7 @@ const Help = () => {
                         {location.pathname === '/help/contact' ? (
                             <Fragment>
                                 <Title>Contact</Title>
-                                <Paragraph small>
+                                <Paragraph small={true}>
                                     Write your question below and we will reply
                                     as soon as possible
                                 </Paragraph>
@@ -28,7 +28,7 @@ const Help = () => {
                         ) : (
                             <Fragment>
                                 <Title>FAQ</Title>
-                                <Paragraph small>
+                                <Paragraph small={true}>
                                     Feel free to contact us for any other
                                     questions
                                 </Paragraph>

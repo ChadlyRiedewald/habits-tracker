@@ -24,7 +24,7 @@ const All = () => {
                 </Modal>
                 <Wrapper>
                     <FilterButton onClick={() => setModalIsOpen(true)} />
-                    <Flex paddingTop>
+                    <Flex paddingTop={true}>
                         <Card />
                         <Card />
                         <Card />
@@ -68,7 +68,7 @@ const All = () => {
                     </Flex>
                 </Wrapper>
             </MobileOnly>
-            <DesktopOnly width>
+            <DesktopOnly width={true}>
                 <WrapperDesktop>
                     <Left>
                         <Grid>

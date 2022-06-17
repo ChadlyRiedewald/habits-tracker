@@ -1,12 +1,17 @@
 import styled from 'styled-components/macro';
 import { Inverted } from '../Button';
 import { ReactComponent as Filter } from '../../assets/filter.svg';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const FilterButton = ({ ...otherProps }) => {
     return (
         <Wrapper>
-            <Button type='button' className='filter' border {...otherProps}>
+            <Button
+                type='button'
+                className='filter'
+                border={true}
+                {...otherProps}
+            >
                 <Filter />
                 Filter
             </Button>

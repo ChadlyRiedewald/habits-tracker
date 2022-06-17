@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { AuthContext } from '../../hooks/Auth.context';
 import { Fragment, useContext, useState } from 'react';
 import { ReactComponent as Home } from '../../assets/home.svg';

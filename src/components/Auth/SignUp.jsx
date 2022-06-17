@@ -23,27 +23,27 @@ const SignUp = () => {
             <DesktopOnly>
                 <Style.Wrapper>
                     <SignInContainer>
-                        <Header center>
+                        <Header center={true}>
                             <h2>Welcome back</h2>
-                            <Paragraph small center>
+                            <Paragraph small={true} center={true}>
                                 Already have an account?
                                 <br />
                                 Click the button below to sign in
                             </Paragraph>
                             <Inverted
                                 onClick={() => navigate('/auth/sign-in')}
-                                round
+                                round={true}
                                 alignSelf='center'
-                                marginTop
+                                marginTop={true}
                             >
                                 Sign in
                             </Inverted>
                         </Header>
                     </SignInContainer>
                     <SignUpContainer>
-                        <Header center>
+                        <Header center={true}>
                             <h1>Get started</h1>
-                            <Paragraph orange width='80%' center>
+                            <Paragraph orange={true} width='80%' center={true}>
                                 Welcome to Fix Your Habits! Fill in your info to
                                 get started!
                             </Paragraph>

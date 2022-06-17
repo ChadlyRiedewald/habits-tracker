@@ -1,26 +1,15 @@
 import styled from 'styled-components/macro';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { motion } from 'framer-motion';
+import { VARIANTS } from '../../constants/variants';
 
 const AnimatedButton = ({ children, ...otherProps }) => {
-    const buttonVariants = {
-        hover: {
-            scale: 1.05,
-        },
-        pressed: {
-            scale: 0.9,
-        },
-        rest: {
-            scale: 1,
-        },
-    };
-
     return (
         <motion.button
-            initial='rest'
-            whileHover='hover'
-            whileTap='pressed'
-            variants={buttonVariants}
+            initial='initial'
+            whileHover='whileHover'
+            whileTap='whileTap'
+            variants={VARIANTS.button}
             {...otherProps}
         >
             {children}

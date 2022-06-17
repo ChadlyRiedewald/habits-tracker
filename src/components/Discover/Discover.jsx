@@ -6,13 +6,13 @@ import { NavLink } from '../NavLink';
 import styled from 'styled-components/macro';
 import DesktopOnly from '../DesktopOnly';
 import { Outlet } from 'react-router-dom';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const Discover = () => {
     return (
         <Fragment>
-            <MobileLayout discover>
-                <Header center>
+            <MobileLayout discover={true}>
+                <Header center={true}>
                     <ButtonGroupNavigation>
                         <li>
                             <NavLink

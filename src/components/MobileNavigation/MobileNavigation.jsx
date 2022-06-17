@@ -6,7 +6,7 @@ import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const MobileNavigation = () => {
     return (

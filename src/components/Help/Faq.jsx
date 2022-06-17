@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 import MobileOnly from '../MobileOnly';
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import DesktopOnly from '../DesktopOnly';
 import FaqNav from './FaqNav';
 import { Header } from '../Header';
@@ -21,7 +21,7 @@ const Faq = () => {
                 <Wrapper>
                     <Header>
                         <h2>Have a question?</h2>
-                        <Paragraph small>
+                        <Paragraph small={true}>
                             Feel free to contact us for any other questions
                         </Paragraph>
                     </Header>

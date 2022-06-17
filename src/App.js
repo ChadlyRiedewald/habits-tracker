@@ -1,6 +1,6 @@
 import { Fragment, useContext } from 'react';
 import styled from 'styled-components/macro';
-import GlobalStyles from './globalStyles';
+import GlobalStyles from './constants/globalStyles';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AuthContext } from './hooks/Auth.context';
 import Div100vh from 'react-div-100vh';

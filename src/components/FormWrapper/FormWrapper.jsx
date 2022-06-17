@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 export const FormWrapper = styled.div`
     margin-inline: auto;

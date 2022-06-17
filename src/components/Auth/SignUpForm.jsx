@@ -6,7 +6,13 @@ const SignUpForm = () => {
         <form>
             <Input name='email' label='Email:' type='email' />
             <Input name='password' label='Password:' type='password' />
-            <B.Base round wide alignSelf='center' marginTop type='button'>
+            <B.Base
+                round={true}
+                wide={true}
+                alignSelf='center'
+                marginTop={true}
+                type='button'
+            >
                 Sign up
             </B.Base>
         </form>

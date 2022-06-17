@@ -27,12 +27,12 @@ const MyAccount = () => {
                     <Flex>
                         <MobileHeader>
                             <Subtitle>Reset account</Subtitle>
-                            <Paragraph small>
+                            <Paragraph small={true}>
                                 If you reset your account, you will lose all of
                                 your progress and data
                             </Paragraph>
                         </MobileHeader>
-                        <B.Alert small alignSelf='center'>
+                        <B.Alert small={true} alignSelf='center'>
                             Reset
                         </B.Alert>
                     </Flex>
@@ -40,12 +40,12 @@ const MyAccount = () => {
                     <Flex>
                         <MobileHeader>
                             <Subtitle>Delete account</Subtitle>
-                            <Paragraph small>
+                            <Paragraph small={true}>
                                 If you reset your account, you will lose all of
                                 your progress and data
                             </Paragraph>
                         </MobileHeader>
-                        <B.Error small alignSelf='center'>
+                        <B.Error small={true} alignSelf='center'>
                             Delete
                         </B.Error>
                     </Flex>
@@ -53,15 +53,15 @@ const MyAccount = () => {
                     <Flex>
                         <MobileHeader>
                             <Subtitle>Signout</Subtitle>
-                            <Paragraph small>
+                            <Paragraph small={true}>
                                 You will be signed out of your account
                             </Paragraph>
                         </MobileHeader>
                         <B.Inverted
-                            small
+                            small={true}
                             alignSelf='center'
                             onClick={() => setModalIsOpen(true)}
-                            border
+                            border={true}
                         >
                             Sign out
                         </B.Inverted>
@@ -72,7 +72,7 @@ const MyAccount = () => {
                 <Wrapper>
                     <Header>
                         <h2>General details</h2>
-                        <Paragraph small>
+                        <Paragraph small={true}>
                             Update your personal information, reset or delete
                             your account
                         </Paragraph>
@@ -84,12 +84,12 @@ const MyAccount = () => {
                         <Flex>
                             <Header>
                                 <Subtitle>Reset account</Subtitle>
-                                <Paragraph small>
+                                <Paragraph small={true}>
                                     If you reset your account, you will lose all
                                     of your progress and data
                                 </Paragraph>
                             </Header>
-                            <B.Alert small alignSelf='center'>
+                            <B.Alert small={true} alignSelf='center'>
                                 Reset
                             </B.Alert>
                         </Flex>
@@ -98,12 +98,12 @@ const MyAccount = () => {
                         <Flex>
                             <Header>
                                 <Subtitle>Delete account</Subtitle>
-                                <Paragraph small>
+                                <Paragraph small={true}>
                                     If you delete your account, all your data
                                     will be gone forever
                                 </Paragraph>
                             </Header>
-                            <B.Error small alignSelf='center'>
+                            <B.Error small={true} alignSelf='center'>
                                 Delete
                             </B.Error>
                         </Flex>

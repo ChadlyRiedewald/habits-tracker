@@ -1,9 +1,10 @@
 import styled from 'styled-components/macro';
 import ReactDOM from 'react-dom';
 import { Fragment } from 'react';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { motion, AnimatePresence } from 'framer-motion';
 import Title from '../Title';
+import { VARIANTS } from '../../constants/variants';
 
 const Modal = ({ children, isOpen, setModal, title }) => {
     const close = () => {
@@ -18,36 +19,21 @@ const Modal = ({ children, isOpen, setModal, title }) => {
                         onClick={close}
                         key='overlay'
                         as={motion.div}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                        exit={{
-                            opacity: 0,
-                            transition: {
-                                when: 'afterChildren',
-                            },
-                        }}
+                        variants={VARIANTS.overlay}
+                        initial='initial'
+                        animate='animate'
+                        transition='transition'
+                        exit='exit'
                     >
                         <Wrapper
                             onClick={e => e.stopPropagation()}
                             key='modal'
                             as={motion.div}
-                            initial={{ opacity: 0, y: '-55%', x: '-50%' }}
-                            animate={{ opacity: 1, y: '-50%', x: '-50%' }}
-                            transition={{
-                                duration: 0.5,
-                                delay: 0.2,
-                                type: 'spring',
-                                stiffness: 150,
-                            }}
-                            exit={{
-                                opacity: 0,
-                                y: '-45%',
-                                x: '-50%',
-                                transition: {
-                                    when: 'beforeParent',
-                                },
-                            }}
+                            variants={VARIANTS.modal}
+                            initial='initial'
+                            animate='animate'
+                            transition='transition'
+                            exit='exit'
                         >
                             <Topbar>
                                 <Flex>
@@ -77,12 +63,11 @@ const Wrapper = styled.div`
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-elevation-high);
     z-index: 1000;
-
     width: clamp(200px, 90vw, 450px);
     height: clamp(200px, 80vh, fit-content);
 
     @media screen and ${BREAKPOINTS.sm} {
-        max-width: clamp(200px, 90vw, 300px);
+        max-width: clamp(200px, 90vw, 320px);
     }
 `;
 

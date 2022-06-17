@@ -20,7 +20,7 @@ const Contact = () => {
                 <Wrapper>
                     <Header>
                         <h2>Get in touch</h2>
-                        <Paragraph small>
+                        <Paragraph small={true}>
                             Feel free to contact us for any other questions
                         </Paragraph>
                     </Header>

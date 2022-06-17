@@ -20,14 +20,14 @@ const Settings = () => {
                         {location.pathname === '/settings/my-account' ? (
                             <Fragment>
                                 <Title>My Account</Title>
-                                <Paragraph small>
+                                <Paragraph small={true}>
                                     Update, reset or delete your account
                                 </Paragraph>
                             </Fragment>
                         ) : (
                             <Fragment>
                                 <Title>Security</Title>
-                                <Paragraph small>
+                                <Paragraph small={true}>
                                     Update your password
                                 </Paragraph>
                             </Fragment>

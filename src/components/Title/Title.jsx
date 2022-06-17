@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const Title = styled.h2`
     @media screen and ${BREAKPOINTS.sm} {

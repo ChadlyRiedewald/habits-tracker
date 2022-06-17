@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 import MobileOnly from '../MobileOnly';
 import S from '../Subtitle';
 import Title from '../Title';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { Base, Inverted } from '../Button';
 
 const FilterModal = ({ setModal }) => {

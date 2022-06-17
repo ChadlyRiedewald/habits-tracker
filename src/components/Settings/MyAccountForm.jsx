@@ -10,10 +10,10 @@ const MyAccountForm = () => {
             <Input label='Name' name='name' />
             <Input label='Email' name='email' type='email' />
             <Flex>
-                <B.Inverted small border>
+                <B.Inverted small={true} border={true}>
                     Cancel
                 </B.Inverted>
-                <B.Base small>Save</B.Base>
+                <B.Base small={true}>Save</B.Base>
             </Flex>
         </form>
     );

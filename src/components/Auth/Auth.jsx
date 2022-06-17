@@ -14,7 +14,7 @@ const Auth = () => {
     return (
         <Fragment>
             <MobileLayout>
-                <Header center>
+                <Header center={true}>
                     <ButtonGroupNavigation>
                         <li>
                             <NavLink
@@ -36,7 +36,7 @@ const Auth = () => {
                             </NavLink>
                         </li>
                     </ButtonGroupNavigation>
-                    <Paragraph orange center>
+                    <Paragraph orange={true} center={true}>
                         {location.pathname === '/auth/sign-in'
                             ? 'Log in with your account to Fix Your Habits'
                             : 'Welcome to Fix Your Habits. Fill in your information to get started!'}

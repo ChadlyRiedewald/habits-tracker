@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 export const Paragraph = styled.p`
     color: ${p => p.orange && 'var(--color-orange-400)'};

@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import { BREAKPOINTS } from '../../constants';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 export const Header = styled.div`
     display: flex;

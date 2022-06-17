@@ -64,10 +64,10 @@ const DiscoverContent = () => {
                     </FlexColumn>
                 </Wrapper>
             </MobileOnly>
-            <DesktopOnly width>
+            <DesktopOnly width={true}>
                 <FlexColumn>
                     <Banner />
-                    <FlexColumn marginTop>
+                    <FlexColumn marginTop={true}>
                         <h2>Popular</h2>
                         <Grid>
                             <Card />

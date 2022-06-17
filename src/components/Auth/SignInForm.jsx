@@ -12,10 +12,10 @@ const SignInForm = () => {
             <Input name='password' label='Password:' type='password' />
             <B.Base
                 onClick={toggle}
-                round
-                wide
+                round={true}
+                wide={true}
                 alignSelf='center'
-                marginTop
+                marginTop={true}
                 type='button'
             >
                 Sign in
