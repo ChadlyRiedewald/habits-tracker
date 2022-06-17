@@ -2,10 +2,11 @@ import styled from 'styled-components/macro';
 import { Fragment } from 'react';
 import * as B from '../Button';
 import { ReactComponent as Close } from '../../assets/close-modal.svg';
+import { BREAKPOINTS } from '../../constants';
 
-const Modal = ({ children, open, onClose, okFunction }) => {
-    const handleSuccess = () => {
-        okFunction();
+const Modal = ({ children, open, onClose, handleAction }) => {
+    const handleActions = () => {
+        handleAction();
         onClose();
     };
 
@@ -21,7 +22,7 @@ const Modal = ({ children, open, onClose, okFunction }) => {
                     <B.Inverted small onClick={onClose}>
                         Cancel
                     </B.Inverted>
-                    <B.Base small onClick={handleSuccess}>
+                    <B.Base small onClick={handleActions}>
                         Ok
                     </B.Base>
                 </Flex>
@@ -33,22 +34,25 @@ const Modal = ({ children, open, onClose, okFunction }) => {
 export default Modal;
 
 const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-md);
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--color-gray-100);
-    width: 500px;
-    height: 300px;
-    padding-block: var(--padding-md);
-    padding-inline: calc(var(--padding-md) * 1.5);
-    z-index: 1000;
+    padding: var(--padding-md);
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-elevation-high);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
+    z-index: 1000;
+    width: clamp(200px, 90vw, 500px);
+
+    @media screen and ${BREAKPOINTS.lg} {
+        height: clamp(200px, fit-content, 80vh);
+    }
 `;
 
 const Overlay = styled.div`
@@ -69,10 +73,15 @@ const X = styled.span`
     & svg {
         width: 32px;
         height: 32px;
+        @media screen and ${BREAKPOINTS.smMin} {
+            width: 42px;
+            height: 42px;
+        }
     }
 `;
 
 const Flex = styled.div`
     display: flex;
     gap: var(--padding-sm);
+    align-items: flex-end;
 `;

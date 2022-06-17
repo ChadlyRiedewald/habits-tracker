@@ -5,16 +5,30 @@ import DesktopOnly from '../DesktopOnly/DesktopOnly';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
 import { Card } from '../Card';
-import { Fragment } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import MyAccountForm from './MyAccountForm';
 import Subtitle from '../Subtitle';
 import * as B from '../Button';
 import { Divider } from '../Divider';
+import { AuthContext } from '../../hooks/Auth.context';
+import Modal from '../Modal/Modal';
 
 const MyAccount = () => {
+    const { toggle } = useContext(AuthContext);
+    const [modal, toggleModal] = useState(false);
+
+    const openModal = () => {
+        toggleModal(!modal);
+    };
+
     return (
         <Fragment>
             <MobileOnly>
+                <Modal open={modal} onClose={openModal} handleAction={toggle}>
+                    <Paragraph center>
+                        Are you sure you want to sign out?
+                    </Paragraph>
+                </Modal>
                 <Wrapper>
                     <FormWrapper>
                         <MyAccountForm />
@@ -44,6 +58,22 @@ const MyAccount = () => {
                         <B.Error small alignSelf='center'>
                             Delete
                         </B.Error>
+                    </Flex>
+                    <Divider />
+                    <Flex>
+                        <MobileHeader>
+                            <Subtitle>Signout</Subtitle>
+                            <Paragraph small>
+                                You will be signed out of your account
+                            </Paragraph>
+                        </MobileHeader>
+                        <B.Inverted
+                            small
+                            alignSelf='center'
+                            onClick={openModal}
+                        >
+                            Sign out
+                        </B.Inverted>
                     </Flex>
                 </Wrapper>
             </MobileOnly>

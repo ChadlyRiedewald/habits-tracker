@@ -19,6 +19,7 @@ export const Base = styled.button`
     transition: all 0.5s;
     align-self: ${p => p.alignSelf || 'flex-start'};
     margin-top: ${p => p.marginTop && 'var(--padding-sm)'};
+    flex-shrink: 0;
 
     @media screen and ${BREAKPOINTS.smMin} {
         font-size: ${p =>
@@ -53,12 +54,12 @@ export const Error = styled(Alert)`
     font-size: ${p => p.xs && 'var(--font-xxs)'};
     color: var(--color-error);
     background-color: var(--color-error-bg);
-    border-color: var(--color-error);
+    box-shadow: inset 0 0 0 1px var(--color-error);
 `;
 
 export const Success = styled(Alert)`
     font-size: ${p => p.xs && 'var(--font-xxs)'};
     color: var(--color-success);
     background-color: var(--color-success-bg);
-    border-color: var(--color-success);
+    box-shadow: inset 0 0 0 1px var(--color-success);
 `;
