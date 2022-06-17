@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import ReactDOM from 'react-dom';
 import { Fragment } from 'react';
 import * as B from '../Button';
 import { ReactComponent as Close } from '../../assets/close-modal.svg';
@@ -11,7 +12,7 @@ const Modal = ({ children, open, onClose, handleAction }) => {
         onClose();
     };
 
-    return (
+    return ReactDOM.createPortal(
         <Fragment>
             <AnimatePresence>
                 {open && (
@@ -65,7 +66,8 @@ const Modal = ({ children, open, onClose, handleAction }) => {
                     </Overlay>
                 )}
             </AnimatePresence>
-        </Fragment>
+        </Fragment>,
+        document.getElementById('portal')
     );
 };
 
