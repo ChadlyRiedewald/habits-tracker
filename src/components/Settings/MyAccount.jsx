@@ -5,30 +5,20 @@ import DesktopOnly from '../DesktopOnly/DesktopOnly';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
 import { Card } from '../Card';
-import { Fragment, useContext, useState } from 'react';
+import { Fragment, useState } from 'react';
 import MyAccountForm from './MyAccountForm';
 import Subtitle from '../Subtitle';
 import * as B from '../Button';
 import { Divider } from '../Divider';
-import { AuthContext } from '../../hooks/Auth.context';
-import Modal from '../Modal/Modal';
+import SignOutModal from '../Modal/SignOutModal';
 
 const MyAccount = () => {
-    const { toggle } = useContext(AuthContext);
-    const [modal, toggleModal] = useState(false);
-
-    const openModal = () => {
-        toggleModal(!modal);
-    };
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     return (
         <Fragment>
             <MobileOnly>
-                <Modal open={modal} onClose={openModal} handleAction={toggle}>
-                    <Paragraph center>
-                        Are you sure you want to sign out?
-                    </Paragraph>
-                </Modal>
+                <SignOutModal isOpen={modalIsOpen} setModal={setModalIsOpen} />
                 <Wrapper>
                     <FormWrapper>
                         <MyAccountForm />
@@ -70,7 +60,8 @@ const MyAccount = () => {
                         <B.Inverted
                             small
                             alignSelf='center'
-                            onClick={openModal}
+                            onClick={() => setModalIsOpen(true)}
+                            border
                         >
                             Sign out
                         </B.Inverted>

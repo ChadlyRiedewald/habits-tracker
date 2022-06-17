@@ -1,19 +1,30 @@
 import { Card, Flex, Grid, Wrapper } from './Discover';
 import styled from 'styled-components/macro';
-import FilterMenu from './FilterMenu';
+import FilterButton from './FilterButton';
 import MobileOnly from '../MobileOnly';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import DesktopOnly from '../DesktopOnly';
 import { Divider } from '../Divider';
 import Checkbox from '../Checkbox/Checkbox';
+import Modal from '../Modal/Modal';
+import FilterModal from './FilterModal';
 
 const All = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     return (
         <Fragment>
             <MobileOnly>
+                <Modal
+                    isOpen={modalIsOpen}
+                    setModal={setModalIsOpen}
+                    title='Filter'
+                >
+                    <FilterModal setModal={setModalIsOpen} />
+                </Modal>
                 <Wrapper>
-                    <FilterMenu />
-                    <Flex>
+                    <FilterButton onClick={() => setModalIsOpen(true)} />
+                    <Flex paddingTop>
                         <Card />
                         <Card />
                         <Card />

@@ -11,22 +11,15 @@ import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as SignIn } from '../../assets/login.svg';
 import { ReactComponent as SignOut } from '../../assets/logout.svg';
 import DesktopOnly from '../DesktopOnly';
-import Modal from '../Modal/Modal';
-import { Paragraph } from '../Paragraph';
+import SignOutModal from '../Modal/SignOutModal';
 
 const DesktopNavigation = () => {
-    const { isAuth, toggle } = useContext(AuthContext);
-    const [openModal, toggleOpenModel] = useState(false);
+    const { isAuth } = useContext(AuthContext);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     return (
         <DesktopOnly>
-            <Modal
-                open={openModal}
-                onClose={() => toggleOpenModel(!openModal)}
-                okFunction={() => toggle()}
-            >
-                <Paragraph center>Are you sure you want to sign out?</Paragraph>
-            </Modal>
+            <SignOutModal isOpen={modalIsOpen} setModal={setModalIsOpen} />
             <Wrapper>
                 <Logo />
                 <List>
@@ -94,7 +87,7 @@ const DesktopNavigation = () => {
                         {isAuth && (
                             <ListItem>
                                 <SignOutLink
-                                    onClick={() => toggleOpenModel(!openModal)}
+                                    onClick={() => setModalIsOpen(true)}
                                 >
                                     <SignOut />
                                     <p>Sign out</p>

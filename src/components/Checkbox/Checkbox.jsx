@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { BREAKPOINTS } from '../../constants';
 
 const Checkbox = ({ label }) => {
     return (
@@ -29,6 +30,11 @@ const Label = styled.label`
         background-color: var(--color-gray-100);
         transition: background 300ms;
         cursor: pointer;
+
+        @media screen and ${BREAKPOINTS.sm} {
+            width: calc(var(--margin-sm) * 1.5);
+            height: calc(var(--margin-sm) * 1.5);
+        }
 
         &::before {
             content: '';

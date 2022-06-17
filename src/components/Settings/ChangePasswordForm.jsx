@@ -19,7 +19,9 @@ const ChangePasswordForm = () => {
                 type='password'
             />
             <Flex>
-                <B.Inverted small>Cancel</B.Inverted>
+                <B.Inverted small border>
+                    Cancel
+                </B.Inverted>
                 <B.Base small>Save</B.Base>
             </Flex>
         </form>
