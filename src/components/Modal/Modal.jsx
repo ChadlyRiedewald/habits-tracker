@@ -1,23 +1,21 @@
 import styled from 'styled-components/macro';
 import ReactDOM from 'react-dom';
 import { Fragment } from 'react';
-import * as B from '../Button';
-import { ReactComponent as Close } from '../../assets/close-modal.svg';
 import { BREAKPOINTS } from '../../constants';
 import { motion, AnimatePresence } from 'framer-motion';
+import Title from '../Title';
 
-const Modal = ({ children, open, onClose, handleAction }) => {
-    const handleActions = () => {
-        handleAction();
-        onClose();
+const Modal = ({ children, isOpen, setModal, title }) => {
+    const close = () => {
+        setModal(false);
     };
 
     return ReactDOM.createPortal(
         <Fragment>
             <AnimatePresence>
-                {open && (
+                {isOpen && (
                     <Overlay
-                        onClick={onClose}
+                        onClick={close}
                         key='overlay'
                         as={motion.div}
                         initial={{ opacity: 0 }}
@@ -31,6 +29,7 @@ const Modal = ({ children, open, onClose, handleAction }) => {
                         }}
                     >
                         <Wrapper
+                            onClick={e => e.stopPropagation()}
                             key='modal'
                             as={motion.div}
                             initial={{ opacity: 0, y: '-55%', x: '-50%' }}
@@ -50,18 +49,12 @@ const Modal = ({ children, open, onClose, handleAction }) => {
                                 },
                             }}
                         >
-                            <X onClick={onClose}>
-                                <Close stroke='var(--color-gray-800)' />
-                            </X>
+                            <Topbar>
+                                <Flex>
+                                    <Title>{title}</Title>
+                                </Flex>
+                            </Topbar>
                             {children}
-                            <Flex>
-                                <B.Inverted small onClick={onClose}>
-                                    Cancel
-                                </B.Inverted>
-                                <B.Base small onClick={handleActions}>
-                                    Ok
-                                </B.Base>
-                            </Flex>
                         </Wrapper>
                     </Overlay>
                 )}
@@ -76,22 +69,20 @@ export default Modal;
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    gap: var(--padding-md);
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--color-gray-100);
-    padding: var(--padding-md);
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-elevation-high);
     z-index: 1000;
-    width: clamp(200px, 90vw, 500px);
 
-    @media screen and ${BREAKPOINTS.lg} {
-        height: clamp(200px, fit-content, 80vh);
+    width: clamp(200px, 90vw, 450px);
+    height: clamp(200px, 80vh, fit-content);
+
+    @media screen and ${BREAKPOINTS.sm} {
+        max-width: clamp(200px, 90vw, 300px);
     }
 `;
 
@@ -106,22 +97,16 @@ const Overlay = styled.div`
     backdrop-filter: blur(2px);
 `;
 
-const X = styled.span`
-    cursor: pointer;
-    align-self: flex-end;
-
-    & svg {
-        width: 32px;
-        height: 32px;
-        @media screen and ${BREAKPOINTS.smMin} {
-            width: 42px;
-            height: 42px;
-        }
-    }
-`;
-
 const Flex = styled.div`
     display: flex;
-    gap: var(--padding-sm);
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Topbar = styled.div`
+    width: 100%;
+    background-color: var(--color-gray-200);
+    border-top-left-radius: var(--border-radius-sm);
+    border-top-right-radius: var(--border-radius-sm);
+    padding: calc(var(--padding-sm) * 1.5);
 `;
