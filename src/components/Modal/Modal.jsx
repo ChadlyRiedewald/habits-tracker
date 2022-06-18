@@ -23,7 +23,6 @@ const Modal = ({ children, isOpen, setModal, title }) => {
                         variants={VARIANTS.overlay}
                         initial='initial'
                         animate='animate'
-                        transition='transition'
                         exit='exit'
                     >
                         <Wrapper
@@ -33,7 +32,6 @@ const Modal = ({ children, isOpen, setModal, title }) => {
                             variants={VARIANTS.modal}
                             initial='initial'
                             animate='animate'
-                            transition='transition'
                             exit='exit'
                         >
                             <Topbar>
