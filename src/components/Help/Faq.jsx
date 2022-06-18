@@ -1,10 +1,11 @@
-import styled from 'styled-components/macro';
-import MobileOnly from '../MobileOnly';
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
-import { BREAKPOINTS } from '../../constants/breakpoints';
+import styled from 'styled-components/macro';
+
+import MobileOnly from '../MobileOnly';
 import DesktopOnly from '../DesktopOnly';
 import FaqNav from './FaqNav';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
 
@@ -21,15 +22,15 @@ const Faq = () => {
                 <Wrapper>
                     <Header>
                         <h2>Have a question?</h2>
-                        <Paragraph small={true}>
+                        <Paragraph small='true'>
                             Feel free to contact us for any other questions
                         </Paragraph>
                     </Header>
                     <Flex>
                         <FaqNav />
-                        <WrapOutlet>
+                        <OutletWrapper>
                             <Outlet />
-                        </WrapOutlet>
+                        </OutletWrapper>
                     </Flex>
                 </Wrapper>
             </DesktopOnly>
@@ -51,7 +52,7 @@ const Flex = styled.div`
     gap: var(--padding-xl);
 `;
 
-const WrapOutlet = styled.div`
+const OutletWrapper = styled.div`
     max-width: 550px;
     flex: 1;
     margin-top: var(--padding-sm);

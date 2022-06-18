@@ -1,17 +1,19 @@
+import { Fragment, useContext, useState } from 'react';
+import { AuthContext } from '../../hooks/Auth.context';
 import styled from 'styled-components/macro';
+
+import DesktopOnly from '../DesktopOnly';
+import SignOutModal from '../Modal/SignOutModal';
 import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants/breakpoints';
-import { AuthContext } from '../../hooks/Auth.context';
-import { Fragment, useContext, useState } from 'react';
+
 import { ReactComponent as Home } from '../../assets/home.svg';
 import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as SignIn } from '../../assets/login.svg';
 import { ReactComponent as SignOut } from '../../assets/logout.svg';
-import DesktopOnly from '../DesktopOnly';
-import SignOutModal from '../Modal/SignOutModal';
 
 const DesktopNavigation = () => {
     const { isAuth } = useContext(AuthContext);

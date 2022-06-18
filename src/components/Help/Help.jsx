@@ -1,13 +1,14 @@
-import { useLocation } from 'react-router-dom';
-import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
-import { NavLink } from '../NavLink';
-import MobileLayout from '../MobileLayout';
-import { Paragraph } from '../Paragraph';
-import DesktopLayout from '../DesktopLayout';
 import { Fragment } from 'react';
-import { Header } from '../Header';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components/macro';
+
+import MobileLayout from '../MobileLayout';
+import DesktopLayout from '../DesktopLayout';
 import Title from '../Title';
+import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
+import { Paragraph } from '../Paragraph';
+import { Header } from '../Header';
+import NavLinks from './NavLinks';
 
 const Help = () => {
     let location = useLocation();
@@ -20,7 +21,7 @@ const Help = () => {
                         {location.pathname === '/help/contact' ? (
                             <Fragment>
                                 <Title>Contact</Title>
-                                <Paragraph small={true}>
+                                <Paragraph small='true'>
                                     Write your question below and we will reply
                                     as soon as possible
                                 </Paragraph>
@@ -28,7 +29,7 @@ const Help = () => {
                         ) : (
                             <Fragment>
                                 <Title>FAQ</Title>
-                                <Paragraph small={true}>
+                                <Paragraph small='true'>
                                     Feel free to contact us for any other
                                     questions
                                 </Paragraph>
@@ -36,47 +37,12 @@ const Help = () => {
                         )}
                     </FlexColumn>
                     <ButtonGroupNavigation>
-                        <li>
-                            <NavLink
-                                to='faq'
-                                className='button-group'
-                                activeClassName='button-group--active'
-                            >
-                                FAQ
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to='contact'
-                                className='button-group'
-                                activeClassName='button-group--active'
-                                exact={true}
-                            >
-                                Contact
-                            </NavLink>
-                        </li>
+                        <NavLinks mobile='true' />
                     </ButtonGroupNavigation>
                 </Header>
             </MobileLayout>
             <DesktopLayout title='Help'>
-                <li>
-                    <NavLink
-                        to='faq'
-                        className='settings-link'
-                        activeClassName='settings-link--active'
-                    >
-                        FAQ
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='contact'
-                        className='settings-link'
-                        activeClassName='settings-link--active'
-                    >
-                        Contact
-                    </NavLink>
-                </li>
+                <NavLinks />
             </DesktopLayout>
         </Fragment>
     );

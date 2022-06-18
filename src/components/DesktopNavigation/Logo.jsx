@@ -1,7 +1,9 @@
-import styled from 'styled-components/macro';
-import { ReactComponent as Svg } from '../../assets/logo.svg';
-import { BREAKPOINTS } from '../../constants/breakpoints';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components/macro';
+
+import { BREAKPOINTS } from '../../constants/breakpoints';
+
+import { ReactComponent as Svg } from '../../assets/logo.svg';
 
 export const Logo = () => {
     const navigate = useNavigate();

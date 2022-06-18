@@ -1,6 +1,7 @@
-import DesktopOnly from '../DesktopOnly';
-import styled from 'styled-components/macro';
 import { Outlet } from 'react-router-dom';
+import styled from 'styled-components/macro';
+
+import DesktopOnly from '../DesktopOnly';
 
 const DesktopLayout = ({ title, children }) => {
     return (

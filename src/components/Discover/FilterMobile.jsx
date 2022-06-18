@@ -1,35 +1,28 @@
-import Checkbox from '../Checkbox/Checkbox';
 import styled from 'styled-components/macro';
+
+import * as Button from '../Button';
 import MobileOnly from '../MobileOnly';
 import S from '../Subtitle';
 import Title from '../Title';
 import { BREAKPOINTS } from '../../constants/breakpoints';
-import * as Button from '../Button';
+import FilterItems from './FilterItems';
 
 const FilterMobile = ({ setModal }) => {
     return (
-        <MobileOnly width={true}>
+        <MobileOnly width='true'>
             <Subtitle>Type</Subtitle>
-            <FilterItems>
-                <Checkbox label='Sports' />
-                <Checkbox label='Mind' />
-                <Checkbox label='Hobby' />
-                <Checkbox label='Food' />
-                <Checkbox label='Health' />
-                <Checkbox label='Study' />
-                <Checkbox label='Social' />
-                <Checkbox label='Finance' />
-                <Checkbox label='Business' />
-            </FilterItems>
+            <FilterItemsWrapper>
+                <FilterItems />
+            </FilterItemsWrapper>
             <ButtonWrapper>
                 <Button.Inverted
-                    border={true}
-                    small={true}
+                    border='true'
+                    small='true'
                     onClick={() => setModal(false)}
                 >
                     Cancel
                 </Button.Inverted>
-                <Button.Base small={true} onClick={() => setModal(false)}>
+                <Button.Base small='true' onClick={() => setModal(false)}>
                     Apply
                 </Button.Base>
             </ButtonWrapper>
@@ -39,7 +32,7 @@ const FilterMobile = ({ setModal }) => {
 
 export default FilterMobile;
 
-const FilterItems = styled.div`
+const FilterItemsWrapper = styled.div`
     min-width: 250px;
     display: flex;
     flex-direction: column;

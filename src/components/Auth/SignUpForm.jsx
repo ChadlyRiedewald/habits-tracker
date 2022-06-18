@@ -7,10 +7,10 @@ const SignUpForm = () => {
             <Input name='email' label='Email:' type='email' />
             <Input name='password' label='Password:' type='password' />
             <Button.Base
-                round={true}
-                wide={true}
-                alignSelf='center'
-                marginTop={true}
+                round='true'
+                wide='true'
+                align='center'
+                margin='true'
                 type='button'
             >
                 Sign up

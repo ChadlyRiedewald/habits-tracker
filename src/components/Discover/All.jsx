@@ -1,13 +1,15 @@
-import { Card, Flex, Grid, Wrapper } from './Discover';
+import { Fragment, useState } from 'react';
 import styled from 'styled-components/macro';
+
+import * as Discover from './Discover';
 import FilterButton from './FilterButton';
 import MobileOnly from '../MobileOnly';
-import { Fragment, useState } from 'react';
 import DesktopOnly from '../DesktopOnly';
-import { Divider } from '../Divider';
-import Checkbox from '../Checkbox/Checkbox';
 import Modal from '../Modal/Modal';
 import FilterMobile from './FilterMobile';
+import DummyCards from './DummyCards';
+import FilterItems from './FilterItems';
+import { Divider } from '../Divider';
 
 const All = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -22,117 +24,31 @@ const All = () => {
                 >
                     <FilterMobile setModal={setModalIsOpen} />
                 </Modal>
-                <Wrapper>
+                <Discover.Wrapper>
                     <FilterButton onClick={() => setModalIsOpen(true)} />
-                    <Flex paddingTop={true}>
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                    </Flex>
-                </Wrapper>
+                    <Discover.Flex paddingTop='true'>
+                        <DummyCards />
+                    </Discover.Flex>
+                </Discover.Wrapper>
             </MobileOnly>
-            <DesktopOnly width={true}>
-                <WrapperDesktop>
-                    <Left>
-                        <Grid>
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                        </Grid>
-                    </Left>
-                    <Right>
-                        <WrapperFilter>
+            <DesktopOnly width='true'>
+                <DesktopWrapper>
+                    <LeftWrapper>
+                        <Discover.Grid>
+                            <DummyCards />
+                        </Discover.Grid>
+                    </LeftWrapper>
+                    <RightWrapper>
+                        <FilterWrapper>
                             <FlexColumn>
                                 <h2>Filter</h2>
                                 <Divider />
                                 <h3>Type</h3>
-                                <Checkbox label='Sports' />
-                                <Checkbox label='Mind' />
-                                <Checkbox label='Hobby' />
-                                <Checkbox label='Food' />
-                                <Checkbox label='Health' />
-                                <Checkbox label='Study' />
-                                <Checkbox label='Social' />
-                                <Checkbox label='Finance' />
-                                <Checkbox label='Business' />
+                                <FilterItems />
                             </FlexColumn>
-                        </WrapperFilter>
-                    </Right>
-                </WrapperDesktop>
+                        </FilterWrapper>
+                    </RightWrapper>
+                </DesktopWrapper>
             </DesktopOnly>
         </Fragment>
     );
@@ -140,24 +56,24 @@ const All = () => {
 
 export default All;
 
-const WrapperDesktop = styled.div`
+const DesktopWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     gap: calc(var(--padding-md) * 1.5);
     width: 100%;
 `;
 
-const Left = styled.div`
+const LeftWrapper = styled.div`
     width: 100%;
 `;
 
-const Right = styled.div`
+const RightWrapper = styled.div`
     width: calc(300px + calc(var(--padding-md) * 3));
 `;
 
 /////////// FILTER
 
-const WrapperFilter = styled.div`
+const FilterWrapper = styled.div`
     position: fixed;
     top: var(--padding-md);
     right: calc(var(--padding-md) * 1.5);

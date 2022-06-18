@@ -1,5 +1,5 @@
-import { NavLink } from '../NavLink';
 import styled from 'styled-components/macro';
+import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const FaqNav = () => {

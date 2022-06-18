@@ -1,6 +1,11 @@
+import {
+    useLocation,
+    matchRoutes,
+    useResolvedPath,
+    Link as L,
+} from 'react-router-dom';
 import styled from 'styled-components/macro';
-import { useLocation, matchRoutes, useResolvedPath } from 'react-router-dom';
-import { Link as L } from 'react-router-dom';
+
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { ROUTES } from '../../constants/routes';
 

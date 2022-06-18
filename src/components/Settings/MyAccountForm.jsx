@@ -1,6 +1,7 @@
+import styled from 'styled-components/macro';
+
 import Input from '../Input';
 import * as Button from '../Button';
-import styled from 'styled-components/macro';
 import Subtitle from '../Subtitle';
 
 const MyAccountForm = () => {
@@ -10,10 +11,10 @@ const MyAccountForm = () => {
             <Input label='Name' name='name' />
             <Input label='Email' name='email' type='email' />
             <Flex>
-                <Button.Inverted small={true} border={true}>
+                <Button.Inverted small='true' border='true'>
                     Cancel
                 </Button.Inverted>
-                <Button.Base small={true}>Save</Button.Base>
+                <Button.Base small='true'>Save</Button.Base>
             </Flex>
         </form>
     );

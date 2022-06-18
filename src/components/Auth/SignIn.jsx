@@ -1,13 +1,13 @@
-import MobileOnly from '../MobileOnly';
-import DesktopOnly from '../DesktopOnly';
+import { Fragment } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import * as Button from '../Button';
+import * as Auth from './Auth';
+import MobileOnly from '../MobileOnly';
+import DesktopOnly from '../DesktopOnly';
 import SignInForm from './SignInForm';
-import { Fragment } from 'react';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
-import * as Button from '../Button';
-import { SignInWrapper, SignUpWrapper, Wrapper } from './Auth';
 import { FormWrapper } from '../FormWrapper';
 
 const SignIn = () => {
@@ -21,35 +21,35 @@ const SignIn = () => {
                 </FormWrapper>
             </MobileOnly>
             <DesktopOnly>
-                <Wrapper>
-                    <SignInWrapper>
-                        <Header center={true}>
+                <Auth.Wrapper>
+                    <Auth.SignInWrapper>
+                        <Header center='true'>
                             <h1>Log in</h1>
-                            <Paragraph orange={true} width='80%' center={true}>
+                            <Paragraph orange='true' width='80%' center='true'>
                                 Log in with your account to Fix Your Habits
                             </Paragraph>
                         </Header>
                         <FormWrapper>
                             <SignInForm />
                         </FormWrapper>
-                    </SignInWrapper>
-                    <SignUpWrapper>
+                    </Auth.SignInWrapper>
+                    <Auth.SignUpWrapper>
                         <Header center>
                             <h2>New here?</h2>
-                            <Paragraph small={true} center={true}>
+                            <Paragraph small='true' center='true'>
                                 Create an account to start your journey
                             </Paragraph>
                             <Button.Inverted
                                 onClick={() => navigate('/auth/sign-up')}
-                                round
-                                alignSelf='center'
-                                marginTop
+                                round='true'
+                                align='center'
+                                margin='true'
                             >
                                 Sign up
                             </Button.Inverted>
                         </Header>
-                    </SignUpWrapper>
-                </Wrapper>
+                    </Auth.SignUpWrapper>
+                </Auth.Wrapper>
             </DesktopOnly>
         </Fragment>
     );

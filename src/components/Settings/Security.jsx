@@ -1,12 +1,13 @@
 import { Fragment } from 'react';
-import MobileOnly from '../MobileOnly/MobileOnly';
+import styled from 'styled-components/macro';
+
+import MobileOnly from '../MobileOnly';
+import DesktopOnly from '../DesktopOnly';
+import ChangePasswordForm from './ChangePasswordForm';
 import { FormWrapper } from '../FormWrapper';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
-import DesktopOnly from '../DesktopOnly/DesktopOnly';
 import { Card } from '../Card';
-import styled from 'styled-components/macro';
-import ChangePasswordForm from './ChangePasswordForm';
 
 const Security = () => {
     return (
@@ -20,7 +21,7 @@ const Security = () => {
                 <Wrapper>
                     <Header>
                         <h2>Password</h2>
-                        <Paragraph small={true}>Update your password</Paragraph>
+                        <Paragraph small='true'>Update your password</Paragraph>
                     </Header>
                     <Card>
                         <ChangePasswordForm />

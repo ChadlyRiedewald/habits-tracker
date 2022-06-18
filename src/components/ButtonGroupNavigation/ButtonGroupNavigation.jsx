@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+
 import { NavLink } from '../NavLink';
 
 export const ButtonGroupNavigation = ({ children }) => {
@@ -10,7 +11,7 @@ export const ButtonGroupNavigation = ({ children }) => {
 };
 
 const Nav = styled.nav`
-    margin-top: ${p => (p.marginTop ? '1rem' : '0')};
+    margin-top: ${p => (p.margin ? '1rem' : '0')};
     display: flex;
     width: 100%;
 `;

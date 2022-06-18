@@ -1,39 +1,21 @@
-import MobileLayout from '../MobileLayout';
 import { Fragment } from 'react';
-import { Header } from '../Header';
-import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
-import { NavLink } from '../NavLink';
-import styled from 'styled-components/macro';
-import DesktopOnly from '../DesktopOnly';
 import { Outlet } from 'react-router-dom';
+import styled from 'styled-components/macro';
+
+import DesktopOnly from '../DesktopOnly';
+import MobileLayout from '../MobileLayout';
+import NavLinks from './NavLinks';
 import { BREAKPOINTS } from '../../constants/breakpoints';
+import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
+import { Header } from '../Header';
 
 const Discover = () => {
     return (
         <Fragment>
-            <MobileLayout discover={true}>
-                <Header center={true}>
+            <MobileLayout discover='true'>
+                <Header center='true'>
                     <ButtonGroupNavigation>
-                        <li>
-                            <NavLink
-                                to='discover'
-                                className='button-group'
-                                activeClassName='button-group--active'
-                                exact={true}
-                            >
-                                Discover
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to='all'
-                                className='button-group'
-                                activeClassName='button-group--active'
-                                exact={true}
-                            >
-                                All
-                            </NavLink>
-                        </li>
+                        <NavLinks mobile='true' />
                     </ButtonGroupNavigation>
                 </Header>
             </MobileLayout>
@@ -42,24 +24,7 @@ const Discover = () => {
                     <Header>
                         <nav>
                             <List>
-                                <li>
-                                    <NavLink
-                                        to='discover'
-                                        className='discover-link'
-                                        activeClassName='discover-link--active'
-                                    >
-                                        Discover
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink
-                                        to='all'
-                                        className='discover-link'
-                                        activeClassName='discover-link--active'
-                                    >
-                                        All
-                                    </NavLink>
-                                </li>
+                                <NavLinks />
                             </List>
                         </nav>
                     </Header>

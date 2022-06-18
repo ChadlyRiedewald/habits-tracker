@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
-import { BREAKPOINTS } from '../../constants/breakpoints';
 import { motion } from 'framer-motion';
+
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { VARIANTS } from '../../constants/variants';
 
 const AnimatedButton = ({ children, ...otherProps }) => {
@@ -29,8 +30,8 @@ export const Base = styled(AnimatedButton)`
         p.wide ? 'var(--btn-padding-wide)' : 'var(--btn-padding-normal)'};
     border-radius: ${p =>
         p.round ? 'var(--border-radius-xl)' : 'var(--border-radius-sm)'};
-    align-self: ${p => p.alignSelf || 'flex-start'};
-    margin-top: ${p => p.marginTop && 'var(--padding-sm)'};
+    align-self: ${p => p.align || 'flex-start'};
+    margin-top: ${p => p.margin && 'var(--padding-sm)'};
     flex-shrink: 0;
 
     @media screen and ${BREAKPOINTS.smMin} {

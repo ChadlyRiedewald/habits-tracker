@@ -1,7 +1,8 @@
-import Input from '../Input';
-import * as Button from '../Button';
 import { useContext } from 'react';
 import { AuthContext } from '../../hooks/Auth.context';
+
+import * as Button from '../Button';
+import Input from '../Input';
 
 const SignInForm = () => {
     const { toggle } = useContext(AuthContext);
@@ -12,10 +13,10 @@ const SignInForm = () => {
             <Input name='password' label='Password:' type='password' />
             <Button.Base
                 onClick={toggle}
-                round={true}
-                wide={true}
-                alignSelf='center'
-                marginTop={true}
+                round='true'
+                wide='true'
+                align='center'
+                margin='true'
                 type='button'
             >
                 Sign in

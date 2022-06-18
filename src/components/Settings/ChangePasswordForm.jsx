@@ -1,7 +1,8 @@
+import styled from 'styled-components/macro';
+
+import * as Button from '../Button';
 import Subtitle from '../Subtitle';
 import Input from '../Input';
-import * as Button from '../Button';
-import styled from 'styled-components/macro';
 
 const ChangePasswordForm = () => {
     return (
@@ -19,10 +20,10 @@ const ChangePasswordForm = () => {
                 type='password'
             />
             <Flex>
-                <Button.Inverted small={true} border={true}>
+                <Button.Inverted small='true' border='true'>
                     Cancel
                 </Button.Inverted>
-                <Button.Base small={true}>Save</Button.Base>
+                <Button.Base small='true'>Save</Button.Base>
             </Flex>
         </form>
     );

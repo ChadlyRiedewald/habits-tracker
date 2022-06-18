@@ -1,6 +1,7 @@
-import styled from 'styled-components/macro';
-import MobileOnly from '../MobileOnly';
 import { Outlet } from 'react-router-dom';
+import styled from 'styled-components/macro';
+
+import MobileOnly from '../MobileOnly';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const MobileLayout = ({ children, discover }) => {

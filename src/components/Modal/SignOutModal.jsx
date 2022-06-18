@@ -1,9 +1,10 @@
-import { Paragraph } from '../Paragraph';
-import * as Button from '../Button';
-import Modal from './Modal';
-import styled from 'styled-components/macro';
 import { useContext } from 'react';
 import { AuthContext } from '../../hooks/Auth.context';
+import styled from 'styled-components/macro';
+
+import * as Button from '../Button';
+import Modal from './Modal';
+import { Paragraph } from '../Paragraph';
 
 const SignOutModal = ({ isOpen, setModal }) => {
     const { toggle } = useContext(AuthContext);
@@ -19,13 +20,13 @@ const SignOutModal = ({ isOpen, setModal }) => {
                 <Paragraph center>Are you sure you want to sign out?</Paragraph>
                 <Flex>
                     <Button.Inverted
-                        small={true}
-                        border={true}
+                        small='true'
+                        border='true'
                         onClick={() => setModal(false)}
                     >
                         Cancel
                     </Button.Inverted>
-                    <Button.Base small={true} onClick={signOut}>
+                    <Button.Base small='true' onClick={signOut}>
                         Confirm
                     </Button.Base>
                 </Flex>

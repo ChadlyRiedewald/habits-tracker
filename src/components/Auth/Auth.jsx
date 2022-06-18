@@ -1,11 +1,12 @@
+import { Fragment } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import styled from 'styled-components/macro';
+
+import MobileLayout from '../MobileLayout';
+import DesktopOnly from '../DesktopOnly';
 import { NavLink } from '../NavLink';
 import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
-import MobileLayout from '../MobileLayout';
 import { Paragraph } from '../Paragraph';
-import { Fragment } from 'react';
-import DesktopOnly from '../DesktopOnly';
-import styled from 'styled-components/macro';
 import { Header } from '../Header';
 
 const Auth = () => {
@@ -14,14 +15,14 @@ const Auth = () => {
     return (
         <Fragment>
             <MobileLayout>
-                <Header center={true}>
+                <Header center='true'>
                     <ButtonGroupNavigation>
                         <li>
                             <NavLink
                                 to='sign-in'
                                 className='button-group'
                                 activeClassName='button-group--active'
-                                exact={true}
+                                exact='true'
                             >
                                 Sign in
                             </NavLink>
@@ -36,7 +37,7 @@ const Auth = () => {
                             </NavLink>
                         </li>
                     </ButtonGroupNavigation>
-                    <Paragraph orange={true} center={true}>
+                    <Paragraph orange='true' center='true'>
                         {location.pathname === '/auth/sign-in'
                             ? 'Log in with your account to Fix Your Habits'
                             : 'Welcome to Fix Your Habits. Fill in your information to get started!'}
@@ -63,6 +64,7 @@ const InnerContainer = styled.div`
     align-items: center;
 `;
 
+///////////////////// CHILDREN REUSABLE STYLES
 export const Wrapper = styled.div`
     background-color: var(--color-gray-100);
     display: flex;

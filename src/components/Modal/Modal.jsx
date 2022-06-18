@@ -1,10 +1,11 @@
-import styled from 'styled-components/macro';
-import ReactDOM from 'react-dom';
 import { Fragment } from 'react';
-import { BREAKPOINTS } from '../../constants/breakpoints';
-import { motion, AnimatePresence } from 'framer-motion';
+import ReactDOM from 'react-dom';
+import styled from 'styled-components/macro';
+
 import Title from '../Title';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { VARIANTS } from '../../constants/variants';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Modal = ({ children, isOpen, setModal, title }) => {
     const close = () => {

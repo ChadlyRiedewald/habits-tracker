@@ -1,11 +1,12 @@
+import { Fragment } from 'react';
 import styled from 'styled-components/macro';
-import { FormWrapper } from '../FormWrapper';
+
 import ContactForm from './ContactForm';
 import MobileOnly from '../MobileOnly';
-import { Fragment } from 'react';
 import DesktopOnly from '../DesktopOnly';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
+import { FormWrapper } from '../FormWrapper';
 import { Card } from '../Card';
 
 const Contact = () => {
@@ -20,7 +21,7 @@ const Contact = () => {
                 <Wrapper>
                     <Header>
                         <h2>Get in touch</h2>
-                        <Paragraph small={true}>
+                        <Paragraph small='true'>
                             Feel free to contact us for any other questions
                         </Paragraph>
                     </Header>

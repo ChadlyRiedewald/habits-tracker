@@ -1,13 +1,14 @@
-import MobileLayout from '../MobileLayout';
-import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
-import { NavLink } from '../NavLink';
 import { Fragment } from 'react';
+import { useLocation } from 'react-router-dom';
+import styled from 'styled-components/macro';
+
+import MobileLayout from '../MobileLayout';
 import DesktopLayout from '../DesktopLayout';
+import Title from '../Title';
+import { ButtonGroupNavigation } from '../ButtonGroupNavigation';
 import { Paragraph } from '../Paragraph';
 import { Header } from '../Header';
-import Title from '../Title';
-import styled from 'styled-components/macro';
-import { useLocation } from 'react-router-dom';
+import NavLinks from './NavLinks';
 
 const Settings = () => {
     let location = useLocation();
@@ -20,14 +21,14 @@ const Settings = () => {
                         {location.pathname === '/settings/my-account' ? (
                             <Fragment>
                                 <Title>My Account</Title>
-                                <Paragraph small={true}>
+                                <Paragraph small='true'>
                                     Update, reset or delete your account
                                 </Paragraph>
                             </Fragment>
                         ) : (
                             <Fragment>
                                 <Title>Security</Title>
-                                <Paragraph small={true}>
+                                <Paragraph small='true'>
                                     Update your password
                                 </Paragraph>
                             </Fragment>
@@ -35,47 +36,12 @@ const Settings = () => {
                     </FlexColumn>
 
                     <ButtonGroupNavigation>
-                        <li>
-                            <NavLink
-                                to='my-account'
-                                className='button-group'
-                                activeClassName='button-group--active'
-                                exact={true}
-                            >
-                                Account
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to='security'
-                                className='button-group'
-                                activeClassName='button-group--active'
-                            >
-                                Security
-                            </NavLink>
-                        </li>
+                        <NavLinks mobile='true' />
                     </ButtonGroupNavigation>
                 </Header>
             </MobileLayout>
             <DesktopLayout title='Settings'>
-                <li>
-                    <NavLink
-                        to='my-account'
-                        className='settings-link'
-                        activeClassName='settings-link--active'
-                    >
-                        My Account
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink
-                        to='security'
-                        className='settings-link'
-                        activeClassName='settings-link--active'
-                    >
-                        Security
-                    </NavLink>
-                </li>
+                <NavLinks />
             </DesktopLayout>
         </Fragment>
     );

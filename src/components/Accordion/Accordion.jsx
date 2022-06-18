@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import styled from 'styled-components/macro';
+
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
 import { ReactComponent as Minus } from '../../assets/minus.svg';
-import { useState } from 'react';
-import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const Accordion = ({ title, content }) => {
     const [isActive, setIsActive] = useState(false);

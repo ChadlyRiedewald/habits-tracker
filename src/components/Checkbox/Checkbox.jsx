@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+
 import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const Checkbox = ({ label }) => {

@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
-import { Inverted } from '../Button';
+
+import * as B from '../Button';
 import { ReactComponent as Filter } from '../../assets/filter.svg';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 
@@ -9,7 +10,7 @@ const FilterButton = ({ ...otherProps }) => {
             <Button
                 type='button'
                 className='filter'
-                border={true}
+                border='true'
                 {...otherProps}
             >
                 <Filter />
@@ -26,7 +27,7 @@ const Wrapper = styled.div`
     margin-inline: auto;
 `;
 
-const Button = styled(Inverted)`
+const Button = styled(B.Inverted)`
     font-size: var(--font-xs);
     display: flex;
     justify-content: center;

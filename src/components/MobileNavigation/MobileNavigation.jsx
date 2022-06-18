@@ -1,12 +1,14 @@
 import styled from 'styled-components/macro';
+
 import MobileOnly from '../MobileOnly';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 import { NavLink } from '../NavLink';
+
 import { ReactComponent as Home } from '../../assets/home.svg';
 import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
-import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const MobileNavigation = () => {
     return (
