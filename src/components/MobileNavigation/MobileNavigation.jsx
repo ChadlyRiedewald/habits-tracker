@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components/macro';
 
 import MobileOnly from '../MobileOnly';
-import Modal from '../Modal';
+import NewHabitModal from '../Modals/NewHabitModal';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { VARIANTS } from '../../constants/variants';
 import { motion } from 'framer-motion';
@@ -20,7 +20,11 @@ const MobileNavigation = () => {
 
     return (
         <MobileOnly>
-            <Modal isOpen={modalIsOpen} setModal={setModalIsOpen} />
+            <NewHabitModal
+                isOpen={modalIsOpen}
+                setModal={setModalIsOpen}
+                title='Create new habit'
+            />
             <Wrapper>
                 <List>
                     <ListItem>

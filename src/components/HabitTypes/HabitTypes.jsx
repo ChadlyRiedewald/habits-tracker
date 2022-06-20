@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import Checkbox from '../Checkbox/Checkbox';
 
-const FilterItems = () => {
+const HabitTypes = () => {
     return (
         <Fragment>
             <Checkbox label='Sports' />
@@ -17,4 +17,4 @@ const FilterItems = () => {
     );
 };
 
-export default FilterItems;
+export default HabitTypes;

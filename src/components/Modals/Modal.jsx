@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Modal = ({ children, isOpen, setModal, title }) => {
     const { overlay, modal } = VARIANTS;
+
     const close = () => {
         setModal(false);
     };

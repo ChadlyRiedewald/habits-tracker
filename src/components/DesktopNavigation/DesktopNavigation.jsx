@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 
 import DesktopOnly from '../DesktopOnly';
 import ListItem from '../ListItem';
-import SignOutModal from '../Modal/SignOutModal';
+import SignOutModal from '../Modals/SignOutModal';
 import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants/breakpoints';

@@ -5,11 +5,10 @@ import * as Discover from './Discover';
 import FilterButton from './FilterButton';
 import MobileOnly from '../MobileOnly';
 import DesktopOnly from '../DesktopOnly';
-import Modal from '../Modal/Modal';
-import FilterMobile from './FilterMobile';
+import FilterMobileModal from '../Modals/FilterMobileModal';
 import DummyCards from './DummyCards';
-import FilterItems from './FilterItems';
 import { DividerHorizontal } from '../Divider';
+import HabitTypes from '../HabitTypes';
 
 const All = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -17,13 +16,11 @@ const All = () => {
     return (
         <Fragment>
             <MobileOnly>
-                <Modal
+                <FilterMobileModal
                     isOpen={modalIsOpen}
                     setModal={setModalIsOpen}
                     title='Filter'
-                >
-                    <FilterMobile setModal={setModalIsOpen} />
-                </Modal>
+                />
                 <Wrapper>
                     <FilterButton onClick={() => setModalIsOpen(true)} />
                     <Discover.Flex paddingTop='true'>
@@ -44,7 +41,7 @@ const All = () => {
                                 <h2>Filter</h2>
                                 <DividerHorizontal />
                                 <h3>Type</h3>
-                                <FilterItems />
+                                <HabitTypes />
                             </FlexColumn>
                         </FilterWrapper>
                     </RightWrapper>

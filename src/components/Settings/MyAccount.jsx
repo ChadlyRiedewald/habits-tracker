@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import styled from 'styled-components/macro';
 
 import EditAccountDetails from './EditAccountDetails';
-import SignOutModal from '../Modal/SignOutModal';
+import SignOutModal from '../Modals/SignOutModal';
 import ResetAccount from './ResetAccount';
 import DeleteAccount from './DeleteAccount';
 import SignOut from './SignOut';

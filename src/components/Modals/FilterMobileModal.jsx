@@ -3,34 +3,36 @@ import styled from 'styled-components/macro';
 import * as Button from '../Button';
 import MobileOnly from '../MobileOnly';
 import S from '../Subtitle';
-import Title from '../Title';
 import { BREAKPOINTS } from '../../constants/breakpoints';
-import FilterItems from './FilterItems';
+import HabitTypes from '../HabitTypes';
+import Modal from './Modal';
 
-const FilterMobile = ({ setModal }) => {
+const FilterMobileModal = ({ isOpen, setModal, title }) => {
+    const close = () => {
+        setModal(false);
+    };
+
     return (
-        <MobileOnly width='true'>
-            <Subtitle>Type</Subtitle>
-            <FilterItemsWrapper>
-                <FilterItems />
-            </FilterItemsWrapper>
-            <ButtonWrapper>
-                <Button.Inverted
-                    border='true'
-                    small='true'
-                    onClick={() => setModal(false)}
-                >
-                    Cancel
-                </Button.Inverted>
-                <Button.Base small='true' onClick={() => setModal(false)}>
-                    Apply
-                </Button.Base>
-            </ButtonWrapper>
-        </MobileOnly>
+        <Modal isOpen={isOpen} setModal={setModal} title={title}>
+            <MobileOnly width='true'>
+                <Subtitle>Type</Subtitle>
+                <FilterItemsWrapper>
+                    <HabitTypes />
+                </FilterItemsWrapper>
+                <ButtonWrapper>
+                    <Button.Inverted border='true' small='true' onClick={close}>
+                        Cancel
+                    </Button.Inverted>
+                    <Button.Base small='true' onClick={close}>
+                        Apply
+                    </Button.Base>
+                </ButtonWrapper>
+            </MobileOnly>
+        </Modal>
     );
 };
 
-export default FilterMobile;
+export default FilterMobileModal;
 
 const FilterItemsWrapper = styled.div`
     min-width: 250px;
@@ -44,10 +46,6 @@ const FilterItemsWrapper = styled.div`
         max-height: 210px;
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
-    }
-
-    ${Title} {
-        text-align: center;
     }
 `;
 
