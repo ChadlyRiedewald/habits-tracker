@@ -76,6 +76,6 @@ export const InvertedXS = styled(Inverted)`
     }
 
     @media screen and ${BREAKPOINTS.smMin} {
-        font-size: 14px;
+        font-size: var(--font-xxs);
     }
 `;

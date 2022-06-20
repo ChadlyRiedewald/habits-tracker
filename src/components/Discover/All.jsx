@@ -24,12 +24,12 @@ const All = () => {
                 >
                     <FilterMobile setModal={setModalIsOpen} />
                 </Modal>
-                <Discover.Wrapper>
+                <Wrapper>
                     <FilterButton onClick={() => setModalIsOpen(true)} />
                     <Discover.Flex paddingTop='true'>
                         <DummyCards />
                     </Discover.Flex>
-                </Discover.Wrapper>
+                </Wrapper>
             </MobileOnly>
             <DesktopOnly width='true'>
                 <DesktopWrapper>
@@ -69,6 +69,10 @@ const LeftWrapper = styled.div`
 
 const RightWrapper = styled.div`
     width: calc(300px + calc(var(--padding-md) * 3));
+`;
+
+const Wrapper = styled(Discover.Wrapper)`
+    gap: 0;
 `;
 
 /////////// FILTER

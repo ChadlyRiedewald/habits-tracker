@@ -3,6 +3,7 @@ import { AuthContext } from '../../hooks/Auth.context';
 import styled from 'styled-components/macro';
 
 import DesktopOnly from '../DesktopOnly';
+import ListItem from '../ListItem';
 import SignOutModal from '../Modal/SignOutModal';
 import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
@@ -125,8 +126,6 @@ const List = styled.ul`
         height: 90vh;
     }
 `;
-
-const ListItem = styled.li``;
 
 const WrapListItems = styled.div`
     display: flex;

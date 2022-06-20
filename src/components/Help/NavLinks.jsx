@@ -1,10 +1,11 @@
 import { Fragment } from 'react';
 import { NavLink } from '../NavLink';
+import ListItem from '../ListItem';
 
 const NavLinks = ({ mobile }) => {
     return (
         <Fragment>
-            <li>
+            <ListItem>
                 <NavLink
                     to='faq'
                     className={mobile ? 'button-group' : 'settings-link'}
@@ -16,8 +17,8 @@ const NavLinks = ({ mobile }) => {
                 >
                     FAQ
                 </NavLink>
-            </li>
-            <li>
+            </ListItem>
+            <ListItem>
                 <NavLink
                     to='contact'
                     className={mobile ? 'button-group' : 'settings-link'}
@@ -29,7 +30,7 @@ const NavLinks = ({ mobile }) => {
                 >
                     Contact
                 </NavLink>
-            </li>
+            </ListItem>
         </Fragment>
     );
 };

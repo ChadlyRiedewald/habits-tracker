@@ -9,10 +9,17 @@ import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
+import Modal from '../Modal';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { VARIANTS } from '../../constants/variants';
 
 const MobileNavigation = () => {
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
     return (
         <MobileOnly>
+            <Modal isOpen={modalIsOpen} setModal={setModalIsOpen} />
             <Wrapper>
                 <List>
                     <ListItem>
@@ -34,15 +41,15 @@ const MobileNavigation = () => {
                         </NavLink>
                     </ListItem>
                     <ListItem>
-                        <NavLink
-                            to='add-habit'
-                            className='mobile-nav-link'
-                            activeClassName='mobile-nav-link--active'
+                        <motion.a
+                            onClick={() => setModalIsOpen(true)}
+                            variants={VARIANTS.button}
+                            whileTap='whileTap'
                         >
                             <Ellipse>
                                 <Plus stroke='var(--color-orange-400)' />
                             </Ellipse>
-                        </NavLink>
+                        </motion.a>
                     </ListItem>
                     <ListItem>
                         <NavLink

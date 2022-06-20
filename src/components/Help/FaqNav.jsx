@@ -1,12 +1,13 @@
 import styled from 'styled-components/macro';
 import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants/breakpoints';
+import ListItem from '../ListItem';
 
 const FaqNav = () => {
     return (
         <nav>
             <List>
-                <li>
+                <ListItem>
                     <NavLink
                         to='account'
                         className='faq-link'
@@ -14,8 +15,8 @@ const FaqNav = () => {
                     >
                         Account
                     </NavLink>
-                </li>
-                <li>
+                </ListItem>
+                <ListItem>
                     <NavLink
                         to='rewards'
                         className='faq-link'
@@ -23,8 +24,8 @@ const FaqNav = () => {
                     >
                         Rewards
                     </NavLink>
-                </li>
-                <li>
+                </ListItem>
+                <ListItem>
                     <NavLink
                         to='habits'
                         className='faq-link'
@@ -32,7 +33,7 @@ const FaqNav = () => {
                     >
                         Habits
                     </NavLink>
-                </li>
+                </ListItem>
             </List>
         </nav>
     );

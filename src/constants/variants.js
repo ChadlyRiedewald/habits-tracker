@@ -54,4 +54,16 @@ export const VARIANTS = {
             scale: 0.9,
         },
     },
+
+    listItem: {
+        initial: {
+            scale: 1,
+        },
+        whileHover: {
+            scale: 1.1,
+        },
+        whileTap: {
+            scale: 0.95,
+        },
+    },
 };

@@ -34,7 +34,6 @@ const Settings = () => {
                             </Fragment>
                         )}
                     </FlexColumn>
-
                     <ButtonGroupNavigation>
                         <NavLinks mobile='true' />
                     </ButtonGroupNavigation>
