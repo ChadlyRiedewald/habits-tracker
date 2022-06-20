@@ -5,12 +5,14 @@ import { BREAKPOINTS } from '../../constants/breakpoints';
 import { VARIANTS } from '../../constants/variants';
 
 const AnimatedButton = ({ children, ...otherProps }) => {
+    const { button } = VARIANTS;
+
     return (
         <motion.button
             initial='initial'
             whileHover='whileHover'
             whileTap='whileTap'
-            variants={VARIANTS.button}
+            variants={button}
             {...otherProps}
         >
             {children}

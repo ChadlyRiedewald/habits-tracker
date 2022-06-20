@@ -8,6 +8,7 @@ import { VARIANTS } from '../../constants/variants';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Modal = ({ children, isOpen, setModal, title }) => {
+    const { overlay, modal } = VARIANTS;
     const close = () => {
         setModal(false);
     };
@@ -20,7 +21,7 @@ const Modal = ({ children, isOpen, setModal, title }) => {
                         onClick={close}
                         key='overlay'
                         as={motion.div}
-                        variants={VARIANTS.overlay}
+                        variants={overlay}
                         initial='initial'
                         animate='animate'
                         exit='exit'
@@ -29,7 +30,7 @@ const Modal = ({ children, isOpen, setModal, title }) => {
                             onClick={e => e.stopPropagation()}
                             key='modal'
                             as={motion.div}
-                            variants={VARIANTS.modal}
+                            variants={modal}
                             initial='initial'
                             animate='animate'
                             exit='exit'

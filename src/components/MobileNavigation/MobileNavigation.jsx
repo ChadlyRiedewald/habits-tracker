@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import styled from 'styled-components/macro';
 
 import MobileOnly from '../MobileOnly';
+import Modal from '../Modal';
 import { BREAKPOINTS } from '../../constants/breakpoints';
+import { VARIANTS } from '../../constants/variants';
+import { motion } from 'framer-motion';
 import { NavLink } from '../NavLink';
 
 import { ReactComponent as Home } from '../../assets/home.svg';
@@ -9,12 +13,9 @@ import { ReactComponent as Discover } from '../../assets/discover.svg';
 import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
-import Modal from '../Modal';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { VARIANTS } from '../../constants/variants';
 
 const MobileNavigation = () => {
+    const { button } = VARIANTS;
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     return (
@@ -23,27 +24,31 @@ const MobileNavigation = () => {
             <Wrapper>
                 <List>
                     <ListItem>
-                        <NavLink
-                            to='home'
-                            className='mobile-nav-link'
-                            activeClassName='mobile-nav-link--active'
-                        >
-                            <Home />
-                        </NavLink>
+                        <motion.div variants={button} whileTap='whileTap'>
+                            <NavLink
+                                to='home'
+                                className='mobile-nav-link'
+                                activeClassName='mobile-nav-link--active'
+                            >
+                                <Home />
+                            </NavLink>
+                        </motion.div>
                     </ListItem>
                     <ListItem>
-                        <NavLink
-                            to='discover'
-                            className='mobile-nav-link'
-                            activeClassName='mobile-nav-link--active'
-                        >
-                            <Discover />
-                        </NavLink>
+                        <motion.div variants={button} whileTap='whileTap'>
+                            <NavLink
+                                to='discover'
+                                className='mobile-nav-link'
+                                activeClassName='mobile-nav-link--active'
+                            >
+                                <Discover />
+                            </NavLink>
+                        </motion.div>
                     </ListItem>
                     <ListItem>
                         <motion.a
                             onClick={() => setModalIsOpen(true)}
-                            variants={VARIANTS.button}
+                            variants={button}
                             whileTap='whileTap'
                         >
                             <Ellipse>
@@ -52,22 +57,26 @@ const MobileNavigation = () => {
                         </motion.a>
                     </ListItem>
                     <ListItem>
-                        <NavLink
-                            to='settings'
-                            className='mobile-nav-link'
-                            activeClassName='mobile-nav-link--active'
-                        >
-                            <Settings />
-                        </NavLink>
+                        <motion.div variants={button} whileTap='whileTap'>
+                            <NavLink
+                                to='settings'
+                                className='mobile-nav-link'
+                                activeClassName='mobile-nav-link--active'
+                            >
+                                <Settings />
+                            </NavLink>
+                        </motion.div>
                     </ListItem>
                     <ListItem>
-                        <NavLink
-                            to='help'
-                            className='mobile-nav-link'
-                            activeClassName='mobile-nav-link--active'
-                        >
-                            <Help />
-                        </NavLink>
+                        <motion.div variants={button} whileTap='whileTap'>
+                            <NavLink
+                                to='help'
+                                className='mobile-nav-link'
+                                activeClassName='mobile-nav-link--active'
+                            >
+                                <Help />
+                            </NavLink>
+                        </motion.div>
                     </ListItem>
                 </List>
             </Wrapper>
