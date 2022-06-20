@@ -33,6 +33,10 @@ export const Base = styled(AnimatedButton)`
     align-self: ${p => p.align || 'flex-start'};
     margin-top: ${p => p.margin && 'var(--padding-sm)'};
     flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--padding-xs) * 0.5);
 
     @media screen and ${BREAKPOINTS.smMin} {
         font-size: ${p =>
@@ -54,4 +58,24 @@ export const Alert = styled(Inverted)`
 export const Error = styled(Alert)`
     color: var(--color-error);
     background-color: var(--color-error-bg);
+`;
+
+export const InvertedXS = styled(Inverted)`
+    font-size: 11px;
+    padding: var(--btn-padding-small);
+
+    svg {
+        fill: var(--color-orange-400);
+        max-width: 18px;
+        max-height: 18px;
+
+        @media screen and ${BREAKPOINTS.smMin} {
+            max-width: 22px;
+            max-height: 22px;
+        }
+    }
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        font-size: 14px;
+    }
 `;

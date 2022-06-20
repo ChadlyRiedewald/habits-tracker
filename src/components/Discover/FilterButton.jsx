@@ -29,12 +29,13 @@ const Wrapper = styled.div`
 
 const Button = styled(B.Inverted)`
     font-size: var(--font-xs);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-weight: var(--font-weight-normal);
     padding: var(--padding-xs) var(--padding-sm);
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--padding-xs) * 0.5);
 
     svg {
         fill: var(--color-orange-400);

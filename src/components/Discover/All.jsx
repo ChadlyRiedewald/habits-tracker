@@ -9,7 +9,7 @@ import Modal from '../Modal/Modal';
 import FilterMobile from './FilterMobile';
 import DummyCards from './DummyCards';
 import FilterItems from './FilterItems';
-import { Divider } from '../Divider';
+import { DividerHorizontal } from '../Divider';
 
 const All = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -42,7 +42,7 @@ const All = () => {
                         <FilterWrapper>
                             <FlexColumn>
                                 <h2>Filter</h2>
-                                <Divider />
+                                <DividerHorizontal />
                                 <h3>Type</h3>
                                 <FilterItems />
                             </FlexColumn>

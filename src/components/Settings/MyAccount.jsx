@@ -1,19 +1,17 @@
 import { Fragment, useState } from 'react';
 import styled from 'styled-components/macro';
 
-import * as Button from '../Button';
-import MyAccountForm from './MyAccountForm';
+import EditAccountDetails from './EditAccountDetails';
 import SignOutModal from '../Modal/SignOutModal';
-import AccountReset from './AccountReset';
-import AccountDelete from './AccountDelete';
+import ResetAccount from './ResetAccount';
+import DeleteAccount from './DeleteAccount';
+import SignOut from './SignOut';
+import AccountDetails from './AccountDetails';
 import DesktopOnly from '../DesktopOnly';
 import MobileOnly from '../MobileOnly';
-import Subtitle from '../Subtitle';
-import { FormWrapper } from '../FormWrapper';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
-import { Card } from '../Card';
-import { Divider } from '../Divider';
+import { DividerHorizontal } from '../Divider';
 
 const MyAccount = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -23,30 +21,15 @@ const MyAccount = () => {
             <MobileOnly>
                 <SignOutModal isOpen={modalIsOpen} setModal={setModalIsOpen} />
                 <Wrapper>
-                    <FormWrapper>
-                        <MyAccountForm />
-                    </FormWrapper>
-                    <Divider />
-                    <AccountReset mobile='true' />
-                    <Divider />
-                    <AccountDelete mobile='true' />
-                    <Divider />
-                    <Flex>
-                        <MobileHeader>
-                            <Subtitle>Signout</Subtitle>
-                            <Paragraph small='true'>
-                                You will be signed out of your account
-                            </Paragraph>
-                        </MobileHeader>
-                        <Button.Inverted
-                            small='true'
-                            align='center'
-                            onClick={() => setModalIsOpen(true)}
-                            border='true'
-                        >
-                            Sign out
-                        </Button.Inverted>
-                    </Flex>
+                    <AccountDetails />
+                    <DividerHorizontal />
+                    <EditAccountDetails mobile='true' />
+                    <DividerHorizontal />
+                    <ResetAccount mobile='true' />
+                    <DividerHorizontal />
+                    <DeleteAccount mobile='true' />
+                    <DividerHorizontal />
+                    <SignOut mobile='true' fn={setModalIsOpen} />
                 </Wrapper>
             </MobileOnly>
             <DesktopOnly>
@@ -58,11 +41,11 @@ const MyAccount = () => {
                             your account
                         </Paragraph>
                     </Header>
-                    <Card>
-                        <MyAccountForm />
-                    </Card>
-                    <AccountReset />
-                    <AccountDelete />
+                    <AccountDetails />
+                    <EditAccountDetails />
+                    <ResetAccount />
+                    <DeleteAccount />
+                    <SignOut fn={setModalIsOpen} />
                 </Wrapper>
             </DesktopOnly>
         </Fragment>
@@ -77,7 +60,9 @@ const Wrapper = styled.div`
     gap: var(--margin-md);
 `;
 
-const Flex = styled.div`
+////////////////// NESTED ROUTES STYLES
+
+export const Flex = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -85,6 +70,6 @@ const Flex = styled.div`
     gap: var(--padding-lg);
 `;
 
-const MobileHeader = styled(Header)`
+export const MobileHeader = styled(Header)`
     margin: 0;
 `;

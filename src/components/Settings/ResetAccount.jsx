@@ -5,16 +5,25 @@ import Subtitle from '../Subtitle';
 import { Paragraph } from '../Paragraph';
 import { Header } from '../Header';
 import { Card } from '../Card';
+import { Fragment } from 'react';
 
-const AccountReset = ({ mobile }) => {
+const Content = () => {
+    return (
+        <Fragment>
+            <Subtitle>Reset account</Subtitle>
+            <Paragraph small='true'>
+                If you reset your account, you will lose all of your progress
+                and data
+            </Paragraph>
+        </Fragment>
+    );
+};
+
+const ResetAccount = ({ mobile }) => {
     return mobile ? (
         <Flex>
             <MobileHeader>
-                <Subtitle>Reset account</Subtitle>
-                <Paragraph small='true'>
-                    If you reset your account, you will lose all of your
-                    progress and data
-                </Paragraph>
+                <Content />
             </MobileHeader>
             <Button.Alert small='true' align='center'>
                 Reset
@@ -24,11 +33,7 @@ const AccountReset = ({ mobile }) => {
         <Card>
             <Flex>
                 <Header>
-                    <Subtitle>Reset account</Subtitle>
-                    <Paragraph small='true'>
-                        If you reset your account, you will lose all of your
-                        progress and data
-                    </Paragraph>
+                    <Content />
                 </Header>
                 <Button.Alert small='true' align='center'>
                     Reset
@@ -38,7 +43,7 @@ const AccountReset = ({ mobile }) => {
     );
 };
 
-export default AccountReset;
+export default ResetAccount;
 
 const Flex = styled.div`
     width: 100%;

@@ -3,11 +3,13 @@ import styled from 'styled-components/macro';
 import Input from '../Input';
 import * as Button from '../Button';
 import Subtitle from '../Subtitle';
+import { FormWrapper } from '../FormWrapper';
+import { Card } from '../Card';
 
-const MyAccountForm = () => {
+const Form = () => {
     return (
         <form>
-            <Subtitle>Personal information</Subtitle>
+            <Subtitle>Edit account details</Subtitle>
             <Input label='Name' name='name' />
             <Input label='Email' name='email' type='email' />
             <Flex>
@@ -20,7 +22,19 @@ const MyAccountForm = () => {
     );
 };
 
-export default MyAccountForm;
+const EditAccountDetails = ({ mobile }) => {
+    return mobile ? (
+        <FormWrapper>
+            <Form />
+        </FormWrapper>
+    ) : (
+        <Card>
+            <Form />
+        </Card>
+    );
+};
+
+export default EditAccountDetails;
 
 const Flex = styled.div`
     display: flex;

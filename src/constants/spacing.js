@@ -10,10 +10,10 @@ export const SPACING = {
 };
 
 export const BORDER_RADIUS = {
-    sm: '8px',
-    md: '16px',
-    lg: '32px',
-    xl: '64px',
+    sm: '0.5em',
+    md: '1em',
+    lg: '2em',
+    xl: '4em',
 };
 
 export const BORDER_WIDTH = {

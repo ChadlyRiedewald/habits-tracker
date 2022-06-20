@@ -47,6 +47,7 @@ const GlobalStyles = createGlobalStyle`
 	--padding-xxxl: ${`${S.SPACING.xxxl}px`};
 
     /////////////////////// Button padding
+	--btn-padding-small: 0.375em 0.75em;
 	--btn-padding-normal: 0.75em 1.5em;
 	--btn-padding-wide: 0.75em 3.5em;
 	
