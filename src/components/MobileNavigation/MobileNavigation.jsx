@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../hooks/Auth.context';
+
 import styled from 'styled-components/macro';
 
 import MobileOnly from '../MobileOnly';
@@ -15,6 +17,7 @@ import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
 
 const MobileNavigation = () => {
+    const { isAuth } = useContext(AuthContext);
     const { button } = VARIANTS;
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -51,7 +54,7 @@ const MobileNavigation = () => {
                     </ListItem>
                     <ListItem>
                         <motion.a
-                            onClick={() => setModalIsOpen(true)}
+                            onClick={isAuth ? () => setModalIsOpen(true) : ''}
                             variants={button}
                             whileTap='whileTap'
                         >
