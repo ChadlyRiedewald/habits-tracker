@@ -8,6 +8,7 @@ import { Paragraph } from '../Paragraph';
 import { ReactComponent as Avatar } from '../../assets/avatars/4.svg';
 import { ReactComponent as Edit } from '../../assets/edit.svg';
 import { FormWrapper } from '../FormWrapper';
+import { DividerVertical } from '../Divider';
 
 const AccountDetails = () => {
     return (
@@ -36,6 +37,7 @@ const AccountDetails = () => {
                                 </Li>
                             </Ul>
                         </LeftWrapper>
+                        <DividerVertical />
                         <RightWrapper>
                             <Avatar />
                             <ButtonWrapper>
@@ -63,29 +65,17 @@ const Wrapper = styled.div`
 const Flex = styled.div`
     display: flex;
     align-items: center;
-
-    //flex-direction: column;
-    //justify-content: flex-start;
-    //align-items: flex-start;
+    justify-content: space-between;
     gap: var(--padding-md);
-
-    @media screen and ${BREAKPOINTS.smMin} {
-        flex-direction: row;
-        justify-content: space-between;
-        min-width: 100%;
-        align-items: center;
-    }
 `;
 
 const RightWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    flex-basis: 30%;
     align-items: center;
     gap: var(--padding-sm);
 
     @media screen and ${BREAKPOINTS.lgMin} {
-        flex-basis: 50%;
         display: flex;
         flex-direction: column;
     }
@@ -108,7 +98,6 @@ const RightWrapper = styled.div`
 
 const LeftWrapper = styled.div`
     display: flex;
-    flex-basis: 70%;
     @media screen and ${BREAKPOINTS.smMin} {
         flex-basis: 50%;
         justify-content: center;
