@@ -5,6 +5,10 @@ import { Paragraph } from '../Paragraph';
 import { Card } from '../Card';
 import { Header } from '../Header';
 import { Fragment } from 'react';
+import { useState } from 'react';
+import ConfirmActionModal from '../Modals/ConfirmActionModal';
+import { useContext } from 'react';
+import { AuthContext } from '../../hooks/Auth.context';
 
 const Content = () => {
     return (
@@ -17,16 +21,32 @@ const Content = () => {
     );
 };
 
-const SignOut = ({ mobile, fn }) => {
+const SignOut = ({ mobile }) => {
+    const { toggle } = useContext(AuthContext);
+    const [isModalOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
     return mobile ? (
         <Account.Flex>
+            <ConfirmActionModal
+                isOpen={isModalOpen}
+                setModal={setModalIsOpen}
+                action={toggle}
+            >
+                <Paragraph center='true'>
+                    Are you sure you want to sign out?
+                </Paragraph>
+            </ConfirmActionModal>
             <Account.MobileHeader>
                 <Content />
             </Account.MobileHeader>
             <Button.Inverted
                 small='true'
                 align='center'
-                onClick={() => fn(true)}
+                onClick={openModal}
                 border='true'
             >
                 Sign out
@@ -34,6 +54,15 @@ const SignOut = ({ mobile, fn }) => {
         </Account.Flex>
     ) : (
         <Card>
+            <ConfirmActionModal
+                isOpen={isModalOpen}
+                setModal={setModalIsOpen}
+                action={toggle}
+            >
+                <Paragraph center='true'>
+                    Are you sure you want to sign out?
+                </Paragraph>
+            </ConfirmActionModal>
             <Account.Flex>
                 <Header>
                     <Content />
@@ -41,7 +70,7 @@ const SignOut = ({ mobile, fn }) => {
                 <Button.Inverted
                     small='true'
                     align='center'
-                    onClick={() => fn(true)}
+                    onClick={openModal}
                     border='true'
                 >
                     Sign out

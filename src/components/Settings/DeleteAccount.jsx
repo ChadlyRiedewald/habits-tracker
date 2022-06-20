@@ -1,10 +1,13 @@
+import { Fragment } from 'react';
+import { useState } from 'react';
+
 import * as Account from './MyAccount';
 import * as Button from '../Button';
+import ConfirmActionModal from '../Modals/ConfirmActionModal';
 import Subtitle from '../Subtitle';
 import { Paragraph } from '../Paragraph';
-import { Card } from '../Card';
 import { Header } from '../Header';
-import { Fragment } from 'react';
+import { Card } from '../Card';
 
 const Content = () => {
     return (
@@ -18,26 +21,50 @@ const Content = () => {
 };
 
 const DeleteAccount = ({ mobile }) => {
+    const [isModalOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
     return mobile ? (
-        <Account.Flex>
-            <Account.MobileHeader>
-                <Content />
-            </Account.MobileHeader>
-            <Button.Error small='true' align='center'>
-                Delete
-            </Button.Error>
-        </Account.Flex>
-    ) : (
-        <Card>
+        <Fragment>
+            <ConfirmActionModal isOpen={isModalOpen} setModal={setModalIsOpen}>
+                <Paragraph center='true'>
+                    Are you sure you want to delete your account?
+                </Paragraph>
+            </ConfirmActionModal>
             <Account.Flex>
-                <Header>
+                <Account.MobileHeader>
                     <Content />
-                </Header>
-                <Button.Error small='true' align='center'>
+                </Account.MobileHeader>
+                <Button.Error small='true' align='center' onClick={openModal}>
                     Delete
                 </Button.Error>
             </Account.Flex>
-        </Card>
+        </Fragment>
+    ) : (
+        <Fragment>
+            <ConfirmActionModal isOpen={isModalOpen} setModal={setModalIsOpen}>
+                <Paragraph center='true'>
+                    Are you sure you want to delete your account?
+                </Paragraph>
+            </ConfirmActionModal>
+            <Card>
+                <Account.Flex>
+                    <Header>
+                        <Content />
+                    </Header>
+                    <Button.Error
+                        small='true'
+                        align='center'
+                        onClick={openModal}
+                    >
+                        Delete
+                    </Button.Error>
+                </Account.Flex>
+            </Card>
+        </Fragment>
     );
 };
 

@@ -1,26 +1,27 @@
-import { useContext } from 'react';
-import { AuthContext } from '../../hooks/Auth.context';
-import styled from 'styled-components/macro';
-
-import * as Button from '../Button';
 import Modal from './Modal';
-import { Paragraph } from '../Paragraph';
+import * as Button from '../Button';
+import styled from 'styled-components/macro';
 import { useNavigate } from 'react-router-dom';
 
-const SignOutModal = ({ isOpen, setModal }) => {
+const ConfirmActionModal = ({
+    isOpen,
+    setModal,
+    action,
+    children,
+    navigateTo,
+}) => {
     const navigate = useNavigate();
-    const { toggle } = useContext(AuthContext);
 
-    const signOut = () => {
+    const handleAction = () => {
         setModal(false);
-        toggle();
-        navigate('/');
+        action();
+        navigate({ navigateTo });
     };
 
     return (
         <Modal isOpen={isOpen} setModal={setModal}>
             <FlexColumn>
-                <Paragraph center>Are you sure you want to sign out?</Paragraph>
+                {children}
                 <Flex>
                     <Button.Inverted
                         small='true'
@@ -29,7 +30,7 @@ const SignOutModal = ({ isOpen, setModal }) => {
                     >
                         Cancel
                     </Button.Inverted>
-                    <Button.Base small='true' onClick={signOut}>
+                    <Button.Base small='true' onClick={handleAction}>
                         Confirm
                     </Button.Base>
                 </Flex>
@@ -38,9 +39,7 @@ const SignOutModal = ({ isOpen, setModal }) => {
     );
 };
 
-export default SignOutModal;
-
-/////////////// MODAL
+export default ConfirmActionModal;
 
 const FlexColumn = styled.div`
     display: flex;

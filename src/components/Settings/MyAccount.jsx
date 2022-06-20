@@ -1,8 +1,7 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import styled from 'styled-components/macro';
 
 import EditAccountDetails from './EditAccountDetails';
-import SignOutModal from '../Modals/SignOutModal';
 import ResetAccount from './ResetAccount';
 import DeleteAccount from './DeleteAccount';
 import SignOut from './SignOut';
@@ -12,14 +11,12 @@ import MobileOnly from '../MobileOnly';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
 import { DividerHorizontal } from '../Divider';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const MyAccount = () => {
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-
     return (
         <Fragment>
             <MobileOnly>
-                <SignOutModal isOpen={modalIsOpen} setModal={setModalIsOpen} />
                 <Wrapper>
                     <AccountDetails />
                     <DividerHorizontal />
@@ -29,7 +26,7 @@ const MyAccount = () => {
                     <DividerHorizontal />
                     <DeleteAccount mobile='true' />
                     <DividerHorizontal />
-                    <SignOut mobile='true' fn={setModalIsOpen} />
+                    <SignOut mobile='true' />
                 </Wrapper>
             </MobileOnly>
             <DesktopOnly>
@@ -45,7 +42,7 @@ const MyAccount = () => {
                     <EditAccountDetails />
                     <ResetAccount />
                     <DeleteAccount />
-                    <SignOut fn={setModalIsOpen} />
+                    <SignOut />
                 </Wrapper>
             </DesktopOnly>
         </Fragment>
@@ -58,8 +55,11 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--margin-md);
-    width: clamp(200px, 100%, 650px);
-    margin-inline: auto;
+
+    @media screen and ${BREAKPOINTS.lg} {
+        width: clamp(200px, 100%, 650px);
+        margin-inline: auto;
+    }
 `;
 
 ////////////////// NESTED ROUTES STYLES
@@ -69,6 +69,7 @@ export const Flex = styled.div`
     justify-content: space-between;
     align-items: center;
     gap: var(--padding-md);
+    min-width: 100%;
 `;
 
 export const MobileHeader = styled(Header)`

@@ -4,7 +4,6 @@ import styled from 'styled-components/macro';
 
 import DesktopOnly from '../DesktopOnly';
 import ListItem from '../ListItem';
-import SignOutModal from '../Modals/SignOutModal';
 import { Logo } from './Logo';
 import { NavLink } from '../NavLink';
 import { BREAKPOINTS } from '../../constants/breakpoints';
@@ -15,14 +14,28 @@ import { ReactComponent as Settings } from '../../assets/settings.svg';
 import { ReactComponent as Help } from '../../assets/help.svg';
 import { ReactComponent as SignIn } from '../../assets/login.svg';
 import { ReactComponent as SignOut } from '../../assets/logout.svg';
+import ConfirmActionModal from '../Modals/ConfirmActionModal';
+import { Paragraph } from '../Paragraph';
 
 const DesktopNavigation = () => {
-    const { isAuth } = useContext(AuthContext);
+    const { isAuth, toggle } = useContext(AuthContext);
     const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
 
     return (
         <DesktopOnly>
-            <SignOutModal isOpen={modalIsOpen} setModal={setModalIsOpen} />
+            <ConfirmActionModal
+                isOpen={modalIsOpen}
+                setModal={setModalIsOpen}
+                action={toggle}
+            >
+                <Paragraph center='true'>
+                    Are you sure you want to sign out?
+                </Paragraph>
+            </ConfirmActionModal>
             <Wrapper>
                 <Logo />
                 <List>
@@ -90,7 +103,9 @@ const DesktopNavigation = () => {
                         {isAuth && (
                             <ListItem>
                                 <SignOutLink
-                                    onClick={() => setModalIsOpen(true)}
+                                    onClick={openModal}
+
+                                    /* TODO when modal is open same active styles as other navLinks*/
                                 >
                                     <SignOut />
                                     <p>Sign out</p>

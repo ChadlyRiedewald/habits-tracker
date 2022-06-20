@@ -4,7 +4,8 @@ import Subtitle from '../Subtitle';
 import { Paragraph } from '../Paragraph';
 import { Header } from '../Header';
 import { Card } from '../Card';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
+import ConfirmActionModal from '../Modals/ConfirmActionModal';
 
 const Content = () => {
     return (
@@ -19,26 +20,50 @@ const Content = () => {
 };
 
 const ResetAccount = ({ mobile }) => {
+    const [isModalOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
     return mobile ? (
-        <Account.Flex>
-            <Account.MobileHeader>
-                <Content />
-            </Account.MobileHeader>
-            <Button.Alert small='true' align='center'>
-                Reset
-            </Button.Alert>
-        </Account.Flex>
-    ) : (
-        <Card>
+        <Fragment>
+            <ConfirmActionModal isOpen={isModalOpen} setModal={setModalIsOpen}>
+                <Paragraph center='true'>
+                    Are you sure you want to reset your account?
+                </Paragraph>
+            </ConfirmActionModal>
             <Account.Flex>
-                <Header>
+                <Account.MobileHeader>
                     <Content />
-                </Header>
-                <Button.Alert small='true' align='center'>
+                </Account.MobileHeader>
+                <Button.Alert small='true' align='center' onClick={openModal}>
                     Reset
                 </Button.Alert>
             </Account.Flex>
-        </Card>
+        </Fragment>
+    ) : (
+        <Fragment>
+            <ConfirmActionModal isOpen={isModalOpen} setModal={setModalIsOpen}>
+                <Paragraph center='true'>
+                    Are you sure you want to reset your account?
+                </Paragraph>
+            </ConfirmActionModal>
+            <Card>
+                <Account.Flex>
+                    <Header>
+                        <Content />
+                    </Header>
+                    <Button.Alert
+                        small='true'
+                        align='center'
+                        onClick={openModal}
+                    >
+                        Reset
+                    </Button.Alert>
+                </Account.Flex>
+            </Card>
+        </Fragment>
     );
 };
 
