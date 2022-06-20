@@ -7,49 +7,42 @@ import { Card } from '../Card';
 import { Paragraph } from '../Paragraph';
 import { ReactComponent as Avatar } from '../../assets/avatars/4.svg';
 import { ReactComponent as Edit } from '../../assets/edit.svg';
-import { FormWrapper } from '../FormWrapper';
-import { DividerVertical } from '../Divider';
 
 const AccountDetails = () => {
     return (
         <Card>
-            <FormWrapper>
-                <Wrapper>
-                    <Subtitle>Account details</Subtitle>
-                    <Flex>
-                        <LeftWrapper>
-                            <Ul>
-                                <Li>
-                                    <Em>Username:</Em>
-                                    <P>chadly</P>
-                                </Li>
-                                <Li>
-                                    <Em>Email:</Em>
-                                    <P>chadly@live</P>
-                                </Li>
-                                <Li>
-                                    <Em>Role:</Em>
-                                    <P>Admin</P>
-                                </Li>
-                                <Li>
-                                    <Em>Active since:</Em>
-                                    <P>01-05-2022</P>
-                                </Li>
-                            </Ul>
-                        </LeftWrapper>
-                        <DividerVertical />
-                        <RightWrapper>
-                            <Avatar />
-                            <ButtonWrapper>
-                                <Button.InvertedXS border='true'>
-                                    Change
-                                    <Edit />
-                                </Button.InvertedXS>
-                            </ButtonWrapper>
-                        </RightWrapper>
-                    </Flex>
-                </Wrapper>
-            </FormWrapper>
+            <Wrapper>
+                <Subtitle>Account details</Subtitle>
+                <Flex>
+                    <LeftWrapper>
+                        <Ul>
+                            <Li>
+                                <Em>Username:</Em>
+                                <P>chadly</P>
+                            </Li>
+                            <Li>
+                                <Em>Email:</Em>
+                                <P>chadly@live</P>
+                            </Li>
+                            <Li>
+                                <Em>Role:</Em>
+                                <P>Admin</P>
+                            </Li>
+                            <Li>
+                                <Em>Active since:</Em>
+                                <P>01-05-2022</P>
+                            </Li>
+                        </Ul>
+                    </LeftWrapper>
+                    <RightWrapper>
+                        <Avatar />
+                        <Button.InvertedXS align='center'>
+                            Change
+                            <Edit />
+                        </Button.InvertedXS>
+                    </RightWrapper>
+                </Flex>
+            </Wrapper>
         </Card>
     );
 };
@@ -60,6 +53,8 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--padding-sm);
+    min-width: 100%;
+    width: clamp(200px, 100%, 650px);
 `;
 
 const Flex = styled.div`
@@ -73,12 +68,8 @@ const RightWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-basis: 50%;
     gap: var(--padding-sm);
-
-    @media screen and ${BREAKPOINTS.lgMin} {
-        display: flex;
-        flex-direction: column;
-    }
 
     svg {
         width: 64px;
@@ -98,6 +89,7 @@ const RightWrapper = styled.div`
 
 const LeftWrapper = styled.div`
     display: flex;
+
     @media screen and ${BREAKPOINTS.smMin} {
         flex-basis: 50%;
         justify-content: center;
@@ -113,15 +105,6 @@ const Li = styled.li`
 
     @media screen and ${BREAKPOINTS.smMin} {
         width: clamp(150px, 100%, 250px);
-    }
-`;
-
-const ButtonWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: var(--padding-xs);
-    @media screen and ${BREAKPOINTS.smMin} {
-        flex-direction: row;
     }
 `;
 

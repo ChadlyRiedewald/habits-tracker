@@ -2,10 +2,10 @@ import styled from 'styled-components/macro';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 
 export const FormWrapper = styled.div`
-    width: 100%;
+    width: clamp(200px, 100%, 650px);
+    margin-inline: auto;
 
-    @media screen and ${BREAKPOINTS.smMin} {
-        width: clamp(200px, 85vw, 650px);
-        margin-inline: auto;
+    @media screen and ${BREAKPOINTS.lgMin} {
+        width: 80%;
     }
 `;

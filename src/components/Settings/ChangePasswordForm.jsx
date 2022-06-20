@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import * as Button from '../Button';
 import Subtitle from '../Subtitle';
 import Input from '../Input';
+import { ButtonWrapper as B } from '../ButtonWrapper';
 
 const ChangePasswordForm = () => {
     return (
@@ -19,20 +20,18 @@ const ChangePasswordForm = () => {
                 name='confirm-password'
                 type='password'
             />
-            <Flex>
+            <ButtonWrapper>
                 <Button.Inverted small='true' border='true'>
                     Cancel
                 </Button.Inverted>
                 <Button.Base small='true'>Save</Button.Base>
-            </Flex>
+            </ButtonWrapper>
         </form>
     );
 };
 
 export default ChangePasswordForm;
 
-const Flex = styled.div`
-    display: flex;
-    gap: var(--margin-sm);
+const ButtonWrapper = styled(B)`
     align-self: flex-end;
 `;

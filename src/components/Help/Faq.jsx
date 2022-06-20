@@ -64,7 +64,7 @@ export const AccordionWrapper = styled.div`
     gap: calc(var(--padding-sm) * 1.5);
 
     @media screen and ${BREAKPOINTS.lg} {
-        width: clamp(248px, 85vw, 800px);
+        width: clamp(200px, 100%, 650px);
         margin-inline: auto;
     }
 

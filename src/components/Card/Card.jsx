@@ -3,6 +3,8 @@ import { BREAKPOINTS } from '../../constants/breakpoints';
 
 export const Card = styled.div`
     display: flex;
+    width: clamp(200px, 100%, 650px);
+    margin-inline: auto;
 
     @media screen and ${BREAKPOINTS.lgMin} {
         width: clamp(550px, 100%, 800px);

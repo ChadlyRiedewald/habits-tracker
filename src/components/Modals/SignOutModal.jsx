@@ -5,13 +5,16 @@ import styled from 'styled-components/macro';
 import * as Button from '../Button';
 import Modal from './Modal';
 import { Paragraph } from '../Paragraph';
+import { useNavigate } from 'react-router-dom';
 
 const SignOutModal = ({ isOpen, setModal }) => {
+    const navigate = useNavigate();
     const { toggle } = useContext(AuthContext);
 
     const signOut = () => {
-        toggle();
         setModal(false);
+        toggle();
+        navigate('/');
     };
 
     return (
