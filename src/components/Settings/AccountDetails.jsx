@@ -7,7 +7,6 @@ import { Card } from '../Card';
 import { Paragraph } from '../Paragraph';
 import { ReactComponent as Avatar } from '../../assets/avatars/4.svg';
 import { ReactComponent as Edit } from '../../assets/edit.svg';
-import { ReactComponent as Delete } from '../../assets/delete.svg';
 import { FormWrapper } from '../FormWrapper';
 
 const AccountDetails = () => {
@@ -44,10 +43,6 @@ const AccountDetails = () => {
                                     Change
                                     <Edit />
                                 </Button.InvertedXS>
-                                <Button.InvertedXS border='true'>
-                                    Delete
-                                    <Delete />
-                                </Button.InvertedXS>
                             </ButtonWrapper>
                         </RightWrapper>
                     </Flex>
@@ -62,15 +57,16 @@ export default AccountDetails;
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    min-width: 100%;
     gap: var(--padding-sm);
 `;
 
 const Flex = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+
+    //flex-direction: column;
+    //justify-content: flex-start;
+    //align-items: flex-start;
     gap: var(--padding-md);
 
     @media screen and ${BREAKPOINTS.smMin} {
@@ -83,6 +79,8 @@ const Flex = styled.div`
 
 const RightWrapper = styled.div`
     display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
     align-items: center;
     gap: var(--padding-sm);
 
@@ -110,7 +108,7 @@ const RightWrapper = styled.div`
 
 const LeftWrapper = styled.div`
     display: flex;
-    flex-basis: 100%;
+    flex-basis: 70%;
     @media screen and ${BREAKPOINTS.smMin} {
         flex-basis: 50%;
         justify-content: center;
@@ -121,20 +119,29 @@ const Ul = styled.ul``;
 
 const Li = styled.li`
     display: flex;
-    width: clamp(190px, 100%, 250px);
     justify-content: space-between;
+    width: clamp(150px, 100%, 180px);
 
-    @media screen and ${BREAKPOINTS.lg} {
+    @media screen and ${BREAKPOINTS.smMin} {
+        width: clamp(150px, 100%, 250px);
     }
 `;
 
 const ButtonWrapper = styled.div`
     display: flex;
+    flex-direction: column;
     gap: var(--padding-xs);
+    @media screen and ${BREAKPOINTS.smMin} {
+        flex-direction: row;
+    }
 `;
 
 const P = styled(Paragraph)`
-    font-size: var(--font-xxs);
+    font-size: 12px;
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        font-size: var(--font-xxs);
+    }
 `;
 
 const Em = styled(P)`

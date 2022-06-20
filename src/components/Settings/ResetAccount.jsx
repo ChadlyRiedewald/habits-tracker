@@ -1,6 +1,5 @@
-import styled from 'styled-components/macro';
-
 import * as Button from '../Button';
+import * as Account from './MyAccount';
 import Subtitle from '../Subtitle';
 import { Paragraph } from '../Paragraph';
 import { Header } from '../Header';
@@ -21,38 +20,26 @@ const Content = () => {
 
 const ResetAccount = ({ mobile }) => {
     return mobile ? (
-        <Flex>
-            <MobileHeader>
+        <Account.Flex>
+            <Account.MobileHeader>
                 <Content />
-            </MobileHeader>
+            </Account.MobileHeader>
             <Button.Alert small='true' align='center'>
                 Reset
             </Button.Alert>
-        </Flex>
+        </Account.Flex>
     ) : (
         <Card>
-            <Flex>
+            <Account.Flex>
                 <Header>
                     <Content />
                 </Header>
                 <Button.Alert small='true' align='center'>
                     Reset
                 </Button.Alert>
-            </Flex>
+            </Account.Flex>
         </Card>
     );
 };
 
 export default ResetAccount;
-
-const Flex = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--padding-lg);
-`;
-
-const MobileHeader = styled(Header)`
-    margin: 0;
-`;

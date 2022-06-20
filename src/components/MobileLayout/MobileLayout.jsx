@@ -30,7 +30,6 @@ export const OuterContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--padding-md);
-    margin-bottom: var(--height-mobile-nav);
 `;
 
 export const InnerContainer = styled.div`
@@ -41,10 +40,10 @@ export const InnerContainer = styled.div`
     border-top-left-radius: var(--border-radius-lg);
     padding: calc(var(--padding-md) * 1.25);
     margin-bottom: var(--height-mobile-nav);
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
+    //overflow: scroll;
+    //-webkit-overflow-scrolling: touch;
 
-    @media screen and ${BREAKPOINTS.xs} {
-        padding: var(--padding-sm);
+    @media screen and ${BREAKPOINTS.sm} {
+        padding: calc(var(--padding-sm) * 1.5);
     }
 `;

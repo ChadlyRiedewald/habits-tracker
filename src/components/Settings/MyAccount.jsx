@@ -58,6 +58,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--margin-md);
+    margin-bottom: var(--height-mobile-nav);
 `;
 
 ////////////////// NESTED ROUTES STYLES
@@ -67,7 +68,7 @@ export const Flex = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--padding-lg);
+    gap: var(--padding-md);
 `;
 
 export const MobileHeader = styled(Header)`
