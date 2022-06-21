@@ -88,6 +88,9 @@ const Scores = () => {
                     </Statistic>
                 </StatsWrapper>
             </FlexColumn>
+            <FlexColumn>
+                <p>Rewards</p>
+            </FlexColumn>
         </Wrapper>
     );
 };
