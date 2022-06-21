@@ -6,7 +6,7 @@ const ProgressCircle = ({ size, progress, strokeWidth }) => {
 
     const center = size / 2;
     const radius = size / 2 - strokeWidth / 2;
-    const circum = 2 * Math.PI * 22;
+    const circum = 2 * Math.PI * radius;
 
     useEffect(() => {
         const progressOffset = ((100 - progress) / 100) * circum;
