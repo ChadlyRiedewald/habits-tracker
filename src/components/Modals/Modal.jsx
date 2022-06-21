@@ -107,7 +107,7 @@ const Ellipse = styled.div`
     width: 12px;
     height: 12px;
     border-radius: 100%;
-    background-color: var(--color-gray-400);
+    background-color: var(--color-gray-300);
 `;
 
 const EllipseWrapper = styled.div`
