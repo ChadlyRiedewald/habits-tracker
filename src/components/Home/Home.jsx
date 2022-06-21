@@ -17,7 +17,7 @@ const Home = () => {
                     <Title>
                         Hi, <span>Chadly</span>
                     </Title>
-                    <Paragraph fontSize='12px'>
+                    <Paragraph fontSize='12px' small='true'>
                         Today is your opportunity to build the tomorrow you
                         desire
                     </Paragraph>
@@ -79,6 +79,8 @@ const InnerContainer = styled.div`
     border-top-left-radius: var(--border-radius-lg);
     padding: calc(var(--padding-md) * 1.25);
     margin-bottom: var(--height-mobile-nav);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 
     @media screen and ${BREAKPOINTS.sm} {
         padding-inline: calc(var(--padding-sm) * 1.5);

@@ -2,6 +2,7 @@ import styled from 'styled-components/macro';
 import { Paragraph } from '../Paragraph';
 import ProgressCircle from './ProgressCircle';
 import { BREAKPOINTS } from '../../constants/breakpoints';
+import { ReactComponent as Icon } from '../../assets/logo.svg';
 
 const Scores = () => {
     return (
@@ -11,7 +12,7 @@ const Scores = () => {
                     <Paragraph>Today</Paragraph>
                     <Card>
                         <ProgressCircle
-                            size='50'
+                            size='55'
                             progress='40'
                             strokeWidth='5'
                         />
@@ -41,7 +42,7 @@ const Scores = () => {
                     <Paragraph>This Week</Paragraph>
                     <Card>
                         <ProgressCircle
-                            size='50'
+                            size='55'
                             progress='65'
                             strokeWidth='5'
                         />
@@ -69,7 +70,7 @@ const Scores = () => {
                 </HalfWrapper>
             </Flex>
             <FlexColumn>
-                <p>Statistics</p>
+                <Paragraph>Statistics</Paragraph>
                 <StatsWrapper>
                     <Statistic bg='var(--color-orange-500)'>
                         <p>Completed</p>
@@ -90,7 +91,12 @@ const Scores = () => {
                 </StatsWrapper>
             </FlexColumn>
             <FlexColumn>
-                <p>Rewards</p>
+                <Paragraph>Rewards</Paragraph>
+                <RewardsWrapper>
+                    <Ellipse bgColor='var(--color-sports)'>
+                        <Icon />
+                    </Ellipse>
+                </RewardsWrapper>
             </FlexColumn>
         </Wrapper>
     );
@@ -136,6 +142,13 @@ const P = styled(Paragraph)`
         font-weight: var(--font-weight-bold);
         font-size: 12px;
     }
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        font-size: 16px;
+        span {
+            font-size: 20px;
+        }
+    }
 `;
 
 const TextWrapper = styled(Flex)`
@@ -174,21 +187,28 @@ const Statistic = styled.div`
 
     @media screen and ${BREAKPOINTS.smMin} {
         p {
-            font-size: 14px;
-        }
-
-        span {
-            font-size: 36px;
-        }
-    }
-
-    @media screen and ${BREAKPOINTS.mdMin} {
-        p {
-            font-size: 24px;
+            font-size: 16px;
         }
 
         span {
             font-size: 42px;
         }
     }
+`;
+
+const RewardsWrapper = styled(Card)`
+    justify-content: flex-start;
+    padding-block: calc(var(--padding-sm) * 1.5);
+    padding-inline: var(--padding-sm);
+`;
+
+const Ellipse = styled.div`
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    background-color: ${p => p.bgColor};
+    border-radius: 100%;
 `;

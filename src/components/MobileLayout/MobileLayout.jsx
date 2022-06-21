@@ -40,6 +40,8 @@ const InnerContainer = styled.div`
     border-top-left-radius: var(--border-radius-lg);
     padding: calc(var(--padding-md) * 1.25);
     margin-bottom: var(--height-mobile-nav);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 
     @media screen and ${BREAKPOINTS.sm} {
         padding-inline: calc(var(--padding-sm) * 1.5);
