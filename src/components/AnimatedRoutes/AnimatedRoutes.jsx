@@ -20,13 +20,15 @@ import All from '../Discover/All';
 import Settings from '../Settings';
 import MyAccount from '../Settings/MyAccount';
 import Security from '../Settings/Security';
+import Scores from '../Home/Scores';
+import HomeHabits from '../Home/Habits';
 
 const AnimatedRoutes = () => {
     const { isAuth } = useContext(AuthContext);
     const location = useLocation();
 
     return (
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence exitBeforeEnter='true'>
             <Routes location={location} key={location.pathname}>
                 {/* Redirecting default Route */}
                 <Route index element={<RedirectRoutes isAuth={isAuth} />} />
@@ -60,11 +62,9 @@ const AnimatedRoutes = () => {
                 {isAuth && (
                     <Fragment>
                         <Route path='home' element={<Home />}>
-                            {/*<Route path='' element={<ToDo />} />*/}
-                            {/*<Route*/}
-                            {/*    path='completed'*/}
-                            {/*    element={<Completed />}*/}
-                            {/*/>*/}
+                            <Route path='' element={<Navigate to='habits' />} />
+                            <Route path='habits' element={<HomeHabits />} />
+                            <Route path='scores' element={<Scores />} />
                         </Route>
                         <Route path='discover' element={<Discover />}>
                             <Route
