@@ -5,14 +5,14 @@ import * as Button from '../Button';
 import Input from '../Input';
 
 const SignInForm = () => {
-    const { toggle } = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
 
     return (
         <form>
             <Input name='email' label='Email:' type='email' />
             <Input name='password' label='Password:' type='password' />
             <Button.Base
-                onClick={toggle}
+                onClick={signIn}
                 round='true'
                 wide='true'
                 align='center'

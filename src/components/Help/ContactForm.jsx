@@ -2,8 +2,9 @@ import * as Button from '../Button';
 import Input from '../Input';
 import { Fragment } from 'react';
 import { useState } from 'react';
-import ConfirmActionModal from '../Modals/ConfirmActionModal';
 import { Paragraph } from '../Paragraph';
+import Modal from '../Modals';
+import styled from 'styled-components/macro';
 
 const ContactForm = () => {
     const [isModalOpen, setModalIsOpen] = useState(false);
@@ -14,12 +15,18 @@ const ContactForm = () => {
 
     return (
         <Fragment>
-            <ConfirmActionModal isOpen={isModalOpen} setModal={setModalIsOpen}>
-                <Paragraph center='true'>
-                    Message is sent!
-                    {/*    TODO make a succesfully sent message modal*/}
-                </Paragraph>
-            </ConfirmActionModal>
+            <Modal isOpen={isModalOpen} setModal={setModalIsOpen}>
+                <FlexColumn>
+                    <Paragraph center='true'>Message is sent!</Paragraph>
+                    <Button.Base
+                        small='true'
+                        align='center'
+                        onClick={() => setModalIsOpen(false)}
+                    >
+                        Ok
+                    </Button.Base>
+                </FlexColumn>
+            </Modal>
             <form>
                 <Input name='name' label='Name:' />
                 <Input name='email' label='Email:' type='email' />
@@ -40,3 +47,10 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+const FlexColumn = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-md);
+    gap: var(--padding-md);
+`;

@@ -18,7 +18,7 @@ import ConfirmActionModal from '../Modals/ConfirmActionModal';
 import { Paragraph } from '../Paragraph';
 
 const DesktopNavigation = () => {
-    const { isAuth, toggle } = useContext(AuthContext);
+    const { isAuth, signOut } = useContext(AuthContext);
     const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const openModal = () => {
@@ -30,7 +30,7 @@ const DesktopNavigation = () => {
             <ConfirmActionModal
                 isOpen={modalIsOpen}
                 setModal={setModalIsOpen}
-                action={toggle}
+                action={signOut}
             >
                 <Paragraph center='true'>
                     Are you sure you want to sign out?
@@ -104,7 +104,6 @@ const DesktopNavigation = () => {
                             <ListItem>
                                 <SignOutLink
                                     onClick={openModal}
-
                                     /* TODO when modal is open same active styles as other navLinks*/
                                 >
                                     <SignOut />

@@ -5,12 +5,23 @@ import Subtitle from '../Subtitle';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { Card } from '../Card';
 import { Paragraph } from '../Paragraph';
-import { ReactComponent as Avatar } from '../../assets/avatars/4.svg';
+import { ReactComponent as A } from '../../assets/avatars/4.svg';
 import { ReactComponent as Edit } from '../../assets/edit.svg';
+import { useState } from 'react';
+import ChangeAvatarModal from '../Modals/ChangeAvatarModal';
 
 const AccountDetails = () => {
+    const [isModalOpen, setModalIsOpen] = useState(false);
+
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
     return (
         <Card>
+            <ChangeAvatarModal isOpen={isModalOpen} setModal={setModalIsOpen}>
+                <Paragraph center='true'></Paragraph>
+            </ChangeAvatarModal>
             <Wrapper>
                 <Subtitle>Account details</Subtitle>
                 <Flex>
@@ -35,8 +46,8 @@ const AccountDetails = () => {
                         </Ul>
                     </LeftWrapper>
                     <RightWrapper>
-                        <Avatar />
-                        <Button.InvertedXS align='center'>
+                        <Avatar onClick={openModal} />
+                        <Button.InvertedXS align='center' onClick={openModal}>
                             Change
                             <Edit />
                         </Button.InvertedXS>
@@ -118,4 +129,8 @@ const P = styled(Paragraph)`
 
 const Em = styled(P)`
     font-weight: var(--font-weight-bold);
+`;
+
+const Avatar = styled(A)`
+    cursor: pointer;
 `;

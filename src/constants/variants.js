@@ -48,10 +48,10 @@ export const VARIANTS = {
             scale: 1,
         },
         whileHover: {
-            scale: 1.05,
+            scale: 1.1,
         },
         whileTap: {
-            scale: 0.9,
+            scale: 0.95,
         },
     },
 

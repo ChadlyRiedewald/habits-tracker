@@ -22,7 +22,7 @@ const Content = () => {
 };
 
 const SignOut = ({ mobile }) => {
-    const { toggle } = useContext(AuthContext);
+    const { signOut } = useContext(AuthContext);
     const [isModalOpen, setModalIsOpen] = useState(false);
 
     const openModal = () => {
@@ -34,7 +34,7 @@ const SignOut = ({ mobile }) => {
             <ConfirmActionModal
                 isOpen={isModalOpen}
                 setModal={setModalIsOpen}
-                action={toggle}
+                action={signOut}
             >
                 <Paragraph center='true'>
                     Are you sure you want to sign out?
@@ -57,7 +57,7 @@ const SignOut = ({ mobile }) => {
             <ConfirmActionModal
                 isOpen={isModalOpen}
                 setModal={setModalIsOpen}
-                action={toggle}
+                action={signOut}
             >
                 <Paragraph center='true'>
                     Are you sure you want to sign out?

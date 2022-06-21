@@ -15,7 +15,7 @@ const ConfirmActionModal = ({
     const handleAction = () => {
         setModal(false);
         action();
-        navigate({ navigateTo });
+        navigate(`${navigateTo}`);
     };
 
     return (
