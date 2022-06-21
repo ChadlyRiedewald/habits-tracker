@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import { Paragraph } from '../Paragraph';
 import ProgressCircle from './ProgressCircle';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const Scores = () => {
     return (
@@ -142,24 +143,26 @@ const TextWrapper = styled(Flex)`
     align-items: center;
 `;
 
-const StatsWrapper = styled(Flex)`
-    gap: 0.5rem;
-    flex-wrap: wrap;
+const StatsWrapper = styled.div`
+    //gap: 0.5rem;
+    display: flex;
+    //grid-template-columns: repeat(4, 1fr);
+    gap: var(--padding-sm);
+    justify-content: space-between;
 `;
 
 const Statistic = styled.div`
-    //width: clamp(75px, 100%, 150px);
-    width: 70px;
-    //height: clamp(75px, 100%, 150px);
-    height: 70px;
-    color: var(--color-gray-100);
-    background-color: ${p => p.bg};
+    flex-basis: 25%;
+    aspect-ratio: 1 / 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--color-gray-100);
+    background-color: ${p => p.bg};
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-elevation-medium);
+    max-width: 150px;
 
     p {
         font-size: 10px;
@@ -167,5 +170,25 @@ const Statistic = styled.div`
 
     span {
         font-size: 28px;
+    }
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        p {
+            font-size: 14px;
+        }
+
+        span {
+            font-size: 36px;
+        }
+    }
+
+    @media screen and ${BREAKPOINTS.mdMin} {
+        p {
+            font-size: 24px;
+        }
+
+        span {
+            font-size: 42px;
+        }
     }
 `;

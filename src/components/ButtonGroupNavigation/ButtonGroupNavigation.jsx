@@ -13,7 +13,8 @@ export const ButtonGroupNavigation = ({ children }) => {
 const Nav = styled.nav`
     margin-top: ${p => (p.margin ? '1rem' : '0')};
     display: flex;
-    width: 100%;
+    width: clamp(200px, 100%, 550px);
+    margin-inline: auto;
 `;
 
 const List = styled.ul`

@@ -23,16 +23,16 @@ const MobileLayout = ({ children, discover }) => {
 
 export default MobileLayout;
 
-export const OuterContainer = styled.div`
+const OuterContainer = styled.div`
     padding-top: var(--padding-md);
     width: 100vw;
-    min-height: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--padding-md);
 `;
 
-export const InnerContainer = styled.div`
+const InnerContainer = styled.div`
     width: 100%;
     height: 100%;
     background-color: var(--color-gray-100);

@@ -23,28 +23,30 @@ const Home = () => {
                     </Paragraph>
                 </Header>
                 <InnerContainer>
-                    <Calendar />
-                    <ButtonGroupNavigation>
-                        <ListItem>
-                            <NavLink
-                                to='habits'
-                                className='button-group button-group--dark'
-                                activeClassName='button-group--active'
-                            >
-                                Habits
-                            </NavLink>
-                        </ListItem>
-                        <ListItem>
-                            <NavLink
-                                to='scores'
-                                className='button-group button-group--dark'
-                                activeClassName='button-group--active'
-                            >
-                                Scores
-                            </NavLink>
-                        </ListItem>
-                    </ButtonGroupNavigation>
-                    <Outlet />
+                    <Wrapper>
+                        <Calendar />
+                        <ButtonGroupNavigation>
+                            <ListItem>
+                                <NavLink
+                                    to='habits'
+                                    className='button-group button-group--dark'
+                                    activeClassName='button-group--active'
+                                >
+                                    Habits
+                                </NavLink>
+                            </ListItem>
+                            <ListItem>
+                                <NavLink
+                                    to='scores'
+                                    className='button-group button-group--dark'
+                                    activeClassName='button-group--active'
+                                >
+                                    Scores
+                                </NavLink>
+                            </ListItem>
+                        </ButtonGroupNavigation>
+                        <Outlet />
+                    </Wrapper>
                 </InnerContainer>
             </OuterContainer>
         </MobileOnly>
@@ -77,14 +79,17 @@ const InnerContainer = styled.div`
     border-top-left-radius: var(--border-radius-lg);
     padding: calc(var(--padding-md) * 1.25);
     margin-bottom: var(--height-mobile-nav);
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--padding-sm) * 1.5);
 
     @media screen and ${BREAKPOINTS.sm} {
         padding-inline: calc(var(--padding-sm) * 1.5);
         padding-block: calc(var(--padding-sm) * 1.75);
     }
+`;
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--padding-sm) * 1.5);
+    width: clamp(150px, 100%, 650px);
+    margin-inline: auto;
 `;
