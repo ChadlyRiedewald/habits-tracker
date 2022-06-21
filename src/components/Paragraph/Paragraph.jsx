@@ -5,6 +5,7 @@ export const Paragraph = styled.p`
     color: ${p => p.orange && 'var(--color-orange-400)'};
     text-align: ${p => (p.center ? 'center' : 'flex-start')};
     width: ${p => p.width};
+    font-size: ${p => p.fontSize};
 
     @media screen and ${BREAKPOINTS.lg} {
         //width: 90%;

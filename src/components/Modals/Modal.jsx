@@ -37,11 +37,6 @@ const Modal = ({ children, isOpen, setModal, title }) => {
                             exit='exit'
                         >
                             <Topbar>
-                                <EllipseWrapper>
-                                    <Ellipse />
-                                    <Ellipse />
-                                    <Ellipse />
-                                </EllipseWrapper>
                                 <Flex>
                                     <Title>{title}</Title>
                                 </Flex>
@@ -101,18 +96,4 @@ const Topbar = styled.div`
     border-top-right-radius: var(--border-radius-sm);
     padding: calc(var(--padding-sm) * 1.5);
     position: relative;
-`;
-
-const Ellipse = styled.div`
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
-    background-color: var(--color-gray-300);
-`;
-
-const EllipseWrapper = styled.div`
-    display: flex;
-    position: absolute;
-    gap: calc(var(--padding-xs) * 0.75);
-    top: calc(50% - 6px);
 `;

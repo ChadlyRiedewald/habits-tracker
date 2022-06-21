@@ -154,6 +154,10 @@ export const NavLink = styled(Link)`
         text-transform: uppercase;
         font-weight: var(--font-weight-bold);
 
+        &--dark {
+            background-color: var(--color-gray-200);
+        }
+
         &--active {
             color: var(--color-gray-100);
             background-color: var(--color-orange-300);

@@ -1,5 +1,10 @@
 export const VARIANTS = {
-    visible: { opacity: 1 },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+        },
+    },
     hidden: { opacity: 0 },
 
     modal: {
