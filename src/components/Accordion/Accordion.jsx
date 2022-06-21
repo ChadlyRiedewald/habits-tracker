@@ -4,18 +4,33 @@ import styled from 'styled-components/macro';
 import { BREAKPOINTS } from '../../constants/breakpoints';
 import { ReactComponent as Plus } from '../../assets/plus.svg';
 import { ReactComponent as Minus } from '../../assets/minus.svg';
+import { AnimatePresence, motion } from 'framer-motion';
+import { VARIANTS } from '../../constants/variants';
 
 const Accordion = ({ title, content }) => {
     const [isActive, setIsActive] = useState(false);
+    const { accordion } = VARIANTS;
 
     return (
         <Wrapper onClick={() => setIsActive(!isActive)}>
             <FlexColumn>
-                <TitleWrapper>
+                <HeaderWrapper>
                     <Title>{title}</Title>
                     {isActive ? <Minus /> : <Plus />}
-                </TitleWrapper>
-                {isActive && <Paragraph>{content}</Paragraph>}
+                </HeaderWrapper>
+                <AnimatePresence>
+                    {isActive && (
+                        <motion.section
+                            key={title}
+                            variants={accordion}
+                            initial='collapsed'
+                            animate='open'
+                            exit='collapsed'
+                        >
+                            <Paragraph>{content}</Paragraph>
+                        </motion.section>
+                    )}
+                </AnimatePresence>
             </FlexColumn>
         </Wrapper>
     );
@@ -37,7 +52,7 @@ const Wrapper = styled.div`
     }
 `;
 
-const TitleWrapper = styled.div`
+const HeaderWrapper = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
