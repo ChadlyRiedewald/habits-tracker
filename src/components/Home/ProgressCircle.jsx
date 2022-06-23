@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const ProgressCircle = ({ size, progress, strokeWidth }) => {
     const [offset, setOffset] = useState(0);
@@ -49,6 +50,10 @@ const Div = styled.div`
     .svg {
         display: inline-block;
         max-width: 100%;
+
+        @media screen and ${BREAKPOINTS.smMin} {
+            transform: scale(1.5);
+        }
     }
 
     .svg-circle-bg {

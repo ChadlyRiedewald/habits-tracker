@@ -135,7 +135,7 @@ const GlobalStyles = createGlobalStyle`
             17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.1),
             25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.1);
   }
-  
+
   /////////////////////// CSS Reset
 *, *::before, *::after {
   box-sizing: border-box;

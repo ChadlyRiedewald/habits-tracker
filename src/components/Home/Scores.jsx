@@ -96,6 +96,12 @@ const Scores = () => {
                     <Ellipse bgColor='var(--color-sports)'>
                         <Icon />
                     </Ellipse>
+                    <Ellipse bgColor='var(--color-finance)'>
+                        <Icon />
+                    </Ellipse>
+                    <Ellipse bgColor='var(--color-health)'>
+                        <Icon />
+                    </Ellipse>
                 </RewardsWrapper>
             </FlexColumn>
         </Wrapper>
@@ -133,6 +139,11 @@ const Card = styled.div`
     padding: calc(var(--padding-xs) * 1.5);
     border-radius: var(--border-radius-sm);
     box-shadow: var(--shadow-elevation-medium);
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        justify-content: space-evenly;
+        gap: var(--padding-md);
+    }
 `;
 
 const P = styled(Paragraph)`
@@ -200,6 +211,7 @@ const RewardsWrapper = styled(Card)`
     justify-content: flex-start;
     padding-block: calc(var(--padding-sm) * 1.5);
     padding-inline: var(--padding-sm);
+    gap: var(--padding-sm);
 `;
 
 const Ellipse = styled.div`

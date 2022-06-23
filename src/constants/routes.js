@@ -27,7 +27,10 @@ export const ROUTES = [
     },
 
     // When logged in
-    { path: 'home', children: [{ path: '' }, { path: 'completed' }] },
+    {
+        path: 'home',
+        children: [{ path: '' }, { path: 'habits' }, { path: 'scores' }],
+    },
     {
         path: 'discover',
         children: [{ path: '' }, { path: 'discover' }, { path: 'all' }],
