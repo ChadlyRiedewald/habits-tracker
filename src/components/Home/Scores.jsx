@@ -229,6 +229,7 @@ const Ellipse = styled.div`
     svg {
         width: 100%;
         height: 100%;
+        fill: var(--color-gray-100);
     }
 
     @media screen and ${BREAKPOINTS.smMin} {
