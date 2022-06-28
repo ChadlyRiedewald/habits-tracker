@@ -54,7 +54,7 @@ const MobileNavigation = () => {
                     </ListItem>
                     <ListItem>
                         <motion.a
-                            onClick={isAuth ? () => setModalIsOpen(true) : ''}
+                            onClick={isAuth ? () => setModalIsOpen(true) : null}
                             variants={button}
                             whileTap='whileTap'
                         >

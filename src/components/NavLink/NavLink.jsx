@@ -210,4 +210,21 @@ export const NavLink = styled(Link)`
             border-color: var(--color-orange-400);
         }
     }
+
+    // Home Habits Tab Link
+    &.habits-link {
+        font-size: var(--font-xxs);
+        color: var(--color-gray-600);
+        padding-inline: var(--padding-xs);
+        padding-block: calc(var(--padding-xs) * 0.75);
+        padding-bottom: var(--padding-sm);
+        margin-bottom: -0.75rem;
+
+        &--active {
+            color: var(--color-orange-400);
+            background-color: var(--color-gray-200);
+            border-top-left-radius: var(--border-radius-sm);
+            border-top-right-radius: var(--border-radius-sm);
+        }
+    }
 `;

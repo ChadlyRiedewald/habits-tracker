@@ -22,6 +22,8 @@ import MyAccount from '../Settings/MyAccount';
 import Security from '../Settings/Security';
 import Scores from '../Home/Scores';
 import HomeHabits from '../Home/Habits';
+import ToDo from '../Home/ToDo';
+import Completed from '../Home/Completed';
 
 const AnimatedRoutes = () => {
     const { isAuth } = useContext(AuthContext);
@@ -63,7 +65,17 @@ const AnimatedRoutes = () => {
                     <Fragment>
                         <Route path='home' element={<Home />}>
                             <Route path='' element={<Navigate to='habits' />} />
-                            <Route path='habits' element={<HomeHabits />} />
+                            <Route path='habits' element={<HomeHabits />}>
+                                <Route
+                                    path=''
+                                    element={<Navigate to='todo' />}
+                                />
+                                <Route path='todo' element={<ToDo />} />
+                                <Route
+                                    path='completed'
+                                    element={<Completed />}
+                                />
+                            </Route>
                             <Route path='scores' element={<Scores />} />
                         </Route>
                         <Route path='discover' element={<Discover />}>

@@ -38,6 +38,7 @@ const GlobalStyles = createGlobalStyle`
     --color-alert-bg: ${COLORS.other.alertBg};
 	
 	/////////////////////// Padding
+	--padding-xxs: ${`${S.SPACING.xxs}px`};
 	--padding-xs: ${`${S.SPACING.xs}px`};
 	--padding-sm: ${`${S.SPACING.sm}px`};
 	--padding-md: ${`${S.SPACING.md}px`};
@@ -52,6 +53,7 @@ const GlobalStyles = createGlobalStyle`
 	--btn-padding-wide: 0.75em 3.5em;
 	
 	/////////////////////// Margin
+	--margin-xxs: calc(${S.SPACING.xxs / 16}em);
 	--margin-xs: calc(${S.SPACING.xs / 16}em);
 	--margin-sm: calc(${S.SPACING.sm / 16}em);
 	--margin-md: calc(${S.SPACING.md / 16}em);

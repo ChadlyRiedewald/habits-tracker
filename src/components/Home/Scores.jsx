@@ -2,7 +2,9 @@ import styled from 'styled-components/macro';
 import { Paragraph } from '../Paragraph';
 import ProgressCircle from './ProgressCircle';
 import { BREAKPOINTS } from '../../constants/breakpoints';
-import { ReactComponent as Icon } from '../../assets/logo.svg';
+import { ReactComponent as Award } from '../../assets/award.svg';
+import { ReactComponent as Heart } from '../../assets/heart.svg';
+import { ReactComponent as Diamond } from '../../assets/diamond.svg';
 
 const Scores = () => {
     return (
@@ -94,13 +96,13 @@ const Scores = () => {
                 <Paragraph>Rewards</Paragraph>
                 <RewardsWrapper>
                     <Ellipse bgColor='var(--color-sports)'>
-                        <Icon />
+                        <Award />
                     </Ellipse>
                     <Ellipse bgColor='var(--color-finance)'>
-                        <Icon />
+                        <Heart />
                     </Ellipse>
                     <Ellipse bgColor='var(--color-health)'>
-                        <Icon />
+                        <Diamond />
                     </Ellipse>
                 </RewardsWrapper>
             </FlexColumn>
@@ -215,12 +217,23 @@ const RewardsWrapper = styled(Card)`
 `;
 
 const Ellipse = styled.div`
-    padding: 1rem;
+    padding: calc(var(--padding-xs) * 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 64px;
-    height: 64px;
+    width: 42px;
+    height: 42px;
     background-color: ${p => p.bgColor};
     border-radius: 100%;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        padding: var(--padding-xs);
+        width: 64px;
+        height: 64px;
+    }
 `;
