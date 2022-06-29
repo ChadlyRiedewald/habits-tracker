@@ -117,17 +117,17 @@ const GlobalStyles = createGlobalStyle`
     }
 	
 	/////////////////////// Shadows
-    --shadow-color: 0deg 0% 60%;
-    --shadow-elevation-low:
+    --shadow-color: 0deg 0% 40%;
+    --shadow-sm:
             0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
             0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
             1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
-    --shadow-elevation-medium:
-            0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.1),
-            0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.1),
-            2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.1),
-            5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.1);
-    --shadow-elevation-high:
+    --shadow-md:
+            0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.05),
+            0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.05),
+            2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.05),
+            5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.05);
+    --shadow-lg:
             0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.1),
             1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.1),
             2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.1),

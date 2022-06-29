@@ -10,7 +10,7 @@ const Calendar = () => {
                     Week 1
                 </Paragraph>
                 <Paragraph fontSize='12px' small='true'>
-                    01-01-2022 - 07-01-2022
+                    1 jan - 7 jan
                 </Paragraph>
             </Flex>
             <DatesWrapper>
@@ -45,6 +45,8 @@ const DateWrapper = styled.div`
     padding-block: calc(var(--padding-xs) * 0.5);
     padding-inline: calc(var(--padding-xs) * 1.5);
     border-radius: var(--border-radius-md);
+    max-width: 45px;
+    margin-inline: auto;
 
     &.active {
         background-color: var(--color-orange-500);
@@ -52,6 +54,7 @@ const DateWrapper = styled.div`
     }
 
     @media screen and ${BREAKPOINTS.smMin} {
+        max-width: 80px;
         padding-block: var(--padding-xs);
         padding-inline: var(--padding-sm);
     }
@@ -61,17 +64,35 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--padding-xs);
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        flex-direction: row;
+        gap: 0;
+    }
 `;
 
 const Flex = styled.div`
     display: flex;
     justify-content: space-between;
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        flex-basis: 30%;
+        flex-direction: column;
+        background-color: var(--color-orange-500);
+        border-radius: var(--border-radius-md);
+        padding-block: calc(var(--padding-xs) * 1.5);
+        padding-inline: var(--padding-sm);
+
+        ${Paragraph} {
+            color: var(--color-gray-100);
+        }
+    }
 `;
 
 const DatesWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
 `;
 
 const Day = styled(Paragraph)`

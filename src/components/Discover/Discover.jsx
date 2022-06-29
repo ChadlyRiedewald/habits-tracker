@@ -77,7 +77,7 @@ export const Card = styled.div`
     height: 256px;
     background-color: var(--color-gray-100);
     border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-elevation-low);
+    box-shadow: var(--shadow-sm);
 
     @media screen and ${BREAKPOINTS.lg} {
         height: 128px;

@@ -1,6 +1,7 @@
 import Checkbox from '../Checkbox/Checkbox';
 import { ReactComponent as Award } from '../../assets/award.svg';
 import styled from 'styled-components/macro';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const Habit = ({ bgColor, habitText }) => {
     return (
@@ -28,6 +29,11 @@ const Wrapper = styled.div`
     padding-block: calc(var(--padding-xs) * 1.5);
     padding-inline: var(--padding-sm);
     border-radius: var(--border-radius-sm);
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        flex-direction: column;
+        position: relative;
+    }
 `;
 
 const Flex = styled.div`
@@ -37,6 +43,23 @@ const Flex = styled.div`
 
     p {
         font-size: var(--font-xxs);
+
+        @media screen and ${BREAKPOINTS.smMin} {
+            font-size: var(--font-xs);
+        }
+
+        @media screen and ${BREAKPOINTS.lgMin} {
+            font-size: 12px;
+        }
+    }
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        flex-direction: column;
+        text-align: center;
+
+        input {
+            display: none;
+        }
     }
 `;
 
@@ -44,6 +67,10 @@ const Divider = styled.div`
     min-height: var(--padding-md);
     min-width: 1px;
     background-color: var(--color-gray-100);
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        display: none;
+    }
 `;
 
 const Ellipse = styled.div`
@@ -55,6 +82,16 @@ const Ellipse = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and ${BREAKPOINTS.smMin} {
+        width: 36px;
+        height: 36px;
+    }
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        width: 48px;
+        height: 48px;
+    }
 
     svg {
         width: 100%;
@@ -85,5 +122,11 @@ const Options = styled.div`
 
     &::after {
         margin-top: 8px;
+    }
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        transform: rotate(90deg);
+        position: absolute;
+        right: 1.25rem;
     }
 `;

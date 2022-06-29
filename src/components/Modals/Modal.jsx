@@ -62,7 +62,7 @@ const Wrapper = styled.div`
     transform: translate(-50%, -50%);
     background-color: var(--color-gray-100);
     border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-elevation-high);
+    box-shadow: var(--shadow-lg);
     z-index: 1000;
     width: clamp(200px, 90vw, 450px);
     height: clamp(200px, 80vh, fit-content);

@@ -7,7 +7,7 @@ const Title = styled.h2`
     }
 
     span {
-        color: var(--color-orange-400);
+        color: var(--color-orange-600);
     }
 `;
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 import Habit from './Habit';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const Completed = () => {
     return (
@@ -17,4 +18,12 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--padding-xs);
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+        justify-content: start;
+        align-content: center;
+        gap: var(--padding-sm);
+    }
 `;

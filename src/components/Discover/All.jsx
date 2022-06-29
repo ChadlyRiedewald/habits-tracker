@@ -86,7 +86,7 @@ const FilterWrapper = styled.div`
     border-radius: var(--border-radius-sm);
     padding-inline: calc(var(--padding-md) * 1.5);
     padding-block: var(--padding-md);
-    box-shadow: var(--shadow-elevation-low);
+    box-shadow: var(--shadow-sm);
 `;
 
 const FlexColumn = styled.div`

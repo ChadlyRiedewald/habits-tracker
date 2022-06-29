@@ -140,7 +140,7 @@ const Card = styled.div`
     background-color: var(--color-gray-100);
     padding: calc(var(--padding-xs) * 1.5);
     border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-elevation-medium);
+    box-shadow: var(--shadow-md);
 
     @media screen and ${BREAKPOINTS.smMin} {
         justify-content: space-evenly;
@@ -187,7 +187,7 @@ const Statistic = styled.div`
     color: var(--color-gray-100);
     background-color: ${p => p.bg};
     border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-elevation-medium);
+    box-shadow: var(--shadow-md);
     max-width: 150px;
 
     p {

@@ -215,7 +215,7 @@ export const NavLink = styled(Link)`
     &.habits-link {
         font-size: var(--font-xxs);
         color: var(--color-gray-600);
-        padding-inline: var(--padding-xs);
+        padding-inline: var(--padding-sm);
         padding-block: calc(var(--padding-xs) * 0.75);
         padding-bottom: var(--padding-sm);
         margin-bottom: -0.75rem;
@@ -225,6 +225,15 @@ export const NavLink = styled(Link)`
             background-color: var(--color-gray-200);
             border-top-left-radius: var(--border-radius-sm);
             border-top-right-radius: var(--border-radius-sm);
+            box-shadow: var(--shadow-md);
+
+            @media screen and ${BREAKPOINTS.lgMin} {
+                background-color: var(--color-gray-100);
+            }
+        }
+
+        @media screen and ${BREAKPOINTS.smMin} {
+            font-size: var(--font-xs);
         }
     }
 `;
