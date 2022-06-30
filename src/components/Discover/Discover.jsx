@@ -41,7 +41,7 @@ export default Discover;
 
 //////// DESKTOP STYLES
 
-const OuterContainer = styled.div`
+export const OuterContainer = styled.div`
     width: calc(100vw - var(--width-nav));
     height: 100vh;
     display: flex;
@@ -84,6 +84,7 @@ export const Card = styled.div`
         width: 128px;
     }
 `;
+
 export const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--padding-xxl), 1fr));

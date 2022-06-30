@@ -3,9 +3,9 @@ import * as Account from './MyAccount';
 import Subtitle from '../Subtitle';
 import { Paragraph } from '../Paragraph';
 import { Header } from '../Header';
-import { Card } from '../Card';
 import { Fragment, useState } from 'react';
 import ConfirmActionModal from '../Modals/ConfirmActionModal';
+import { Card } from '../Card';
 
 const Content = () => {
     return (

@@ -51,7 +51,7 @@ const MyAccount = () => {
 
 export default MyAccount;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--margin-md);

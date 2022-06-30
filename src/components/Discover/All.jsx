@@ -9,6 +9,7 @@ import FilterMobileModal from '../Modals/FilterMobileModal';
 import DummyCards from './DummyCards';
 import { DividerHorizontal } from '../Divider';
 import HabitTypes from '../HabitTypes';
+import { Card } from '../Card';
 
 const All = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -74,7 +75,7 @@ const Wrapper = styled(Discover.Wrapper)`
 
 /////////// FILTER
 
-const FilterWrapper = styled.div`
+const FilterWrapper = styled(Card)`
     position: fixed;
     top: var(--padding-md);
     right: calc(var(--padding-md) * 1.5);
@@ -82,11 +83,8 @@ const FilterWrapper = styled.div`
     flex-direction: column;
     width: 300px;
     height: calc(100vh - var(--padding-lg));
-    background-color: var(--color-gray-100);
-    border-radius: var(--border-radius-sm);
     padding-inline: calc(var(--padding-md) * 1.5);
     padding-block: var(--padding-md);
-    box-shadow: var(--shadow-sm);
 `;
 
 const FlexColumn = styled.div`

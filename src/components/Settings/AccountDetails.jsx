@@ -3,12 +3,12 @@ import styled from 'styled-components/macro';
 import * as Button from '../Button';
 import Subtitle from '../Subtitle';
 import { BREAKPOINTS } from '../../constants/breakpoints';
-import { Card } from '../Card';
 import { Paragraph } from '../Paragraph';
 import { ReactComponent as A } from '../../assets/avatars/4.svg';
 import { ReactComponent as Edit } from '../../assets/edit.svg';
 import { useState } from 'react';
 import ChangeAvatarModal from '../Modals/ChangeAvatarModal';
+import { Card } from '../Card';
 
 const AccountDetails = () => {
     const [isModalOpen, setModalIsOpen] = useState(false);

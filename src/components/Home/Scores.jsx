@@ -72,7 +72,7 @@ const Scores = () => {
                 </HalfWrapper>
             </Flex>
             <FlexColumn>
-                <Paragraph>Statistics</Paragraph>
+                <Paragraph>All time</Paragraph>
                 <StatsWrapper>
                     <Statistic bg='var(--color-orange-500)'>
                         <p>Completed</p>
@@ -170,9 +170,7 @@ const TextWrapper = styled(Flex)`
 `;
 
 const StatsWrapper = styled.div`
-    //gap: 0.5rem;
     display: flex;
-    //grid-template-columns: repeat(4, 1fr);
     gap: var(--padding-sm);
     justify-content: space-between;
 `;

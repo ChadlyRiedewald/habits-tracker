@@ -7,7 +7,8 @@ import DesktopOnly from '../DesktopOnly';
 import { Header } from '../Header';
 import { Paragraph } from '../Paragraph';
 import { FormWrapper } from '../FormWrapper';
-import { Card } from '../Card';
+import { Card as C } from '../Card';
+import { BREAKPOINTS } from '../../constants/breakpoints';
 
 const Contact = () => {
     return (
@@ -36,8 +37,21 @@ const Contact = () => {
 
 export default Contact;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: var(--margin-lg);
+`;
+
+const Card = styled(C)`
+    @media screen and ${BREAKPOINTS.lg} {
+        width: clamp(200px, 100%, 650px);
+        margin-inline: auto;
+        box-shadow: none;
+    }
+
+    @media screen and ${BREAKPOINTS.lgMin} {
+        width: clamp(550px, 100%, 800px);
+        padding: calc(var(--padding-md) * 1.5);
+    }
 `;

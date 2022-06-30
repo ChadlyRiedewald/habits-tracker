@@ -5,6 +5,7 @@ import MobileOnly from '../MobileOnly';
 import DesktopOnly from '../DesktopOnly';
 import { Fragment } from 'react';
 import { BREAKPOINTS } from '../../constants/breakpoints';
+import { ReactComponent as Add } from '../../assets/plus.svg';
 
 const ToDo = () => {
     return (
@@ -63,6 +64,9 @@ const ToDo = () => {
                         bgColor='var(--color-food)'
                         habitText='Eat healthy'
                     />
+                    <AddHabit>
+                        <Add />
+                    </AddHabit>
                 </Wrapper>
             </DesktopOnly>
         </Fragment>
@@ -79,8 +83,22 @@ const Wrapper = styled.div`
     @media screen and ${BREAKPOINTS.lgMin} {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
-        justify-content: start;
-        align-content: center;
         gap: var(--padding-sm);
+    }
+`;
+
+const AddHabit = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border-radius: var(--border-radius-sm);
+    box-shadow: inset 0 0 0 5px var(--color-orange-400);
+
+    svg {
+        stroke: var(--color-orange-400);
+        width: 8rem;
+        height: 8rem;
     }
 `;

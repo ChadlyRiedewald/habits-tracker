@@ -5,10 +5,10 @@ import Input from '../Input';
 import * as Button from '../Button';
 import Subtitle from '../Subtitle';
 import { FormWrapper } from '../FormWrapper';
-import { Card } from '../Card';
 import { ButtonWrapper as B } from '../ButtonWrapper';
 import ConfirmActionModal from '../Modals/ConfirmActionModal';
 import { Paragraph } from '../Paragraph';
+import { Card } from '../Card';
 
 const Form = () => {
     const [isModalOpen, setModalIsOpen] = useState(false);

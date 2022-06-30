@@ -2,13 +2,13 @@ import * as Button from '../Button';
 import * as Account from './MyAccount';
 import Subtitle from '../Subtitle';
 import { Paragraph } from '../Paragraph';
-import { Card } from '../Card';
 import { Header } from '../Header';
 import { Fragment } from 'react';
 import { useState } from 'react';
 import ConfirmActionModal from '../Modals/ConfirmActionModal';
 import { useContext } from 'react';
 import { AuthContext } from '../../hooks/Auth.context';
+import { Card } from '../Card';
 
 const Content = () => {
     return (

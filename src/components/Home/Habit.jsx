@@ -33,6 +33,7 @@ const Wrapper = styled.div`
     @media screen and ${BREAKPOINTS.lgMin} {
         flex-direction: column;
         position: relative;
+        height: 8rem;
     }
 `;
 

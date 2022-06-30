@@ -59,7 +59,10 @@ const MobileNavigation = () => {
                             whileTap='whileTap'
                         >
                             <Ellipse>
-                                <Plus stroke='var(--color-orange-400)' />
+                                <Plus
+                                    stroke='var(--color-orange-400)'
+                                    strokeWidth='2px'
+                                />
                             </Ellipse>
                         </motion.a>
                     </ListItem>

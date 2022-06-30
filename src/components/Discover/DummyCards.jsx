@@ -1,49 +1,49 @@
 import { Fragment } from 'react';
-import * as Discover from './Discover';
+import { Card } from '../Card';
 
 const DummyCards = () => {
     return (
         <Fragment>
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
-            <Discover.Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
         </Fragment>
     );
 };

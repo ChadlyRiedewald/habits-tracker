@@ -6,6 +6,7 @@ import DummyCards from './DummyCards';
 import Subtitle from '../Subtitle';
 import MobileOnly from '../MobileOnly';
 import DesktopOnly from '../DesktopOnly';
+import { Card } from '../Card';
 
 const DiscoverContent = () => {
     return (
@@ -13,11 +14,11 @@ const DiscoverContent = () => {
             <MobileOnly>
                 <Discover.Wrapper>
                     <Discover.Flex>
-                        <Discover.Card />
-                        <Discover.Card />
-                        <Discover.Card />
-                        <Discover.Card />
-                        <Discover.Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
+                        <Card />
                     </Discover.Flex>
                     <FlexColumn>
                         <Subtitle>Popular</Subtitle>
